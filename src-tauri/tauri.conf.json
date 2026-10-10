@@ -1,0 +1,110 @@
+{
+    "build": {
+        "beforeDevCommand": "corepack pnpm@11.19.0 dev",
+        "beforeBuildCommand": "corepack pnpm@11.19.0 build",
+        "devPath": "http://localhost:1420",
+        "distDir": "../dist",
+        "withGlobalTauri": false
+    },
+    "package": {
+        "productName": "Aries",
+        "version": "1.0.11"
+    },
+    "tauri": {
+        "allowlist": {
+            "all": false,
+            "shell": {
+                "all": true,
+                "open": ".*"
+            },
+            "path": {
+                "all": true
+            },
+            "window": {
+                "all": true
+            },
+            "clipboard": {
+                "all": true
+            },
+            "globalShortcut": {
+                "all": true
+            },
+            "notification": {
+                "all": true
+            },
+            "http": {
+                "all": true,
+                "request": true,
+                "scope": ["http://**", "https://**"]
+            },
+            "os": {
+                "all": true
+            },
+            "protocol": {
+                "asset": true,
+                "assetScope": ["$CACHE/**", "$CONFIG/**"]
+            },
+            "fs": {
+                "all": true,
+                "scope": ["$APPCONFIG/**", "$APPCACHE/**"]
+            },
+            "dialog": {
+                "open": true,
+                "save": true
+            }
+        },
+        "bundle": {
+            "active": true,
+            "category": "Utility",
+            "copyright": "Copyright © 2026 Myster_Jin",
+            "targets": ["nsis"],
+            "identifier": "com.aries.translate",
+            "longDescription": "Aries: selection translation, OCR and read aloud",
+            "shortDescription": "Aries",
+            "externalBin": [],
+            "resources": [],
+            "icon": [
+                "icons/32x32.png",
+                "icons/128x128.png",
+                "icons/128x128@2x.png",
+                "icons/icon.icns",
+                "icons/icon.ico"
+            ],
+            "deb": {
+                "depends": ["libxdo-dev", "libxcb1", "libxrandr2", "tesseract-ocr"]
+            },
+            "rpm": {
+                "depends": ["libxdo-dev", "libxcb1", "libxrandr2", "tesseract-ocr"]
+            },
+            "macOS": {
+                "entitlements": null,
+                "exceptionDomain": "",
+                "frameworks": [],
+                "providerShortName": null,
+                "signingIdentity": null
+            }
+        },
+        "security": {
+            "csp": "default-src * data: ; img-src * 'self' asset: https: data: ; media-src * data: blob: ; style-src * 'unsafe-inline'; worker-src 'self' blob: ; script-src * 'unsafe-eval';",
+            "devCsp": "default-src * data: ; img-src * 'self' asset: https: data: ; media-src * data: blob: ; style-src * 'unsafe-inline'; worker-src 'self' blob: ; script-src * 'unsafe-eval';"
+        },
+        "windows": [
+            {
+                "title": "Daemon",
+                "label": "daemon",
+                "visible": false,
+                "url": "daemon.html",
+                "additionalBrowserArgs": "--disable-web-security"
+            }
+        ],
+        "systemTray": {
+            "iconPath": "icons/icon.png",
+            "iconAsTemplate": true
+        },
+        "updater": {
+            "active": false,
+            "dialog": false,
+            "endpoints": []
+        }
+    }
+}

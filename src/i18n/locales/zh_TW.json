@@ -1,0 +1,1088 @@
+{
+    "translation": {
+        "common": {
+            "delete": "刪除",
+            "ok": "確定",
+            "cancel": "取消",
+            "save": "儲存",
+            "write_clipboard": "寫入剪貼簿",
+            "plugin": "外掛程式",
+            "coming": "即將推出…",
+            "clear": "清除",
+            "minimize": "最小化",
+            "maximize": "最大化",
+            "restore": "還原",
+            "close": "關閉",
+            "show_secret": "顯示內容",
+            "hide_secret": "隱藏內容",
+            "app_name": "Aries"
+        },
+        "languages": {
+            "auto": "自動偵測",
+            "zh_cn": "簡體中文",
+            "zh_tw": "繁體中文",
+            "ja": "日語",
+            "en": "英語",
+            "ko": "韓語",
+            "fr": "法語",
+            "es": "西班牙語",
+            "ru": "俄語",
+            "de": "德語",
+            "it": "義大利語",
+            "tr": "土耳其語",
+            "pt_pt": "葡萄牙語",
+            "pt_br": "葡萄牙語（巴西）",
+            "vi": "越南語",
+            "id": "印尼語",
+            "th": "泰語",
+            "ms": "馬來語",
+            "ar": "阿拉伯語",
+            "hi": "印地語",
+            "mn_mo": "蒙古語",
+            "mn_cy": "蒙古語（西里爾字母）",
+            "km": "高棉語",
+            "nb_no": "挪威語（書面語）",
+            "nn_no": "挪威語（新諾斯克）",
+            "sv": "瑞典語",
+            "pl": "波蘭語",
+            "nl": "荷蘭語",
+            "fa": "波斯語",
+            "uk": "烏克蘭語",
+            "he": "希伯來語"
+        },
+        "config": {
+            "general": {
+                "label": "一般設定",
+                "title": "一般設定",
+                "auto_start": "開機自動啟動",
+                "check_update": "啟動時檢查更新",
+                "server_port": "監聽連接埠",
+                "server_port_change": "監聽連接埠已變更，請重新啟動應用程式以使變更生效",
+                "app_language": "應用程式語言",
+                "app_theme": "主題",
+                "app_accent": "主題色",
+                "app_accent_desc": "開關、主按鈕和選取項目使用的顏色",
+                "accents": {
+                    "neutral": "預設",
+                    "aries": "Aries",
+                    "blue": "藍",
+                    "teal": "青",
+                    "orange": "橙紅",
+                    "violet": "紫"
+                },
+                "theme": {
+                    "light": "淺色主題",
+                    "dark": "深色主題",
+                    "system": "系統主題"
+                },
+                "transparent": "透明效果",
+                "proxy": {
+                    "title": "代理伺服器",
+                    "host": "主機",
+                    "port": "連接埠",
+                    "username": "使用者名稱",
+                    "password": "密碼",
+                    "no_proxy": "不使用代理伺服器",
+                    "enable": "啟用網路代理",
+                    "enable_desc": "需先填寫代理位址和連接埠",
+                    "unsupported": "個人版暫不支援",
+                    "no_proxy_hint": "多個位址以英文逗號分隔"
+                },
+                "proxy_change": "代理伺服器已變更，請重新啟動應用程式以使變更生效",
+                "proxy_error": "請填寫主機和連接埠",
+                "tray_click_event": "系統列圖示點選事件",
+                "event": {
+                    "config": "偏好設定",
+                    "translate": "翻譯",
+                    "disable": "停用",
+                    "ocr_recognize": "文字辨識",
+                    "ocr_translate": "截圖翻譯"
+                },
+                "app_font": "字型",
+                "app_fallback_font": "備用字型",
+                "font_size": {
+                    "10": "特小（10px）",
+                    "12": "非常小（12px）",
+                    "14": "小（14px）",
+                    "16": "標準（16px）",
+                    "18": "大（18px）",
+                    "20": "非常大（20px）",
+                    "24": "特大（24px）",
+                    "title": "字型大小"
+                },
+                "default_font": "預設",
+                "check_update_desc": "個人版已停用自動更新",
+                "auto_start_desc": "登入系統後自動在背景執行",
+                "server_port_desc": "供外部程式呼叫的本機 HTTP 連接埠，修改後重新啟動生效",
+                "app_font_desc": "介面與譯文使用的字型",
+                "app_fallback_font_desc": "主字型缺少字形時使用",
+                "transparent_desc": "側邊欄使用半透明背景",
+                "dev_mode_desc": "顯示偵錯工具與詳細記錄",
+                "tray_click_event_desc": "按一下系統匣圖示時執行的動作",
+                "section": {
+                    "startup": "啟動",
+                    "startup_desc": "應用程式啟動、更新與外部呼叫",
+                    "appearance": "外觀",
+                    "appearance_desc": "介面語言、主題與字型",
+                    "tray": "系統匣",
+                    "tray_desc": "僅限 Windows",
+                    "proxy_desc": "修改後需重新啟動應用程式生效"
+                }
+            },
+            "translate": {
+                "label": "翻譯設定",
+                "title": "翻譯設定",
+                "source_language": "原文語言",
+                "target_language": "譯文語言",
+                "second_language": "次要目標語言",
+                "auto_copy": "自動複製",
+                "source": "原文",
+                "target": "譯文",
+                "source_target": "原文+譯文",
+                "disable": "停用",
+                "history_disable": "停用歷史記錄",
+                "incremental_translate": "增量翻譯",
+                "dynamic_translate": "動態翻譯",
+                "delete_newline": "自動刪除換行",
+                "remember_language": "記住目標語言",
+                "window_position": "視窗位置",
+                "mouse": "跟隨滑鼠",
+                "pre_state": "記住位置",
+                "remember_window_size": "記住視窗大小",
+                "close_on_blur": "失去焦點時關閉視窗",
+                "always_on_top": "視窗始終置頂",
+                "hide_source": "隱藏原文",
+                "hide_language": "隱藏語言區域",
+                "hide_window": "隱藏翻譯視窗",
+                "follow_ocr_language": "翻譯來源語言跟隨 OCR",
+                "follow_ocr_language_hint": "翻譯來源語言為自動時，使用手動指定的 OCR 語言。OCR 自動模式和增量翻譯仍偵測語言。",
+                "detect_engine": "語言偵測引擎",
+                "baidu": "百度",
+                "tencent": "騰訊",
+                "niutrans": "小牛翻譯",
+                "google": "Google",
+                "bing": "Bing",
+                "yandex": "Yandex",
+                "local": "本地",
+                "font_size": {
+                    "10": "非常小（10px）",
+                    "12": "很小（12px）",
+                    "14": "小（14px）",
+                    "16": "標準（16px）",
+                    "18": "大（18px）",
+                    "20": "很大（20px）",
+                    "24": "非常大（24px）",
+                    "title": "字型大小"
+                },
+                "second_language_desc": "原文與目標語言相同時改用此語言",
+                "section": {
+                    "language": "語言",
+                    "language_desc": "翻譯視窗預設使用的語言",
+                    "behavior": "翻譯行為",
+                    "window": "翻譯視窗"
+                },
+                "auto_read_aloud": "翻譯後自動朗讀",
+                "auto_read_aloud_description": "朗讀排在最上面且成功的文字結果；手動朗讀後，本輪不再自動朗讀。"
+            },
+            "recognize": {
+                "label": "文字辨識",
+                "title": "文字辨識設定",
+                "language": "辨識語言",
+                "delete_newline": "自動刪除換行",
+                "auto_copy": "自動複製",
+                "close_on_blur": "失去焦點時關閉視窗",
+                "hide_window": "隱藏辨識視窗",
+                "auto_copy_desc": "辨識完成後將結果寫入剪貼簿",
+                "hide_window_desc": "開啟自動複製時，結果透過系統通知顯示",
+                "section": {
+                    "title": "辨識",
+                    "description": "文字辨識視窗的預設行為"
+                }
+            },
+            "hotkey": {
+                "label": "快速鍵設定",
+                "title": "快速鍵設定",
+                "selection_translate": "選取翻譯",
+                "input_translate": "輸入翻譯",
+                "replace_translate": "替換翻譯",
+                "read_aloud": "朗讀",
+                "ocr_recognize": "文字辨識",
+                "ocr_translate": "截圖翻譯",
+                "is_register": "該快速鍵已被註冊",
+                "success": "快速鍵註冊成功",
+                "set_hotkey": "按下設定快速鍵",
+                "selection_translate_desc": "選取文字後翻譯",
+                "input_translate_desc": "開啟翻譯視窗手動輸入",
+                "replace_translate_desc": "用譯文取代選取的文字",
+                "read_aloud_desc": "朗讀選取的文字",
+                "ocr_recognize_desc": "截圖並辨識其中的文字",
+                "ocr_translate_desc": "截圖辨識後直接翻譯",
+                "clear": "清除快速鍵",
+                "section": {
+                    "title": "全域快速鍵",
+                    "description": "點擊輸入框後按下組合鍵即可錄製，按 Backspace 清除",
+                    "behavior": "行為"
+                },
+                "disable_in_fullscreen": "在全螢幕應用程式中停用快捷鍵",
+                "disable_in_fullscreen_description": "前景應用程式處於全螢幕狀態（如遊戲、全螢幕影片、簡報）時，不回應 Aries 的快捷鍵。"
+            },
+            "service": {
+                "label": "服務設定",
+                "title": "服務設定",
+                "translate": "翻譯",
+                "tts": "語音合成",
+                "recognize": "文字辨識",
+                "collection": "收藏",
+                "least": "請至少保留一個",
+                "add_builtin_service": "新增內建服務",
+                "add_external_service": "新增擴充套件",
+                "add_service": "新增服務",
+                "test_failed": "測試失敗",
+                "install_plugin": "安裝外掛程式",
+                "uninstall_success": "外掛程式移除成功",
+                "homepage": "外掛程式首頁",
+                "view_plugin_list": "檢視外掛程式列表",
+                "edit": "編輯",
+                "add": "新增",
+                "delete_title": "刪除「{{name}}」？",
+                "delete_desc": "刪除後該服務的設定也會一併移除。",
+                "add_service_desc": "選擇要新增的{{type}}服務，可多次新增同一服務並分別設定",
+                "search_placeholder": "搜尋服務",
+                "total_count": "共 {{n}} 個服務",
+                "no_match": "沒有符合的服務",
+                "type_translate": "翻譯",
+                "type_recognize": "文字辨識",
+                "type_tts": "語音合成",
+                "type_collection": "收藏",
+                "add_plugin_title": "新增擴充套件",
+                "add_plugin_desc": "安裝 .potext 外掛程式檔案，或從外掛程式列表中選擇",
+                "translate_title": "翻譯服務",
+                "translate_desc": "拖曳調整順序，翻譯視窗依此順序顯示結果",
+                "recognize_title": "文字辨識服務",
+                "recognize_desc": "拖曳調整順序，辨識視窗預設使用第一個服務",
+                "tts_title": "語音合成服務",
+                "tts_desc": "拖曳調整順序，朗讀失敗時依序嘗試下一個服務",
+                "collection_title": "收藏",
+                "collection_desc": "新增後可在翻譯結果中一鍵加入收藏",
+                "removed": "此服務已移除"
+            },
+            "history": {
+                "search_placeholder": "搜尋原文或譯文",
+                "clear_all": "清除歷史",
+                "clear_title": "清除所有歷史記錄？",
+                "clear_desc": "此操作無法復原，所有翻譯歷史都將被刪除。",
+                "empty": "暫無歷史記錄",
+                "no_match": "沒有符合的記錄",
+                "col_text": "原文",
+                "col_language": "語言",
+                "col_result": "譯文",
+                "col_time": "時間",
+                "total": "共 {{total}} 筆，每頁 {{size}} 筆",
+                "prev": "上一頁",
+                "next": "下一頁",
+                "add_to_collection": "加入生詞本",
+                "label": "歷史記錄",
+                "title": "歷史記錄"
+            },
+            "backup": {
+                "section": {
+                    "title": "備份與還原",
+                    "description": "將設定備份到 WebDAV、阿里雲網盤或本機檔案"
+                },
+                "type_desc": "WebDAV、阿里雲網盤或本地",
+                "backup_now": "立即備份",
+                "list_desc": "選擇一個備份還原到目前裝置",
+                "restore_item": "還原",
+                "delete_title": "刪除這個備份？",
+                "delete_desc": "「{{name}}」將從雲端永久刪除。",
+                "label": "備份設定",
+                "title": "備份設定",
+                "type": "服務類型",
+                "webdav": "WebDav",
+                "local": "本地",
+                "webdav_url": "WebDav 網址",
+                "username": "使用者名稱",
+                "password": "密碼",
+                "backup": "備份",
+                "restore": "還原",
+                "list": "備份列表",
+                "load_success": "載入備份成功",
+                "backup_success": "備份成功",
+                "empty": "您尚未進行備份",
+                "legacy": "舊版備份"
+            },
+            "about": {
+                "tagline": "跨平台的劃詞翻譯與文字辨識軟體",
+                "visit": "造訪",
+                "open": "開啟",
+                "feedback_desc": "提交問題或寄送電子郵件",
+                "community_desc": "加入使用者社群",
+                "view_log_desc": "開啟記錄檔所在資料夾",
+                "view_config_desc": "開啟設定所在資料夾",
+                "label": "關於",
+                "title": "關於應用程式",
+                "website": "官方網站",
+                "github": "GitHub",
+                "feedback": "問題回饋",
+                "issue": "問題回報",
+                "email": "電子郵件",
+                "community": "社群交流",
+                "check_update": "檢查更新",
+                "view_log": "檢視記錄檔",
+                "view_config": "檢視設定",
+                "qq_channel": "QQ 頻道",
+                "qq_group": "QQ 群組",
+                "telegram": "Telegram",
+                "discussion": "Github 討論區",
+                "discussion_short": "討論區",
+                "license_title": "許可與來源",
+                "copyright": "Copyright © 2026 Myster_Jin",
+                "original_copyright": "上游版權歸 pot-app 貢獻者所有，原有版權聲明繼續適用。",
+                "license_description": "Aries 是在開源專案 pot-desktop 基礎上修改而來，按 GNU GPL-3.0 許可發佈，不提供任何擔保。修改日期：2026-10-08。",
+                "source_access": "對應原始碼隨每個版本以原始碼 ZIP 提供；私有倉庫存取需要授權。",
+                "view_license": "查看許可證",
+                "get_source": "取得原始碼"
+            },
+            "sidebar": {
+                "settings": "設定",
+                "data": "資料"
+            }
+        },
+        "updater": {
+            "title": "檢查更新",
+            "latest": "## 已安裝最新版本",
+            "progress": "下載進度",
+            "update": "更新",
+            "downloading": "下載中…",
+            "installing": "安裝中…",
+            "cancel": "取消",
+            "installed": "安裝完成，請重新啟動應用程式以使變更生效"
+        },
+        "services": {
+            "help": "設定指南",
+            "no_need": "無需設定",
+            "instance_name": "配置名稱",
+            "instance_name_hint": "用於在列表和翻譯視窗中區分多個實例",
+            "view_guide": "查看設定指南",
+            "translate": {
+                "deepl": {
+                    "title": "DeepL",
+                    "custom_url": "DeepLX 網址",
+                    "auth_key": "授權金鑰",
+                    "type": "服務類型",
+                    "free": "免費版",
+                    "api": "授權金鑰",
+                    "deeplx": "DeepLX"
+                },
+                "google": {
+                    "title": "Google 翻譯",
+                    "custom_url": "自訂網址"
+                },
+                "bing": {
+                    "title": "Bing 翻譯"
+                },
+                "openai": {
+                    "title": "OpenAI",
+                    "service": "服務商",
+                    "openai": "OpenAI",
+                    "azure": "Azure",
+                    "request_path": "請求路徑",
+                    "api_key": "API Key",
+                    "model": "模型",
+                    "stream": "串流輸出",
+                    "prompt_description": "透過自定義 Prompt，您可以自定義 OpenAI 的行為。$text $from $to $detect 將被替換為待翻譯的文字、來源語言、目標語言和偵測到的語言。",
+                    "add": "新增 Prompt",
+                    "openrouter": "OpenRouter",
+                    "chatanywhere": "ChatAnywhere",
+                    "tuzi": "兔子 API",
+                    "address_preserved": "已保留你自訂的位址",
+                    "use_default_address": "改用 {{name}} 預設位址",
+                    "get_key": "取得 Key",
+                    "provider_hint": {
+                        "openai": "使用 OpenAI 官方介面，Key 和模型必須來自同一服務商。",
+                        "azure": "填寫 Azure 資源的完整部署位址，保留現有位址和 API 版本參數。",
+                        "openrouter": "使用 OpenRouter 的相容介面；模型 ID 應包含服務商前綴。",
+                        "chatanywhere": "預設使用國內位址；在國外請把網域改為 api.chatanywhere.org。",
+                        "tuzi": "第三方中轉會處理請求內容，敏感文字請先確認其隱私與日誌政策。"
+                    }
+                },
+                "chatglm": {
+                    "title": "ChatGLM",
+                    "model": "模型",
+                    "chatglm_pro": "ChatGLM Pro",
+                    "chatglm_std": "ChatGLM Std",
+                    "chatglm_lite": "ChatGLM Lite",
+                    "api_key": "API Key",
+                    "prompt_description": "透過自定義 Prompt，您可以自定義 AI 的行為。$text $from $to $detect 將被替換為待翻譯的文字、來源語言、目標語言和偵測到的語言。",
+                    "add": "新增 Prompt",
+                    "chatglm_turbo": "ChatGLM Turbo"
+                },
+                "yandex": {
+                    "title": "Yandex"
+                },
+                "transmart": {
+                    "title": "TranSmart",
+                    "username": "使用者名稱",
+                    "token": "Token"
+                },
+                "baidu": {
+                    "title": "百度翻譯",
+                    "appid": "應用程式 ID",
+                    "secret": "Secret"
+                },
+                "baidu_field": {
+                    "title": "百度領域翻譯",
+                    "it": "資訊科技",
+                    "finance": "金融財經",
+                    "machinery": "機械製造",
+                    "senimed": "生物醫藥",
+                    "novel": "網路文學",
+                    "academic": "學術論文",
+                    "aerospace": "航空航天",
+                    "wiki": "人文社科",
+                    "news": "新聞資訊",
+                    "law": "法律法規",
+                    "contract": "合約"
+                },
+                "alibaba": {
+                    "title": "阿里翻譯",
+                    "accesskey_id": "AccessKey ID",
+                    "accesskey_secret": "AccessKey Secret"
+                },
+                "tencent": {
+                    "title": "騰訊翻譯",
+                    "secret_id": "Secret ID",
+                    "secret_key": "Secret Key"
+                },
+                "volcengine": {
+                    "title": "火山翻譯",
+                    "appid": "應用程式 ID",
+                    "secret": "Secret"
+                },
+                "niutrans": {
+                    "title": "小牛翻譯",
+                    "https": "使用 Https",
+                    "apikey": "API Key"
+                },
+                "youdao": {
+                    "title": "有道翻譯",
+                    "appkey": "應用程式 ID",
+                    "key": "Key"
+                },
+                "bing_dict": {
+                    "title": "必應詞典"
+                },
+                "cambridge_dict": {
+                    "title": "劍橋詞典"
+                },
+                "caiyun": {
+                    "title": "彩雲小譯",
+                    "token": "Token"
+                },
+                "ollama": {
+                    "add": "新增 Prompt",
+                    "title": "Ollama",
+                    "install_ollama": "無法連線到本機的 Ollama，請先下載、安裝並啟動 Ollama。如果您使用的 Ollama 不在這臺主機上，請更改對應的網址。",
+                    "install_ollama_link": "下載 Ollama",
+                    "request_path": "請求路徑",
+                    "supported_models": "點選檢視 Ollama 可用模型列表",
+                    "stream": "串流輸出",
+                    "model": "模型",
+                    "install_model": "安裝",
+                    "ready": "準備就緒",
+                    "not_installed": "此模型尚未安裝，點選立即下載並安裝",
+                    "prompt_description": "透過自定義 Prompt，您可以自定義 AI 的行為。$text $from $to $detect 將被替換為待翻譯的文字、來源語言、目標語言和偵測到的語言。"
+                },
+                "geminipro": {
+                    "title": "Gemini Pro",
+                    "request_path": "請求路徑",
+                    "api_key": "API Key",
+                    "prompt_description": "透過自定義 Prompt，您可以自定義 Gemini Pro 的行為。$text $from $to $detect 將被替換為待翻譯的文字、來源語言、目標語言和偵測到的語言。",
+                    "stream": "串流輸出",
+                    "add": "新增 Prompt"
+                },
+                "gemini_free": {
+                    "errors": {
+                        "auth": "Key 無效或沒有權限。",
+                        "billing": "預付費額度已用完。",
+                        "region": "所在地區不支援免費層。",
+                        "network": "網路請求失敗。",
+                        "blocked": "內容被封鎖。",
+                        "quota_daily": "今日額度已用完，將於 {{time}} 重設。",
+                        "rate_limited": "請求過於頻繁，約 {{seconds}} 秒後可再用。",
+                        "not_found": "模型不存在。",
+                        "unavailable": "Gemini 暫時無法使用。",
+                        "timeout": "請求逾時。",
+                        "invalid_request": "請求參數無效。",
+                        "empty": "沒有回傳譯文。",
+                        "other": "請求失敗。",
+                        "all_failed": "所有模型均失敗。",
+                        "partial": "已輸出部分譯文。"
+                    },
+                    "title": "Gemini Free API",
+                    "api_key": "API Key",
+                    "api_key_hint": "使用 Google AI Studio API Key。",
+                    "request_path": "請求位址",
+                    "request_path_hint": "基礎位址，不含模型名稱。",
+                    "stream": "串流輸出",
+                    "thinking": "思考等級",
+                    "thinking_lowest": "最低",
+                    "thinking_low": "低",
+                    "thinking_medium": "中",
+                    "thinking_high": "高",
+                    "thinking_default": "模型預設",
+                    "thinking_hint": "「最低」在不支援 minimal 的模型上會自動改用 low。",
+                    "models": "模型清單（按優先順序）",
+                    "add_model": "輸入模型 ID",
+                    "delete": "刪除模型",
+                    "quota_hint": "各模型額度只能在 AI Studio 查看；每日額度於太平洋時間午夜重設。",
+                    "status_daily": "今日額度已用完 · {{time}} 重設",
+                    "status_rate": "限流中 · 約 {{seconds}} 秒",
+                    "status_missing": "模型不存在",
+                    "status_success": "上次成功 {{time}}",
+                    "status_unused": "未使用",
+                    "system_prompt": "系統提示詞",
+                    "user_prompt": "使用者範本",
+                    "variables": "$text、$from、$to、$detect 會替換為原文、來源語言、目標語言和偵測到的語言。",
+                    "restore_prompts": "還原預設提示詞",
+                    "privacy": "儲存不會發送請求；測試會消耗每個模型 1 次額度（思考等級降級可能重試）。免費層的請求內容可能被 Google 用於改善產品。",
+                    "test_all": "測試全部模型",
+                    "testing": "測試中…",
+                    "test_success": "成功 · {{ms}} ms",
+                    "key_required": "API Key 不可為空。",
+                    "models_required": "至少需要一個模型。",
+                    "text_required": "使用者範本必須包含 $text。"
+                },
+                "google_cloud_translate": {
+                    "title": "Google Cloud 翻譯",
+                    "api_key": "API 金鑰",
+                    "api_key_hint": "金鑰透過 x-goog-api-key 標頭傳送，不會放入網址，並儲存在 Aries 本機設定中。建議在 Google Cloud 主控台將金鑰限制為只能呼叫 Cloud Translation API，並在配額頁設定每日上限。",
+                    "billing_hint": "使用 Cloud Translation 基本版（NMT 模型）。每月前 50 萬字元免費（以每月 $10 抵用額發放，基本版與進階版共用，不結轉）；超出後每百萬字元 $20，需先啟用帳單。自動偵測來源語言不另外計費。與內建 Google 翻譯不同，只回傳譯文，沒有字典釋義、音標和例句。",
+                    "test": "測試翻譯",
+                    "test_success": "Google Cloud 翻譯測試成功：",
+                    "test_failed": "Google Cloud 翻譯測試失敗："
+                },
+                "azure_translate": {
+                    "title": "Azure 翻譯",
+                    "key": "資源金鑰",
+                    "key_hint": "Azure 入口網站中 Translator 資源「金鑰和端點」頁面提供的金鑰，透過 Ocp-Apim-Subscription-Key 標頭傳送，儲存在 Aries 本機設定中。",
+                    "region": "區域（選填）",
+                    "region_hint": "資源所在區域，例如 westeurope；資源位置為 Global 時留空。",
+                    "billing_hint": "免費額度只適用於 F0 定價層：每月 200 萬字元（文字翻譯、語言偵測、字典、音譯合計），每小時最多 200 萬字元且需平均使用；用完後介面拒絕請求，不會扣費。S1 等定價層從第一個字元起計費。請在 Azure 入口網站確認資源的定價層。與內建「Bing 翻譯」不同，本服務使用你自己的資源金鑰。",
+                    "test": "測試翻譯",
+                    "test_success": "Azure 翻譯測試成功：",
+                    "test_failed": "Azure 翻譯測試失敗："
+                }
+            },
+            "recognize": {
+                "system": {
+                    "title": "系統 OCR"
+                },
+                "tesseract": {
+                    "title": "Tesseract.js"
+                },
+                "baidu_ocr": {
+                    "title": "百度 OCR",
+                    "client_id": "API Key",
+                    "client_secret": "Secret Key"
+                },
+                "baidu_accurate_ocr": {
+                    "title": "百度 OCR（高精度）",
+                    "client_id": "API Key",
+                    "client_secret": "Secret Key"
+                },
+                "baidu_img_ocr": {
+                    "title": "百度圖片翻譯",
+                    "appid": "應用程式 ID",
+                    "secret": "Secret"
+                },
+                "iflytek_ocr": {
+                    "title": "訊飛 OCR",
+                    "appid": "應用程式 ID",
+                    "apisecret": "API Secret",
+                    "apikey": "API Key"
+                },
+                "iflytek_intsig_ocr": {
+                    "title": "訊飛 OCR (Intsig)",
+                    "appid": "應用程式 ID",
+                    "apisecret": "API Secret",
+                    "apikey": "API Key"
+                },
+                "iflytek_latex_ocr": {
+                    "title": "訊飛公式辨識",
+                    "appid": "應用程式 ID",
+                    "apisecret": "API Secret",
+                    "apikey": "API Key"
+                },
+                "simple_latex_ocr": {
+                    "title": "Simple LaTeX",
+                    "token": "Token"
+                },
+                "tencent_ocr": {
+                    "title": "騰訊 OCR",
+                    "secret_id": "Secret ID",
+                    "secret_key": "Secret Key"
+                },
+                "tencent_accurate_ocr": {
+                    "title": "騰訊 OCR（高精度）",
+                    "secret_id": "Secret ID",
+                    "secret_key": "Secret Key"
+                },
+                "tencent_img_ocr": {
+                    "title": "騰訊圖片翻譯",
+                    "secret_id": "Secret ID",
+                    "secret_key": "Secret Key"
+                },
+                "volcengine_ocr": {
+                    "title": "火山 OCR",
+                    "appid": "應用程式 ID",
+                    "secret": "Secret Key"
+                },
+                "volcengine_multi_lang_ocr": {
+                    "title": "火山 OCR（多語言）",
+                    "appid": "應用程式 ID",
+                    "secret": "Secret"
+                },
+                "qrcode": {
+                    "title": "QR Code"
+                },
+                "google_ocr": {
+                    "title": "Google OCR",
+                    "api_key": "API 金鑰",
+                    "api_key_hint": "金鑰透過 x-goog-api-key 標頭傳送，不會放入網址，並儲存在 Aries 本機設定中。",
+                    "billing_hint": "測試會使用範例圖片依目前模式呼叫一次 Google Cloud Vision，計入該模式的額度。",
+                    "test": "測試辨識",
+                    "test_success": "Google OCR 測試成功",
+                    "test_failed": "Google OCR 測試失敗：",
+                    "detection_type": "辨識模式",
+                    "detection_text_detection": "一般（TEXT_DETECTION）· 適合截圖、短句、介面文字",
+                    "detection_document_text_detection": "文件（DOCUMENT_TEXT_DETECTION）· 適合大段文字、文章、掃描頁",
+                    "detection_type_hint": "兩種模式各有每月 1000 次免費額度，分別計算；超出後每 1000 次 $1.50。"
+                },
+                "azure_ocr": {
+                    "title": "Azure OCR",
+                    "engine": "辨識引擎",
+                    "engine_vision_read": "影像 OCR（Azure Vision）· F0 每月 5000 次",
+                    "engine_document_read": "文件 OCR（Document Intelligence）· F0 每月 500 頁",
+                    "engine_vision_read_hint": "一次請求即出結果，適合截圖、介面文字和短句；免費層每分鐘最多 20 次。微軟已宣布 Image Analysis 4.0 將於 2028-09-25 停用。需要 Azure Vision（電腦視覺）資源，且資源所在區域支援 Image Analysis 4.0。",
+                    "engine_document_read_hint": "提交後輪詢結果（通常 1–3 秒），解析度更高，適合大段文字、文章和掃描頁。需要 Document Intelligence 資源。",
+                    "endpoint": "資源端點",
+                    "key": "資源金鑰",
+                    "endpoint_hint": "兩種引擎需要不同的 Azure 資源，端點和金鑰都在資源的「金鑰和端點」頁面；可新增兩個執行個體分別設定。金鑰透過 Ocp-Apim-Subscription-Key 標頭傳送。",
+                    "billing_hint": "免費額度只適用於 F0 定價層，用完後介面拒絕請求，不會扣費；S0 等定價層從第一次呼叫起計費。免費層圖片不超過 4 MB。測試會使用範例圖片依目前引擎呼叫一次。",
+                    "test": "測試辨識",
+                    "test_success": "Azure OCR 測試成功：",
+                    "test_failed": "Azure OCR 測試失敗："
+                }
+            },
+            "tts": {
+                "lingva_tts": {
+                    "title": "Lingva",
+                    "request_path": "請求路徑"
+                },
+                "azure_tts": {
+                    "title": "Microsoft Azure 語音",
+                    "key": "語音資源金鑰",
+                    "key_hint": "金鑰會儲存在 Aries 的本機設定中，請勿分享設定檔。",
+                    "region": "區域",
+                    "endpoint": "資源端點（選填）",
+                    "endpoint_hint": "留空時使用區域端點。使用私人或自訂資源端點時，請填入 Azure 語音資源頁面提供的網址。",
+                    "language": "語音語言",
+                    "voice": "音色",
+                    "automatic_voice": "自動選擇",
+                    "load_voices": "載入可用音色",
+                    "voices_loaded": "Azure 音色已載入",
+                    "billing_hint": "儲存不會合成語音。試聽會向 Azure 傳送一筆短請求。F0 定價層每月 50 萬字元神經網路語音免費，用完後介面拒絕請求；S0 從第一個字元起計費。免費層只列出一般神經網路音色，HD 音色是否計入免費額度以官方說明為準。",
+                    "test": "試聽音色"
+                },
+                "openrouter_tts": {
+                    "title": "OpenRouter 語音合成",
+                    "api_key": "API 金鑰",
+                    "api_key_hint": "金鑰儲存在 Aries 本機設定中，請勿分享設定檔。",
+                    "model": "模型 ID",
+                    "model_hint": "填入 OpenRouter 支援語音輸出的模型 ID。",
+                    "voice": "音色（選填）",
+                    "voice_placeholder": "留白使用模型預設音色",
+                    "voice_hint": "可用音色依模型而異；OpenRouter 會依文字自動處理語言。",
+                    "speed": "合成語速",
+                    "billing_hint": "儲存不會合成語音。試聽會呼叫 OpenRouter，可能產生用量費用。",
+                    "test": "試聽",
+                    "test_success": "OpenRouter 試聽成功",
+                    "test_failed": "OpenRouter 試聽失敗："
+                },
+                "gemini_tts": {
+                    "title": "Gemini 語音合成",
+                    "api_key": "AI Studio API 金鑰",
+                    "api_key_hint": "金鑰儲存在 Aries 的本機設定中，請勿分享設定檔。",
+                    "model": "模型 ID",
+                    "model_hint": "預設使用 gemini-3.8-flash-lite-tts；可改為音質較高但較慢的 gemini-3.8-flash-tts。",
+                    "voice": "音色",
+                    "custom_voice": "自訂音色 ID",
+                    "style": "朗讀風格（選填）",
+                    "style_hint": "例如 speaking slowly。也可在朗讀視窗調整播放倍率。",
+                    "billing_hint": "儲存不會合成語音。試聽會呼叫 Gemini API，可能消耗免費額度或產生費用。免費層的請求內容可能被 Google 用於改進產品。本服務已關閉互動紀錄儲存（store: false）。",
+                    "test": "試聽",
+                    "test_success": "Gemini 試聽成功",
+                    "test_failed": "Gemini 試聽失敗："
+                },
+                "google_cloud_tts": {
+                    "title": "Google Cloud 語音合成",
+                    "credential": "API 金鑰或存取權杖",
+                    "credential_hint": "憑據儲存在 Aries 本機設定中。API 金鑰使用 x-goog-api-key；存取權杖使用 Bearer 驗證。",
+                    "auth_type": "驗證方式",
+                    "api_key_auth": "Google API 金鑰",
+                    "bearer_auth": "OAuth Bearer 權杖",
+                    "request_path": "請求網址",
+                    "request_path_hint": "預設使用 Google Cloud Text-to-Speech v1 網址；也可填入相容的自訂網址。",
+                    "voice": "音色",
+                    "audio_encoding": "音訊格式",
+                    "speaking_rate": "合成語速",
+                    "pitch": "音高（選填）",
+                    "volume_gain_db": "音量增益 dB（選填）",
+                    "sample_rate_hertz": "取樣率 Hz（選填）",
+                    "effects_profile_id": "裝置效果 ID（逗號分隔，選填）",
+                    "billing_hint": "儲存不會合成語音。試聽和朗讀依字元計費，一個漢字計 1 個字元；各系列的每月免費額度寫在系列名稱中。Standard 與 WaveNet、Neural2 與 Polyglot 使用同一計費項目，免費額度可能合計計算。超出後自動計費，需先在 Google Cloud 啟用帳單。",
+                    "test": "試聽",
+                    "test_success": "Google Cloud TTS 試聽成功",
+                    "test_failed": "Google Cloud TTS 試聽失敗：",
+                    "default_voice": "預設音色",
+                    "default_voice_hint": "用於沒有單獨設定音色的語言。簡體中文、英文、波蘭文使用固定的 Standard 或 Chirp 3 HD 音色；其他語言選 Standard 時，依性別自動採用該語言的第一個 Standard 音色（會讀取一次音色清單）。",
+                    "voice_by_language": "依語言設定音色",
+                    "voice_by_language_hint": "朗讀時依辨識出的語言使用對應音色。依序選擇語言、地區、模型系列和性別，再從篩選後的清單中選擇音色。只列出有每月免費額度的系列。",
+                    "load_voices": "載入可用音色",
+                    "voices_loaded": "已載入 {{count}} 個可用音色",
+                    "load_voices_hint": "載入音色清單後才能逐層篩選。讀取音色清單不依字元計費。",
+                    "language": "朗讀語言",
+                    "region": "地區",
+                    "family": "模型系列",
+                    "family_all": "全部系列",
+                    "family_standard": "Standard · 每月免費 400 萬字元（與 WaveNet 合計）",
+                    "family_wavenet": "WaveNet · 每月免費 400 萬字元（與 Standard 合計）",
+                    "family_neural2": "Neural2 · 每月免費 100 萬字元（與 Polyglot 合計）",
+                    "family_polyglot": "Polyglot（預覽）· 每月免費 100 萬字元（與 Neural2 合計）",
+                    "family_chirp3_hd": "Chirp 3 HD · 每月免費 100 萬字元",
+                    "family_studio": "Studio · 每月免費 100 萬字元，超出後 $160/百萬字元",
+                    "gender": "性別",
+                    "gender_all": "全部",
+                    "gender_female": "女聲",
+                    "gender_male": "男聲",
+                    "gender_neutral": "中性",
+                    "use_default_voice": "使用預設音色",
+                    "voice_set": "已設定",
+                    "audio_controls_hint": "Chirp 3 HD 與 Studio 音色不使用音高，語速對所有系列有效。也可以用朗讀視窗的播放倍率調整語速。",
+                    "long_text_hint": "長文字會自動分段；遇到句子過長時繼續縮短重試。分段結果合併成一段 WAV 音訊，進度條和拖曳定位照常可用；合成完成前須稍候。"
+                },
+                "gemini_live_tts": {
+                    "errors": {
+                        "auth": "Gemini Live Key 無效或沒有權限。",
+                        "quota": "Gemini Live 請求過於頻繁，約 60 秒後可再用。",
+                        "model": "Gemini Live 模型不存在或不支援。",
+                        "invalid": "Gemini Live 請求或回應無效。",
+                        "timeout": "Gemini Live 請求逾時。",
+                        "server": "Gemini Live 暫時無法使用。",
+                        "network": "Gemini Live 連線失敗。",
+                        "silent": "沒有回傳音訊。",
+                        "incomplete": "文字沒有完整讀出。",
+                        "interrupted": "產生過程被中斷。",
+                        "japanese": "Gemini Live 不支援日語文字，將嘗試下一個朗讀服務。",
+                        "empty_text": "沒有要朗讀的文字。",
+                        "exhausted": "Gemini Live 未能完整讀出第 {{index}}/{{total}} 段：嘗試 {{attempts}} 次，沉默 {{silent}} 次，沒有讀完 {{incomplete}} 次，其他錯誤 {{other}} 次。"
+                    },
+                    "title": "Gemini Live 朗讀",
+                    "api_key": "API Key",
+                    "api_key_hint": "使用 Google AI Studio API Key。",
+                    "model": "模型",
+                    "model_hint": "預設 gemini-3.8-live。",
+                    "voice": "音色",
+                    "attempts": "每段最多嘗試次數",
+                    "attempts_hint": "中文偶爾會沉默或只讀開頭，重試可解決大部分情況；每次失敗約多等 2–3 秒。",
+                    "prompt_zh": "中文複述提示詞",
+                    "prompt_other": "其他語言複述提示詞",
+                    "restore_prompts": "還原預設提示詞",
+                    "service_hint": "Live 模型不是專門的朗讀模型，本服務讓它原樣複述文字。不支援日語；建議在朗讀服務清單中把 Gemini TTS 或 Azure 放在它後面備援。長文字全部產生完後才開始播放。",
+                    "privacy_hint": "儲存不會發送請求；試聽和重試會消耗額度。免費層的請求內容可能被 Google 用於改善產品。",
+                    "test_zh": "試聽中文",
+                    "test_en": "試聽英文",
+                    "test_success": "試聽音訊已產生。",
+                    "test_failed": "試聽失敗：",
+                    "save_failed": "儲存失敗，請重試。",
+                    "key_required": "API Key 不可為空。",
+                    "model_required": "模型不可為空。"
+                }
+            },
+            "collection": {
+                "anki": {
+                    "title": "Anki",
+                    "port": "連接埠"
+                },
+                "eudic": {
+                    "title": "歐路詞典",
+                    "name": "收藏名稱",
+                    "token": "Token"
+                }
+            },
+            "meta": {
+                "google_cloud": {
+                    "summary": "Google Cloud 官方翻譯與語音。建立專案、啟用對應 API 後，填入受限制的 API Key。",
+                    "quota": "翻譯每月 50 萬字元；語音按系列共用額度；Vision 按辨識功能計費。超額可自動收費，詳見指南。"
+                },
+                "google_ocr": {
+                    "summary": "使用 Cloud Vision API Key；與 Google AI Studio 的 Gemini Key 不同。先啟用 Cloud Vision API，再填入 Key。",
+                    "quota": "文字辨識、文件文字辨識每種功能每月前 1000 單位免費；多頁檔案每頁算一個單位，超額收費。"
+                },
+                "gemini_free": {
+                    "summary": "Google AI Studio 免費層翻譯。建立 Key，按實際可用的免費模型設定清單；輪詢不能增加專案共用額度。",
+                    "quota": "部分模型提供免費層；每分鐘、每日限額以 AI Studio 目前專案為準。免費層內容可能用於改進產品。"
+                },
+                "geminipro": {
+                    "summary": "使用 Gemini Developer API。申請 AI Studio Key，選擇官方價格頁仍提供免費層的可用模型。",
+                    "quota": "部分模型提供免費層；每分鐘、每日限額以 AI Studio 目前專案為準。免費層內容可能用於改進產品。"
+                },
+                "gemini": {
+                    "summary": "Gemini 語音合成使用 AI Studio Key。填入 Key，選擇免費層可用的 TTS 模型與音色。試聽也消耗額度。",
+                    "quota": "部分模型提供免費層；每分鐘、每日限額以 AI Studio 目前專案為準。免費層內容可能用於改進產品。"
+                },
+                "gemini_live": {
+                    "summary": "Gemini Live 朗讀使用 AI Studio Key，透過即時音訊模型播放。填入 Key，確認專案可用模型；目前服務不支援日語。",
+                    "quota": "部分模型提供免費層；每分鐘、每日限額以 AI Studio 目前專案為準。免費層內容可能用於改進產品。"
+                },
+                "azure": {
+                    "summary": "分別建立 Translator 或 Speech 資源並選 F0。填入該資源的 Key、區域；自訂端點按表單提示填寫。",
+                    "quota": "F0：Translator 每月 200 萬字元，Speech 神經網路語音每月 50 萬字元；額度不可互換。"
+                },
+                "azure_ocr": {
+                    "summary": "Vision Read 與 Document Read 需要各自資源的 Key、端點；先選擇辨識引擎，再填寫對應資源，定價層選 F0。",
+                    "quota": "Vision F0 每月 5000 次、每分鐘 20 次；Document Intelligence F0 每月 500 頁，單次僅處理前兩頁。"
+                },
+                "openai": {
+                    "summary": "可連接官方 OpenAI 或第三方相容介面。請求位址填寫完整的 chat/completions 位址，並使用同一站點的 Key 和模型 ID。"
+                },
+                "openrouter": {
+                    "summary": "OpenRouter 語音中轉。建立 Key，選擇支援音訊輸出的模型；翻譯免費模型不代表語音模型免費。"
+                },
+                "deepl": {
+                    "summary": "官方 API：申請 DeepL API 方案，類型選 API 並填入 Auth Key。免 Key 模式和 DeepLX 與官方 API 方案不同，可能限流。",
+                    "quota": "免費額度取決於目前 DeepL API 方案；請在帳戶的使用量與限制頁確認，勿將網頁訂閱當作 API 訂閱。"
+                },
+                "baidu": {
+                    "summary": "翻譯：開通通用翻譯 API，填 APP ID、密鑰。OCR：在百度智慧雲建立對應辨識應用，填 API Key（client_id）與 Secret Key（client_secret）。兩套憑證不能互換。",
+                    "quota": "未能確認持續的月免費額度；開通前在官方控制台核對試用期限、額度和超額計費。"
+                },
+                "baidu_field": {
+                    "summary": "先在百度翻譯平台單獨開通領域翻譯 API；填 APP ID、密鑰並選擇已開通領域。通用翻譯額度不保證適用於領域翻譯。",
+                    "quota": "未能確認持續的月免費額度；開通前在官方控制台核對試用期限、額度和超額計費。"
+                },
+                "baidu_accurate": {
+                    "summary": "在百度智慧雲開通對應 OCR 介面並建立應用。填應用的 API Key（client_id）、Secret Key（client_secret）；不同辨識等級的額度分別核對。",
+                    "quota": "未能確認持續的月免費額度；開通前在官方控制台核對試用期限、額度和超額計費。"
+                },
+                "baidu_img": {
+                    "summary": "使用百度圖片翻譯 API 擷取圖片文字。須單獨開通圖片翻譯，填翻譯平台的 APP ID、密鑰；不是百度 OCR 的 client_id / client_secret。",
+                    "quota": "未能確認持續的月免費額度；開通前在官方控制台核對試用期限、額度和超額計費。"
+                },
+                "tencent": {
+                    "summary": "翻譯：開通機器翻譯；OCR：開通對應文字辨識介面。在存取管理建立 SecretId、SecretKey，按目前服務選擇權限與區域。",
+                    "quota": "騰訊翻譯自 2026-10-01 起停止發放新的免費資源包，已有資源包按有效期使用。OCR 額度按介面單獨核對。"
+                },
+                "tencent_accurate": {
+                    "summary": "開通對應騰訊雲 OCR 介面，在存取管理取得 SecretId、SecretKey；使用國內免費資源包時注意地域及介面匹配。",
+                    "quota": "文字辨識有按介面分組的月免費資源包；高精度、圖片翻譯等介面不能假定共用或額度相同。"
+                },
+                "tencent_img": {
+                    "summary": "使用騰訊雲圖片翻譯 API 擷取圖片文字。開通機器翻譯服務，填 SecretId、SecretKey；該介面使用翻譯資源包，不屬於通用 OCR 額度。",
+                    "quota": "文字辨識有按介面分組的月免費資源包；高精度、圖片翻譯等介面不能假定共用或額度相同。"
+                },
+                "alibaba": {
+                    "summary": "開通阿里雲機器翻譯通用版，建立僅有翻譯權限的 RAM AccessKey，填 AccessKey ID 與 Secret。",
+                    "quota": "通用版每月 100 萬字元免費；用完後可能進入後付費。不同站點價格不同，開通前核對帳單設定。"
+                },
+                "volcengine": {
+                    "summary": "開通火山引擎機器翻譯或對應 OCR 服務，建立限定權限的 Access Key ID、Secret Access Key；按服務表單填寫。",
+                    "quota": "未能確認持續的月免費額度；開通前在官方控制台核對試用期限、額度和超額計費。"
+                },
+                "volcengine_multi_lang": {
+                    "summary": "單獨開通火山引擎多語種 OCR，填 Access Key ID、Secret Access Key。通用 OCR 額度不保證適用於多語種介面。",
+                    "quota": "未能確認持續的月免費額度；開通前在官方控制台核對試用期限、額度和超額計費。"
+                },
+                "iflytek": {
+                    "summary": "在訊飛開放平台建立應用，單獨開通目前 OCR 產品；按表單填寫 APPID、APIKey、APISecret（不同產品所需欄位不同）。",
+                    "quota": "未能確認持續的月免費額度；開通前在官方控制台核對試用期限、額度和超額計費。"
+                },
+                "iflytek_intsig": {
+                    "summary": "在訊飛開放平台建立應用，單獨開通目前 OCR 產品；按表單填寫 APPID、APIKey、APISecret（不同產品所需欄位不同）。",
+                    "quota": "未能確認持續的月免費額度；開通前在官方控制台核對試用期限、額度和超額計費。"
+                },
+                "iflytek_latex": {
+                    "summary": "在訊飛開放平台建立應用，單獨開通目前 OCR 產品；按表單填寫 APPID、APIKey、APISecret（不同產品所需欄位不同）。",
+                    "quota": "未能確認持續的月免費額度；開通前在官方控制台核對試用期限、額度和超額計費。"
+                },
+                "caiyun": {
+                    "summary": "在彩雲科技開放平台申請小譯 Token，填入 Token 欄位。彩雲小譯登入帳戶不是 API Token。",
+                    "quota": "新使用者試用 100 萬字，有效期一個月；不是每月續發的額度。用完後按平台目前規則計費。"
+                },
+                "niutrans": {
+                    "summary": "在小牛翻譯開放平台開通文字翻譯 API，取得 API Key 並填入。網頁翻譯帳號與 API 憑證不同。",
+                    "quota": "未能確認持續的月免費額度；開通前在官方控制台核對試用期限、額度和超額計費。"
+                },
+                "youdao": {
+                    "summary": "在有道智雲建立應用並綁定自然語言翻譯服務，填應用 ID 與應用密鑰。確認額度有效期和儲值設定。",
+                    "quota": "未能確認持續的月免費額度；開通前在官方控制台核對試用期限、額度和超額計費。"
+                },
+                "chatglm": {
+                    "summary": "在智譜開放平台建立 API Key，填入後按帳戶可用模型選擇。現有模型清單保持原樣，使用前核對所選模型價格。",
+                    "quota": "未能確認持續的月免費額度；開通前在官方控制台核對試用期限、額度和超額計費。"
+                },
+                "simple_latex": {
+                    "summary": "在 SimpleTex 的 API 管理頁面申請 UAT Token 並填入 Token。請先確認目前帳戶可用的公式辨識介面與額度。",
+                    "quota": "未能確認持續的月免費額度；開通前在官方控制台核對試用期限、額度和超額計費。"
+                },
+                "eudic": {
+                    "summary": "登入歐路詞典的 OpenAPI 授權頁取得 Token，填入生詞本名稱和 Token；不要填寫帳戶密碼。"
+                },
+                "anki": {
+                    "summary": "先安裝並啟動桌面版 Anki，再安裝 AnkiConnect 外掛。預設連接本機 8765 連接埠；允許 Aries 的連線請求。"
+                },
+                "ollama": {
+                    "summary": "安裝 Ollama 並下載本機模型，保持服務執行；在 Aries 填模型名稱和本機服務位址。本機模式不需要 Key，雲端模型另計費。"
+                },
+                "system": {
+                    "summary": "本機系統文字辨識，無需 API Key。支援的語言取決於作業系統已安裝的辨識語言套件。"
+                },
+                "tesseract": {
+                    "summary": "本機 Tesseract 文字辨識，無需 API Key。首次使用可能需要下載語言資料。"
+                },
+                "qrcode": {
+                    "summary": "本機辨識 QR Code，無需 API Key。"
+                },
+                "transmart": {
+                    "summary": "無需 Key 的騰訊互動翻譯，公開介面可能限流；不是騰訊雲付費機器翻譯 API。"
+                }
+            },
+            "guide": {
+                "about": "服務說明",
+                "apply": "申請 Key",
+                "install": "安裝外掛",
+                "setup": "查看安裝步驟",
+                "view": "查看開通指南",
+                "title": "開通指南",
+                "load_failed": "指南載入失敗，請關閉後重試。",
+                "official": "官方說明"
+            },
+            "recommendations": {
+                "title": "推薦的介面服務",
+                "website": "開啟網站",
+                "domestic": "國內",
+                "overseas": "國外",
+                "openrouter": "一個 Key 使用多家模型；模型 ID 帶 :free 的免費模型有每日次數限制，以目前模型頁和帳戶限額為準。",
+                "chatanywhere": "提供國內與國外位址，可申請每日更新的免費額度；支援模型、額度和網路可用性以官網為準。",
+                "tuzi": "價格很低的中轉站點；請在官方價格頁比較目前模型價格。",
+                "privacy": "第三方中轉服務，請求內容會經過對方伺服器，不建議翻譯含個人資訊或機密的內容。",
+                "relay_note": "中轉站的穩定性和隱私由站點本身負責，Aries 無法保證。也可選擇 OpenAI、Google、微軟官方介面，並核對其隱私與計費條款。",
+                "tags": {
+                    "free_models": "免費模型",
+                    "daily_quota": "每日免費額度",
+                    "privacy": "隱私風險",
+                    "reputable": "正規平台",
+                    "very_cheap": "特別低價"
+                },
+                "hint": "點開查看位址、額度和注意事項",
+                "current": "目前使用"
+            },
+            "errors": {
+                "details": "查看原始錯誤（已隱藏密鑰）",
+                "unauthorized": "身分驗證失敗。",
+                "unauthorized_advice": "檢查 Key 是否完整、有效，並確認它來自目前介面站點。",
+                "forbidden": "目前帳戶或 Key 沒有呼叫權限。",
+                "forbidden_advice": "確認已開通服務、模型權限和 Key 的權限範圍。",
+                "google_cloud_forbidden_advice": "檢查專案結算、對應 API 是否啟用，以及 Key 的 API 限制是否包含該服務。",
+                "azure_forbidden_advice": "確認 Key、區域、端點屬於同一資源，且資源類型與服務一致。",
+                "not_found": "介面位址或模型不存在。",
+                "not_found_advice": "核對完整請求位址和模型 ID；模型可能已停用或帳戶不可用。",
+                "rate_limit": "呼叫頻率或免費額度達到上限。",
+                "rate_limit_advice": "稍後重試，查看控制台的每分鐘與每日限額；免費層不要自動升級為付費層。",
+                "balance": "餘額或付費額度不足。",
+                "balance_advice": "檢查帳戶餘額、Key 的消費上限與帳單；確認費用後再調整。",
+                "region": "目前地區不支援此服務。",
+                "region_advice": "查看官網支援的國家與區域，選擇可用區域的服務資源。",
+                "timeout": "請求逾時。",
+                "timeout_advice": "檢查網路與代理，縮短測試文字，稍後重試。",
+                "network": "無法連接服務。",
+                "network_advice": "檢查介面位址、網路、代理與防火牆。",
+                "required": "缺少必要設定。",
+                "required_advice": "補齊表單中必填的憑證、位址或模型。",
+                "other": "服務測試失敗。",
+                "other_advice": "檢查服務設定和官方狀態；展開詳情查看已隱藏密鑰的原始錯誤。"
+            },
+            "tags": {
+                "all": "全部標籤",
+                "free": "免費",
+                "free_quota": "免費額度",
+                "local": "本機",
+                "relay": "中轉 / 相容介面",
+                "filter": "按標籤篩選"
+            },
+            "form": {
+                "missing": "請補齊：{{fields}}"
+            },
+            "empty": {
+                "description": "尚未新增服務。新增一個內建服務即可開始，也可以安裝自己的外掛。"
+            }
+        },
+        "read_aloud": {
+            "title": "朗讀",
+            "playback_rate": "朗讀速度",
+            "pause": "暫停",
+            "resume": "繼續",
+            "replay": "重新播放",
+            "progress": "播放進度",
+            "stop": "停止朗讀",
+            "synthesizing": "正在合成…",
+            "fallback": {
+                "failed": "「{{service}}」朗讀失敗：{{reason}}",
+                "switched": "已改用「{{service}}」",
+                "all_failed": "所有朗讀服務均失敗",
+                "quota_daily": "今日額度已用完，將於 {{time}} 重設。",
+                "rate_limited": "請求過於頻繁，約 {{seconds}} 秒後可再用。",
+                "auth": "API Key 無效或無權限。",
+                "api_key_invalid": "API Key 無效，請在服務設定中檢查。"
+            },
+            "status": {
+                "loading": "正在產生語音…",
+                "error": "朗讀失敗"
+            },
+            "volume": "音量",
+            "mute": "靜音",
+            "unmute": "取消靜音"
+        },
+        "translate": {
+            "translate": "翻譯",
+            "add_collection_success": "成功加入收藏",
+            "recognizing": "辨識中…",
+            "speak": "朗讀",
+            "copy": "複製",
+            "retry": "重試",
+            "delete_newline": "刪除換行",
+            "translate_back": "翻譯回原文",
+            "pin": "置頂視窗",
+            "unpin": "取消置頂",
+            "source_language": "來源語言",
+            "target_language": "目標語言",
+            "swap_language": "交換語言",
+            "select_service": "切換翻譯服務",
+            "expand": "展開",
+            "collapse": "收合"
+        },
+        "recognize": {
+            "recognize": "辨識",
+            "translate": "翻譯",
+            "copy_img": "複製圖片",
+            "copy_text": "複製",
+            "delete_newline": "刪除換行",
+            "delete_space": "刪除空格",
+            "title": "文字辨識"
+        },
+        "screenshot": {
+            "hint": "拖曳選取區域，放開確認，右鍵取消"
+        }
+    }
+}

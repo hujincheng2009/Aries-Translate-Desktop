@@ -1,0 +1,85 @@
+@import './styles/tokens.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+}
+
+/* Switch thumb (see components/ui/switch.jsx): a circle in a square tile as tall as the track, slid from
+   the left end to the right end. 14px visible diameter with a soft 0.75px edge, 2px from the track edge. */
+@layer components {
+    .ui-switch {
+        --switch-thumb: var(--switch-thumb-off);
+        background-image: radial-gradient(
+            circle closest-side,
+            rgb(var(--switch-thumb)) calc(100% - 2.375px),
+            transparent calc(100% - 1.625px)
+        );
+        background-size: 18px 18px;
+        background-repeat: no-repeat;
+        background-position: left center;
+        transition:
+            background-position 150ms ease,
+            background-color 150ms ease,
+            box-shadow 150ms ease;
+    }
+    .ui-switch[data-state='checked'] {
+        --switch-thumb: var(--switch-thumb-on);
+        background-position: right center;
+    }
+}
+
+/* Scroll container that runs along the window edge (translate list, settings content).
+   wry turns a left-button press within 5 CSS px of a frameless window's edge (tao BORDERLESS_RESIZE_INSET, scaled by DPI)
+   into a window-resize drag, so a scrollbar inside that band can never be grabbed. The container keeps 8px of margin on the
+   right and bottom, and the track is 12px wide: a 4px pill thumb plus an 8px transparent border on its left. That border
+   holds the thumb 8px clear of the cards only while the content overflows (otherwise the cards keep the plain 8px window
+   margin) and still counts as grab area. 4px and 8px land on whole device pixels at 125%, 150% and 175% as well.
+   Radii: 2px for the visible pill, plus the 8px border on the left, because background-clip: padding-box shrinks the
+   corner radii by the border widths. */
+@layer components {
+    .window-scroll {
+        margin-right: 8px;
+        margin-bottom: 8px;
+    }
+    .window-scroll::-webkit-scrollbar {
+        width: 12px;
+    }
+    .window-scroll::-webkit-scrollbar-thumb {
+        border-left: 8px solid transparent;
+        background-clip: padding-box;
+        border-radius: 10px 2px 2px 10px / 2px;
+    }
+}
+
+html {
+    border-radius: 10px !important;
+    background: transparent !important;
+    overflow: hidden;
+}
+
+*::-webkit-scrollbar {
+    width: 5px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #c0c1c550;
+    border-radius: 5px;
+}
+
+/* Hover and drag change only the colour. Never use the `background` shorthand on thumb states: it resets
+   background-clip to border-box and paints .window-scroll's transparent 8px gap, so the thumb jumps to 12px wide. */
+*::-webkit-scrollbar-thumb:hover,
+*::-webkit-scrollbar-thumb:active {
+    background-color: #c0c1c590;
+}

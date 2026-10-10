@@ -1,0 +1,10 @@
+{
+  "browser": {
+    "browserName": "chromium",
+    "launchOptions": {
+      "channel": "msedge",
+      "headless": true,
+      "ignoreDefaultArgs": ["--hide-scrollbars"]
+    }
+  }
+}

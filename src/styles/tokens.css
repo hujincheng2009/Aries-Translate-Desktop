@@ -1,0 +1,148 @@
+/*
+ * shadcn/ui · Vega design tokens for Aries Personal.
+ * Source: Figma "Aries-new-Design" (L33BePgFiIO5FsbFvbAjXW), collections "shadcn · Color" and "shadcn · Style" (Vega).
+ *
+ * Colors are stored as RGB channels so Tailwind opacity modifiers (`bg-primary/90`) keep working.
+ * Colors that are translucent by design also define `--<name>-alpha`; tailwind.config.cjs multiplies it in.
+ */
+
+:root {
+    --background: 255 255 255;
+    --foreground: 9 9 11;
+    --card: 255 255 255;
+    --card-foreground: 9 9 11;
+    --popover: 255 255 255;
+    --popover-foreground: 9 9 11;
+    --primary: 23 23 23;
+    --primary-vivid: var(--primary);
+    --primary-text: var(--primary);
+    --primary-foreground: 250 250 250;
+    --secondary: 245 245 245;
+    --secondary-foreground: 23 23 23;
+    --muted: 244 244 245;
+    --muted-foreground: 113 113 122;
+    --accent: 245 245 245;
+    --accent-foreground: 24 24 27;
+    --destructive: 231 0 11;
+    --border: 228 228 231;
+    --input: 230 230 230;
+    --ring: 163 163 163;
+
+    --sidebar: 250 250 250;
+    --sidebar-foreground: 10 10 10;
+    --sidebar-accent: 245 245 245;
+    --sidebar-accent-foreground: 23 23 23;
+    --sidebar-border: 230 230 230;
+
+    --switch-track: 230 230 230;
+    --switch-thumb-on: 255 255 255;
+    --switch-thumb-off: 255 255 255;
+
+    --warning: 255 251 235;
+    --warning-foreground: 180 83 9;
+    --warning-border: 253 230 138;
+
+    --radius: 0.625rem;
+}
+
+.dark {
+    --background: 10 10 10;
+    --foreground: 250 250 250;
+    --card: 23 23 23;
+    --card-foreground: 250 250 250;
+    --popover: 23 23 23;
+    --popover-foreground: 250 250 250;
+    --primary: 250 250 250;
+    --primary-vivid: var(--primary);
+    --primary-text: var(--primary);
+    --primary-foreground: 24 24 27;
+    --secondary: 39 39 42;
+    --secondary-foreground: 250 250 250;
+    --muted: 39 39 42;
+    --muted-foreground: 156 163 175;
+    --accent: 64 64 64;
+    --accent-foreground: 250 250 250;
+    --destructive: 255 100 103;
+    --border: 255 255 255;
+    --border-alpha: 0.1;
+    --input: 255 255 255;
+    --input-alpha: 0.15;
+    --ring: 133 133 133;
+    --ring-alpha: 0.57;
+
+    --sidebar: 23 23 23;
+    --sidebar-foreground: 250 250 250;
+    --sidebar-accent: 38 38 38;
+    --sidebar-accent-foreground: 250 250 250;
+    --sidebar-border: 255 255 255;
+    --sidebar-border-alpha: 0.1;
+
+    --switch-track: 255 255 255;
+    --switch-track-alpha: 0.12;
+    --switch-thumb-on: 24 24 27;
+    --switch-thumb-off: 250 250 250;
+
+    --warning: 69 26 3;
+    --warning-alpha: 0.6;
+    --warning-foreground: 252 211 77;
+    --warning-border: 146 64 14;
+    --warning-border-alpha: 0.5;
+}
+
+/* Accent overrides never change sidebar, geometry or surface tokens. */
+html[data-accent='aries'] {
+    --primary: 255 199 0;
+    --primary-foreground: 20 20 20;
+    --primary-text: 138 106 0;
+    --switch-thumb-on: 255 255 255;
+    --ring: var(--primary-vivid);
+    --ring-alpha: 1;
+}
+html.dark[data-accent='aries'] {
+    --primary-text: var(--primary);
+    --switch-thumb-on: 20 20 20;
+}
+html[data-accent='blue'] {
+    --primary: 37 99 235;
+    --primary-foreground: 255 255 255;
+    --switch-thumb-on: 255 255 255;
+    --ring: var(--primary-vivid);
+    --ring-alpha: 1;
+}
+html[data-accent='teal'] {
+    --primary: 13 130 144;
+    --primary-vivid: 34 181 197;
+    --primary-foreground: 255 255 255;
+    --switch-thumb-on: 255 255 255;
+    --ring: var(--primary-vivid);
+    --ring-alpha: 1;
+}
+html[data-accent='orange'] {
+    --primary: 204 75 39;
+    --primary-vivid: 225 93 56;
+    --primary-foreground: 255 255 255;
+    --switch-thumb-on: 255 255 255;
+    --ring: var(--primary-vivid);
+    --ring-alpha: 1;
+}
+html[data-accent='violet'] {
+    --primary: 124 58 237;
+    --primary-foreground: 255 255 255;
+    --switch-thumb-on: 255 255 255;
+    --ring: var(--primary-vivid);
+    --ring-alpha: 1;
+}
+
+/* Buttons keep the specified fill. Text-only links need lighter ink on dark surfaces to reach 4.5:1. */
+html.dark[data-accent='blue'] {
+    --primary-text: 96 165 250;
+}
+html.dark[data-accent='teal'] {
+    --primary-text: 34 181 197;
+}
+html.dark[data-accent='orange'] {
+    --primary-text: 225 93 56;
+}
+html.dark[data-accent='violet'] {
+    --primary-text: 167 139 250;
+}

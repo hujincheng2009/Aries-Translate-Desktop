@@ -1,0 +1,1092 @@
+{
+    "translation": {
+        "common": {
+            "delete": "删除",
+            "ok": "确定",
+            "cancel": "取消",
+            "save": "保存",
+            "write_clipboard": "写入剪贴板",
+            "plugin": "插件",
+            "coming": "敬请期待…",
+            "clear": "清空",
+            "minimize": "最小化",
+            "maximize": "最大化",
+            "restore": "还原",
+            "close": "关闭",
+            "show_secret": "显示内容",
+            "hide_secret": "隐藏内容",
+            "app_name": "Aries"
+        },
+        "languages": {
+            "auto": "自动检测",
+            "zh_cn": "简体中文",
+            "zh_tw": "繁體中文",
+            "ja": "日语",
+            "en": "英语",
+            "ko": "韩语",
+            "fr": "法语",
+            "es": "西班牙语",
+            "ru": "俄语",
+            "de": "德语",
+            "it": "意大利语",
+            "tr": "土耳其语",
+            "pt_pt": "葡萄牙语",
+            "pt_br": "葡萄牙语 (巴西)",
+            "vi": "越南语",
+            "id": "印尼语",
+            "th": "泰语",
+            "ms": "马来语",
+            "ar": "阿拉伯语",
+            "hi": "印地语",
+            "mn_mo": "蒙古语",
+            "mn_cy": "蒙古语(西里尔)",
+            "km": "高棉语",
+            "nb_no": "书面挪威语",
+            "nn_no": "新挪威语",
+            "fa": "波斯语",
+            "sv": "瑞典语",
+            "pl": "波兰语",
+            "nl": "荷兰语",
+            "uk": "乌克兰语",
+            "he": "希伯来语"
+        },
+        "config": {
+            "general": {
+                "label": "常规设置",
+                "title": "常规设置",
+                "auto_start": "开机时启动应用",
+                "check_update": "启动时检查更新",
+                "server_port": "监听端口",
+                "server_port_change": "监听端口已更改，重启应用生效",
+                "app_language": "显示语言",
+                "app_theme": "应用主题",
+                "app_accent": "主题色",
+                "app_accent_desc": "开关、主按钮和选中项使用的颜色",
+                "accents": {
+                    "neutral": "默认",
+                    "aries": "Aries",
+                    "blue": "蓝",
+                    "teal": "青",
+                    "orange": "橙红",
+                    "violet": "紫"
+                },
+                "app_font": "字体",
+                "app_fallback_font": "后备字体",
+                "font_size": {
+                    "10": "极小 (10px)",
+                    "12": "特小 (12px)",
+                    "14": "小 (14px)",
+                    "16": "标准 (16px)",
+                    "18": "大 (18px)",
+                    "20": "特大 (20px)",
+                    "24": "超大 (24px)",
+                    "title": "字体大小"
+                },
+                "default_font": "默认",
+                "theme": {
+                    "light": "浅色",
+                    "dark": "深色",
+                    "system": "跟随系统"
+                },
+                "transparent": "透明效果",
+                "dev_mode": "开发模式",
+                "proxy": {
+                    "title": "网络代理",
+                    "host": "代理地址",
+                    "port": "代理端口",
+                    "username": "用户名",
+                    "password": "密码",
+                    "no_proxy": "不使用代理的地址或 IP",
+                    "enable": "启用网络代理",
+                    "enable_desc": "需先填写代理地址和端口",
+                    "unsupported": "个人版暂不支持",
+                    "no_proxy_hint": "多个地址用英文逗号分隔"
+                },
+                "proxy_change": "代理已经改变，重启应用生效",
+                "proxy_error": "请填写代理地址和端口",
+                "tray_click_event": "托盘点击事件",
+                "event": {
+                    "config": "打开设置",
+                    "translate": "打开翻译窗口",
+                    "disable": "禁用",
+                    "ocr_recognize": "文字识别",
+                    "ocr_translate": "截图翻译"
+                },
+                "check_update_desc": "个人版已禁用自动更新",
+                "auto_start_desc": "登录系统后自动在后台运行",
+                "server_port_desc": "供外部程序调用的本地 HTTP 端口，修改后重启生效",
+                "app_font_desc": "界面与译文使用的字体",
+                "app_fallback_font_desc": "主字体缺少字形时使用",
+                "transparent_desc": "侧边栏使用半透明背景",
+                "dev_mode_desc": "显示调试工具与详细日志",
+                "tray_click_event_desc": "单击托盘图标时执行的操作",
+                "section": {
+                    "startup": "启动",
+                    "startup_desc": "应用启动、更新与外部调用",
+                    "appearance": "外观",
+                    "appearance_desc": "界面语言、主题与字体",
+                    "tray": "系统托盘",
+                    "tray_desc": "仅 Windows",
+                    "proxy_desc": "修改后需重启应用生效"
+                }
+            },
+            "translate": {
+                "label": "翻译设置",
+                "title": "翻译设置",
+                "source_language": "源语言",
+                "target_language": "目标语言",
+                "second_language": "第二目标语言",
+                "auto_copy": "自动复制",
+                "source": "原文",
+                "target": "译文",
+                "source_target": "原文+译文",
+                "disable": "禁用",
+                "history_disable": "禁用历史记录",
+                "incremental_translate": "增量翻译",
+                "dynamic_translate": "动态翻译",
+                "delete_newline": "自动删除换行",
+                "remember_language": "记住目标语言",
+                "font_size": {
+                    "10": "极小 (10px)",
+                    "12": "特小 (12px)",
+                    "14": "小 (14px)",
+                    "16": "标准 (16px)",
+                    "18": "大 (18px)",
+                    "20": "特大 (20px)",
+                    "24": "超大 (24px)",
+                    "title": "字体大小"
+                },
+                "window_position": "窗口位置",
+                "mouse": "跟随鼠标",
+                "pre_state": "记住位置",
+                "remember_window_size": "记住窗口大小",
+                "close_on_blur": "失去焦点时关闭窗口",
+                "always_on_top": "窗口默认置顶",
+                "hide_source": "隐藏原文",
+                "hide_language": "隐藏语言栏",
+                "hide_window": "隐藏翻译窗口",
+                "follow_ocr_language": "翻译源语言跟随 OCR",
+                "follow_ocr_language_hint": "翻译源语言为自动时，使用手动指定的 OCR 语言。OCR 自动模式和增量翻译仍检测语种。",
+                "detect_engine": "语种检测引擎",
+                "baidu": "百度",
+                "tencent": "腾讯",
+                "niutrans": "小牛",
+                "google": "谷歌",
+                "bing": "必应",
+                "yandex": "Yandex",
+                "local": "本地",
+                "second_language_desc": "原文与目标语言相同时改用此语言",
+                "section": {
+                    "language": "语言",
+                    "language_desc": "翻译窗口默认使用的语言",
+                    "behavior": "翻译行为",
+                    "window": "翻译窗口"
+                },
+                "auto_read_aloud": "翻译后自动朗读",
+                "auto_read_aloud_description": "朗读排在最上面且成功的文字结果；手动朗读后，本轮不再自动朗读。"
+            },
+            "recognize": {
+                "label": "文字识别",
+                "title": "文字识别",
+                "language": "识别语言",
+                "delete_newline": "自动删除换行",
+                "auto_copy": "自动复制",
+                "close_on_blur": "失去焦点时关闭窗口",
+                "hide_window": "隐藏识别窗口",
+                "auto_copy_desc": "识别完成后将结果写入剪贴板",
+                "hide_window_desc": "开启自动复制时，结果通过系统通知显示",
+                "section": {
+                    "title": "识别",
+                    "description": "文字识别窗口的默认行为"
+                }
+            },
+            "hotkey": {
+                "label": "热键设置",
+                "title": "热键设置",
+                "selection_translate": "划词翻译",
+                "input_translate": "输入翻译",
+                "replace_translate": "替换翻译",
+                "read_aloud": "朗读",
+                "ocr_recognize": "文字识别",
+                "ocr_translate": "截图翻译",
+                "is_register": "快捷键已被注册",
+                "success": "快捷键注册成功",
+                "set_hotkey": "按下按键设置快捷键",
+                "selection_translate_desc": "选中文字后翻译",
+                "input_translate_desc": "打开翻译窗口手动输入",
+                "replace_translate_desc": "用译文替换选中的文字",
+                "read_aloud_desc": "朗读选中的文字",
+                "ocr_recognize_desc": "截图并识别其中的文字",
+                "ocr_translate_desc": "截图识别后直接翻译",
+                "clear": "清除快捷键",
+                "section": {
+                    "title": "全局快捷键",
+                    "description": "点击输入框后按下组合键即可录制，按退格键清除",
+                    "behavior": "行为"
+                },
+                "disable_in_fullscreen": "在全屏应用中禁用快捷键",
+                "disable_in_fullscreen_description": "前台应用处于全屏状态（如游戏、全屏视频、演示）时，不响应 Aries 的快捷键。"
+            },
+            "service": {
+                "label": "服务设置",
+                "title": "服务设置",
+                "translate": "翻译",
+                "tts": "语音合成",
+                "recognize": "文字识别",
+                "collection": "生词本",
+                "least": "请至少保留一个",
+                "on_demand": "按需调用",
+                "on_demand_tooltip": "新内容到来时不自动调用此服务；展开结果卡片后仅处理当前内容。",
+                "on_demand_background_warning": "隐藏窗口或剪贴板监听等后台流程如需自动得到结果，请至少保留一个已启用且未勾选“按需调用”的翻译服务。",
+                "add_builtin_service": "添加内置服务",
+                "add_external_service": "添加外部插件",
+                "add_service": "添加服务",
+                "test_failed": "测试失败",
+                "install_plugin": "安装外部插件",
+                "view_plugin_list": "查看插件列表",
+                "uninstall_success": "插件卸载成功",
+                "homepage": "插件主页",
+                "edit": "编辑",
+                "add": "添加",
+                "delete_title": "删除“{{name}}”？",
+                "delete_desc": "删除后该服务的配置也会一并移除。",
+                "add_service_desc": "选择要添加的{{type}}服务，可多次添加同一服务并分别配置",
+                "search_placeholder": "搜索服务",
+                "total_count": "共 {{n}} 个服务",
+                "no_match": "没有匹配的服务",
+                "type_translate": "翻译",
+                "type_recognize": "文字识别",
+                "type_tts": "语音合成",
+                "type_collection": "生词本",
+                "add_plugin_title": "添加外部插件",
+                "add_plugin_desc": "安装 .potext 插件文件，或从插件列表中选择",
+                "translate_title": "翻译服务",
+                "translate_desc": "拖动调整顺序，翻译窗口按此顺序显示结果",
+                "recognize_title": "文字识别服务",
+                "recognize_desc": "拖动调整顺序，识别窗口默认使用第一个服务",
+                "tts_title": "语音合成服务",
+                "tts_desc": "拖动调整顺序，朗读失败时依次尝试下一个服务",
+                "collection_title": "生词本",
+                "collection_desc": "添加后可在翻译结果中一键加入生词本",
+                "removed": "该服务已移除"
+            },
+            "history": {
+                "search_placeholder": "搜索原文或译文",
+                "clear_all": "清空历史",
+                "clear_title": "清空所有历史记录？",
+                "clear_desc": "此操作无法撤销，所有翻译历史都将被删除。",
+                "empty": "暂无历史记录",
+                "no_match": "没有匹配的记录",
+                "col_text": "原文",
+                "col_language": "语言",
+                "col_result": "译文",
+                "col_time": "时间",
+                "total": "共 {{total}} 条，每页 {{size}} 条",
+                "prev": "上一页",
+                "next": "下一页",
+                "add_to_collection": "添加到生词本",
+                "label": "历史记录",
+                "title": "历史记录"
+            },
+            "backup": {
+                "section": {
+                    "title": "备份与恢复",
+                    "description": "将配置备份到 WebDAV、阿里云盘或本地文件"
+                },
+                "type_desc": "WebDAV、阿里云盘或本地",
+                "backup_now": "立即备份",
+                "list_desc": "选择一个备份恢复到当前设备",
+                "restore_item": "恢复",
+                "delete_title": "删除这个备份？",
+                "delete_desc": "“{{name}}”将从云端永久删除。",
+                "label": "备份设置",
+                "title": "备份设置",
+                "type": "服务类型",
+                "webdav": "WebDav",
+                "local": "本地",
+                "webdav_url": "WebDav地址",
+                "username": "用户名",
+                "password": "密码",
+                "backup": "备份",
+                "restore": "恢复备份",
+                "list": "备份列表",
+                "load_success": "载入备份成功",
+                "backup_success": "备份成功",
+                "empty": "您还没有备份",
+                "legacy": "旧版备份"
+            },
+            "about": {
+                "tagline": "跨平台的划词翻译与文字识别软件",
+                "visit": "访问",
+                "open": "打开",
+                "feedback_desc": "提交议题或发送邮件",
+                "community_desc": "加入用户社区",
+                "view_log_desc": "打开日志所在文件夹",
+                "view_config_desc": "打开配置所在文件夹",
+                "label": "关于应用",
+                "title": "关于应用",
+                "website": "官网",
+                "github": "GitHub",
+                "feedback": "问题反馈",
+                "issue": "议题",
+                "email": "邮件",
+                "community": "社区交流",
+                "check_update": "检查更新",
+                "view_log": "查看日志",
+                "view_config": "查看配置文件",
+                "qq_channel": "QQ 频道",
+                "qq_group": "QQ 群",
+                "telegram": "Telegram",
+                "discussion": "Github 讨论",
+                "discussion_short": "讨论区",
+                "license_title": "许可与来源",
+                "copyright": "Copyright © 2026 Myster_Jin",
+                "original_copyright": "上游版权归 pot-app 贡献者所有，原有版权声明继续适用。",
+                "license_description": "Aries 是在开源项目 pot-desktop 基础上修改而来，按 GNU GPL-3.0 许可发布，不提供任何担保。修改日期：2026-10-08。",
+                "source_access": "对应源码随每个版本以源码 ZIP 提供；私有仓库访问需要授权。",
+                "view_license": "查看许可证",
+                "get_source": "获取源码"
+            },
+            "sidebar": {
+                "settings": "设置",
+                "data": "数据"
+            }
+        },
+        "updater": {
+            "title": "检查更新",
+            "latest": "## 已经是最新版本",
+            "progress": "下载进度",
+            "update": "更新",
+            "downloading": "下载中…",
+            "installing": "安装中…",
+            "cancel": "取消",
+            "installed": "安装完成，重启应用生效"
+        },
+        "services": {
+            "help": "配置指南",
+            "no_need": "无需配置",
+            "instance_name": "配置名称",
+            "instance_name_hint": "用于在列表和翻译窗口中区分多个实例",
+            "view_guide": "查看配置指南",
+            "translate": {
+                "deepl": {
+                    "title": "DeepL",
+                    "custom_url": "DeepLX 地址",
+                    "auth_key": "API 密钥",
+                    "type": "服务类型",
+                    "free": "内置免费",
+                    "api": "Auth Key",
+                    "deeplx": "DeepLX"
+                },
+                "google": {
+                    "title": "谷歌翻译",
+                    "custom_url": "自定义 URL"
+                },
+                "bing": {
+                    "title": "必应翻译"
+                },
+                "ollama": {
+                    "title": "Ollama",
+                    "install_ollama": "无法连接到本地ollama，请先下载安装并启动ollama，如果您使用不在本机上的ollama，请更改请求地址",
+                    "install_ollama_link": "Ollama 下载地址",
+                    "request_path": "请求地址",
+                    "stream": "流式输出",
+                    "model": "模型",
+                    "install_model": "安装",
+                    "ready": "就绪",
+                    "not_installed": "该模型还未安装，点击立即下载安装",
+                    "supported_models": "点击查看 Ollama 可用模型列表",
+                    "prompt_description": "通过自定义Prompt自定义AI的行为, $text $from $to $detect 将会被替换为 待翻译文本，源语言，目标语言和检测到的语言。",
+                    "add": "添加 Prompt"
+                },
+                "openai": {
+                    "title": "OpenAI",
+                    "service": "服务商",
+                    "openai": "OpenAI",
+                    "azure": "Azure",
+                    "request_path": "请求地址",
+                    "api_key": "Api Key",
+                    "model": "模型",
+                    "stream": "流式输出",
+                    "prompt_description": "通过自定义Prompt自定义OpenAI行为, $text $from $to $detect 将会被替换为 待翻译文本，源语言，目标语言和检测到的语言。",
+                    "add": "添加 Prompt",
+                    "openrouter": "OpenRouter",
+                    "chatanywhere": "ChatAnywhere",
+                    "tuzi": "兔子 API",
+                    "address_preserved": "已保留你自定义的地址",
+                    "use_default_address": "改用 {{name}} 默认地址",
+                    "get_key": "获取 Key",
+                    "provider_hint": {
+                        "openai": "使用 OpenAI 官方接口，Key 和模型必须来自同一服务商。",
+                        "azure": "填写 Azure 资源的完整部署地址，保留现有地址和 API 版本参数。",
+                        "openrouter": "使用 OpenRouter 的兼容接口；模型 ID 应包含服务商前缀。",
+                        "chatanywhere": "默认使用国内地址；在国外请把域名改为 api.chatanywhere.org。",
+                        "tuzi": "第三方中转会处理请求内容，敏感文本请先确认其隐私与日志政策。"
+                    }
+                },
+                "geminipro": {
+                    "title": "Gemini Pro",
+                    "request_path": "请求地址",
+                    "api_key": "Api Key",
+                    "stream": "流式输出",
+                    "prompt_description": "通过自定义Prompt自定义Gemini Pro的行为, $text $from $to $detect 将会被替换为 待翻译文本，源语言，目标语言和检测到的语言。",
+                    "add": "添加 Prompt"
+                },
+                "chatglm": {
+                    "title": "智谱 AI",
+                    "model": "模型",
+                    "chatglm_turbo": "ChatGLM Turbo",
+                    "chatglm_pro": "ChatGLM Pro",
+                    "chatglm_std": "ChatGLM Std",
+                    "chatglm_lite": "ChatGLM Lite",
+                    "api_key": "Api Key",
+                    "prompt_description": "通过自定义Prompt自定义AI行为, $text $from $to $detect 将会被替换为 待翻译文本，源语言，目标语言和检测到的语言。",
+                    "add": "添加 Prompt"
+                },
+                "yandex": {
+                    "title": "Yandex"
+                },
+                "transmart": {
+                    "title": "腾讯交互翻译",
+                    "username": "用户名",
+                    "token": "Token"
+                },
+                "baidu": {
+                    "title": "百度翻译",
+                    "appid": "App ID",
+                    "secret": "Secret"
+                },
+                "baidu_field": {
+                    "title": "百度领域翻译",
+                    "it": "信息技术",
+                    "finance": "金融财经",
+                    "machinery": "机械制造",
+                    "senimed": "生物医药",
+                    "novel": "网络文学",
+                    "academic": "学术论文",
+                    "aerospace": "航空航天",
+                    "wiki": "人文社科",
+                    "news": "新闻资讯",
+                    "law": "法律法规",
+                    "contract": "合同"
+                },
+                "alibaba": {
+                    "title": "阿里翻译",
+                    "accesskey_id": "AccessKey ID",
+                    "accesskey_secret": "AccessKey Secret"
+                },
+                "tencent": {
+                    "title": "腾讯翻译",
+                    "secret_id": "Secret ID",
+                    "secret_key": "Secret Key"
+                },
+                "volcengine": {
+                    "title": "火山翻译",
+                    "appid": "App ID",
+                    "secret": "Secret"
+                },
+                "niutrans": {
+                    "title": "小牛翻译",
+                    "https": "使用 Https",
+                    "apikey": "API Key"
+                },
+                "youdao": {
+                    "title": "有道翻译",
+                    "appkey": "App ID",
+                    "key": "Key"
+                },
+                "bing_dict": {
+                    "title": "必应词典"
+                },
+                "cambridge_dict": {
+                    "title": "剑桥词典"
+                },
+                "caiyun": {
+                    "title": "彩云小译",
+                    "token": "Token"
+                },
+                "gemini_free": {
+                    "errors": {
+                        "auth": "Key 无效或无权限。",
+                        "billing": "预付费额度已用完。",
+                        "region": "所在地区不支持免费层。",
+                        "network": "网络请求失败。",
+                        "blocked": "内容被拦截。",
+                        "quota_daily": "今日额度已用完，将于 {{time}} 重置。",
+                        "rate_limited": "请求过于频繁，约 {{seconds}} 秒后可再用。",
+                        "not_found": "模型不存在。",
+                        "unavailable": "Gemini 暂时不可用。",
+                        "timeout": "请求超时。",
+                        "invalid_request": "请求参数无效。",
+                        "empty": "没有返回译文。",
+                        "other": "请求失败。",
+                        "all_failed": "所有模型均失败。",
+                        "partial": "已输出部分译文。"
+                    },
+                    "title": "Gemini Free API",
+                    "api_key": "API Key",
+                    "api_key_hint": "使用 Google AI Studio API Key。",
+                    "request_path": "请求地址",
+                    "request_path_hint": "基础地址，不含模型名。",
+                    "stream": "流式输出",
+                    "thinking": "思考等级",
+                    "thinking_lowest": "最低",
+                    "thinking_low": "低",
+                    "thinking_medium": "中",
+                    "thinking_high": "高",
+                    "thinking_default": "模型默认",
+                    "thinking_hint": "“最低”在不支持 minimal 的模型上会自动改用 low。",
+                    "models": "模型列表（按优先级）",
+                    "add_model": "输入模型 ID",
+                    "delete": "删除模型",
+                    "quota_hint": "各模型的额度只能在 AI Studio 查看；每日额度在太平洋时间午夜重置。",
+                    "status_daily": "今日额度已用完 · {{time}} 重置",
+                    "status_rate": "限流中 · 约 {{seconds}} 秒",
+                    "status_missing": "模型不存在",
+                    "status_success": "上次成功 {{time}}",
+                    "status_unused": "未使用",
+                    "system_prompt": "系统提示词",
+                    "user_prompt": "用户模板",
+                    "variables": "$text、$from、$to、$detect 会替换为原文、源语言、目标语言和检测到的语言。",
+                    "restore_prompts": "恢复默认提示词",
+                    "privacy": "保存不会发送请求；测试会消耗每个模型 1 次额度（思考等级降级可能重试）。免费层的请求内容可能被 Google 用于改进产品。",
+                    "test_all": "测试全部模型",
+                    "testing": "测试中…",
+                    "test_success": "成功 · {{ms}} ms",
+                    "key_required": "API Key 不能为空。",
+                    "models_required": "至少需要一个模型。",
+                    "text_required": "用户模板必须包含 $text。"
+                },
+                "google_cloud_translate": {
+                    "title": "Google Cloud 翻译",
+                    "api_key": "API 密钥",
+                    "api_key_hint": "密钥通过 x-goog-api-key 请求头发送，不会拼入请求地址，并保存在 Aries 的本机配置中。建议在 Google Cloud 控制台把密钥限制为只能调用 Cloud Translation API，并在配额页设置每日上限。",
+                    "billing_hint": "使用 Cloud Translation 基础版（NMT 模型）。每月前 50 万字符免费（以每月 $10 抵扣额发放，基础版与高级版共用，不结转）；超出后每百万字符 $20，需要先开通结算。自动检测源语言不额外计费。与内置 Google 翻译不同，只返回译文，没有词典释义、音标和例句。",
+                    "test": "测试翻译",
+                    "test_success": "Google Cloud 翻译测试成功：",
+                    "test_failed": "Google Cloud 翻译测试失败："
+                },
+                "azure_translate": {
+                    "title": "Azure 翻译",
+                    "key": "资源密钥",
+                    "key_hint": "Azure 门户中 Translator 资源的“密钥和终结点”页面提供的密钥，通过 Ocp-Apim-Subscription-Key 请求头发送，保存在 Aries 的本机配置中。",
+                    "region": "区域（可选）",
+                    "region_hint": "资源所在区域，例如 westeurope；资源位置为 Global 时留空。",
+                    "billing_hint": "免费额度只适用于 F0 定价层：每月 200 万字符（文本翻译、语言检测、词典、音译合计），每小时最多 200 万字符且需均匀使用；用完后接口拒绝请求，不会扣费。S1 等定价层从第一个字符起计费。请在 Azure 门户确认资源的定价层。与内置“必应翻译”不同，本服务使用你自己的资源密钥。",
+                    "test": "测试翻译",
+                    "test_success": "Azure 翻译测试成功：",
+                    "test_failed": "Azure 翻译测试失败："
+                }
+            },
+            "recognize": {
+                "system": {
+                    "title": "系统 OCR"
+                },
+                "tesseract": {
+                    "title": "Tesseract.js"
+                },
+                "baidu_ocr": {
+                    "title": "百度 OCR",
+                    "client_id": "API Key",
+                    "client_secret": "Secret Key"
+                },
+                "baidu_accurate_ocr": {
+                    "title": "百度 OCR (高精度)",
+                    "client_id": "API Key",
+                    "client_secret": "Secret Key"
+                },
+                "baidu_img_ocr": {
+                    "title": "百度图片翻译",
+                    "appid": "App ID",
+                    "secret": "Secret"
+                },
+                "iflytek_ocr": {
+                    "title": "讯飞 OCR",
+                    "appid": "App ID",
+                    "apisecret": "API Secret",
+                    "apikey": "API Key"
+                },
+                "iflytek_intsig_ocr": {
+                    "title": "讯飞 OCR (Intsig)",
+                    "appid": "App ID",
+                    "apisecret": "API Secret",
+                    "apikey": "API Key"
+                },
+                "iflytek_latex_ocr": {
+                    "title": "讯飞公式识别",
+                    "appid": "App ID",
+                    "apisecret": "API Secret",
+                    "apikey": "API Key"
+                },
+                "simple_latex_ocr": {
+                    "title": "Simple LaTeX",
+                    "token": "Token"
+                },
+                "tencent_ocr": {
+                    "title": "腾讯 OCR",
+                    "secret_id": "Secret ID",
+                    "secret_key": "Secret Key"
+                },
+                "tencent_accurate_ocr": {
+                    "title": "腾讯 OCR (高精度)",
+                    "secret_id": "Secret ID",
+                    "secret_key": "Secret Key"
+                },
+                "tencent_img_ocr": {
+                    "title": "腾讯图片翻译",
+                    "secret_id": "Secret ID",
+                    "secret_key": "Secret Key"
+                },
+                "volcengine_ocr": {
+                    "title": "火山 OCR",
+                    "appid": "App ID",
+                    "secret": "Secret"
+                },
+                "volcengine_multi_lang_ocr": {
+                    "title": "火山 OCR (多语言)",
+                    "appid": "App ID",
+                    "secret": "Secret"
+                },
+                "qrcode": {
+                    "title": "二维码识别"
+                },
+                "google_ocr": {
+                    "title": "Google OCR",
+                    "api_key": "API 密钥",
+                    "api_key_hint": "密钥通过 x-goog-api-key 请求头发送，不会拼入请求地址，并保存在 Aries 的本机配置中。",
+                    "billing_hint": "测试会用示例图片按当前模式调用一次 Google Cloud Vision，计入该模式的额度。",
+                    "test": "测试识别",
+                    "test_success": "Google OCR 测试成功",
+                    "test_failed": "Google OCR 测试失败：",
+                    "detection_type": "识别模式",
+                    "detection_text_detection": "通用（TEXT_DETECTION）· 适合截图、短句、界面文字",
+                    "detection_document_text_detection": "文档（DOCUMENT_TEXT_DETECTION）· 适合大段文字、文章、扫描页",
+                    "detection_type_hint": "两种模式各有每月 1000 次免费额度，分别计算；超出后每 1000 次 $1.50。"
+                },
+                "azure_ocr": {
+                    "title": "Azure OCR",
+                    "engine": "识别引擎",
+                    "engine_vision_read": "图像 OCR（Azure Vision）· F0 每月 5000 次",
+                    "engine_document_read": "文档 OCR（Document Intelligence）· F0 每月 500 页",
+                    "engine_vision_read_hint": "一次请求出结果，适合截图、界面文字和短句；免费层每分钟最多 20 次。微软已宣布 Image Analysis 4.0 将于 2028-09-25 停用。需要 Azure Vision（计算机视觉）资源，且资源所在区域支持 Image Analysis 4.0。",
+                    "engine_document_read_hint": "提交后轮询结果（通常 1–3 秒），分辨率更高，适合大段文字、文章和扫描页。需要 Document Intelligence 资源。",
+                    "endpoint": "资源终结点",
+                    "key": "资源密钥",
+                    "endpoint_hint": "两种引擎需要不同的 Azure 资源，终结点和密钥都在资源的“密钥和终结点”页面；可添加两个实例分别配置。密钥通过 Ocp-Apim-Subscription-Key 请求头发送。",
+                    "billing_hint": "免费额度只适用于 F0 定价层，用完后接口拒绝请求，不会扣费；S0 等定价层从第一次调用起计费。免费层图片不超过 4 MB。测试会用示例图片按当前引擎调用一次。",
+                    "test": "测试识别",
+                    "test_success": "Azure OCR 测试成功：",
+                    "test_failed": "Azure OCR 测试失败："
+                }
+            },
+            "tts": {
+                "lingva_tts": {
+                    "title": "Lingva",
+                    "request_path": "请求地址"
+                },
+                "azure_tts": {
+                    "title": "Microsoft Azure 语音",
+                    "key": "语音资源密钥",
+                    "key_hint": "密钥保存在 Aries 的本机配置中，请勿分享配置文件。",
+                    "region": "区域",
+                    "endpoint": "资源终结点（可选）",
+                    "endpoint_hint": "留空时使用区域终结点。使用专用或自定义资源终结点时，填写 Azure 语音资源页面提供的地址。",
+                    "language": "语音语言",
+                    "voice": "音色",
+                    "automatic_voice": "自动选择",
+                    "load_voices": "加载可用音色",
+                    "voices_loaded": "Azure 音色已加载",
+                    "billing_hint": "保存不会合成语音。试听会向 Azure 发送一条短请求。F0 定价层每月 50 万字符神经网络语音免费，用完后接口拒绝请求；S0 从第一个字符起计费。免费层只列出普通神经网络音色，HD 音色是否计入免费额度以官方说明为准。",
+                    "test": "试听音色"
+                },
+                "openrouter_tts": {
+                    "title": "OpenRouter 语音合成",
+                    "api_key": "API 密钥",
+                    "api_key_hint": "密钥保存在 Aries 的本机配置中，请勿分享配置文件。",
+                    "model": "模型 ID",
+                    "model_hint": "填写 OpenRouter 中支持语音输出的模型 ID。",
+                    "voice": "音色（可选）",
+                    "voice_placeholder": "留空使用模型默认音色",
+                    "voice_hint": "可用音色由模型决定；OpenRouter 会根据文本自动处理语言。",
+                    "speed": "合成语速",
+                    "billing_hint": "保存不会合成语音。试听会调用 OpenRouter，可能产生用量费用。",
+                    "test": "试听",
+                    "test_success": "OpenRouter 试听成功",
+                    "test_failed": "OpenRouter 试听失败："
+                },
+                "gemini_tts": {
+                    "title": "Gemini 语音合成",
+                    "api_key": "AI Studio API 密钥",
+                    "api_key_hint": "密钥保存在 Aries 的本机配置中，请勿分享配置文件。",
+                    "model": "模型 ID",
+                    "model_hint": "默认使用 gemini-3.8-flash-lite-tts；可改为音质更高但较慢的 gemini-3.8-flash-tts。",
+                    "voice": "音色",
+                    "custom_voice": "自定义音色 ID",
+                    "style": "朗读风格（可选）",
+                    "style_hint": "例如 speaking slowly。也可在朗读窗口调整播放倍率。",
+                    "billing_hint": "保存不会合成语音。试听会调用 Gemini API，可能消耗免费额度或产生费用。免费层的请求内容可能被 Google 用于改进产品。本服务已关闭交互记录保存（store: false）。",
+                    "test": "试听",
+                    "test_success": "Gemini 试听成功",
+                    "test_failed": "Gemini 试听失败："
+                },
+                "google_cloud_tts": {
+                    "title": "Google Cloud 语音合成",
+                    "credential": "API 密钥或访问令牌",
+                    "credential_hint": "凭据保存在 Aries 的本机配置中。API 密钥使用 x-goog-api-key；访问令牌使用 Bearer 认证。",
+                    "auth_type": "认证方式",
+                    "api_key_auth": "Google API 密钥",
+                    "bearer_auth": "OAuth Bearer 令牌",
+                    "request_path": "请求地址",
+                    "request_path_hint": "默认使用 Google Cloud Text-to-Speech v1 地址；可填写兼容的自定义地址。",
+                    "voice": "音色",
+                    "audio_encoding": "音频格式",
+                    "speaking_rate": "合成语速",
+                    "pitch": "音高（可选）",
+                    "volume_gain_db": "音量增益 dB（可选）",
+                    "sample_rate_hertz": "采样率 Hz（可选）",
+                    "effects_profile_id": "设备效果 ID（逗号分隔，可选）",
+                    "billing_hint": "保存不会合成语音。试听和朗读按字符计费，一个汉字计 1 个字符；各系列的每月免费额度写在系列名称中。Standard 与 WaveNet、Neural2 与 Polyglot 使用同一计费项，免费额度可能合计计算。超出后自动计费，需要先在 Google Cloud 开通结算。",
+                    "test": "试听",
+                    "test_success": "Google Cloud TTS 试听成功",
+                    "test_failed": "Google Cloud TTS 试听失败：",
+                    "default_voice": "默认音色",
+                    "default_voice_hint": "用于没有单独设置音色的语言。简体中文、英语、波兰语使用固定的 Standard 或 Chirp 3 HD 音色；其他语言选 Standard 时，按性别自动取该语言的第一个 Standard 音色（会读取一次音色列表）。",
+                    "voice_by_language": "按语言设置音色",
+                    "voice_by_language_hint": "朗读时按识别出的语言使用对应音色。依次选择语言、地区、模型系列和性别，再从筛选后的列表中选择音色。只列出有每月免费额度的系列。",
+                    "load_voices": "加载可用音色",
+                    "voices_loaded": "已加载 {{count}} 个可用音色",
+                    "load_voices_hint": "加载音色列表后才能逐级筛选。读取音色列表不按字符计费。",
+                    "language": "朗读语言",
+                    "region": "地区",
+                    "family": "模型系列",
+                    "family_all": "全部系列",
+                    "family_standard": "Standard · 每月免费 400 万字符（与 WaveNet 合计）",
+                    "family_wavenet": "WaveNet · 每月免费 400 万字符（与 Standard 合计）",
+                    "family_neural2": "Neural2 · 每月免费 100 万字符（与 Polyglot 合计）",
+                    "family_polyglot": "Polyglot（预览）· 每月免费 100 万字符（与 Neural2 合计）",
+                    "family_chirp3_hd": "Chirp 3 HD · 每月免费 100 万字符",
+                    "family_studio": "Studio · 每月免费 100 万字符，超出后 $160/百万字符",
+                    "gender": "性别",
+                    "gender_all": "全部",
+                    "gender_female": "女声",
+                    "gender_male": "男声",
+                    "gender_neutral": "中性",
+                    "use_default_voice": "使用默认音色",
+                    "voice_set": "已设置",
+                    "audio_controls_hint": "Chirp 3 HD 与 Studio 音色不使用音高，语速对所有系列有效。也可以用朗读窗口的播放倍率调整语速。",
+                    "long_text_hint": "长文本会自动分段；遇到句子过长时继续缩短重试。分段结果合并成一段 WAV 音频，进度条和拖动定位照常可用；合成完成前需稍作等待。"
+                },
+                "gemini_live_tts": {
+                    "errors": {
+                        "auth": "Gemini Live Key 无效或无权限。",
+                        "quota": "Gemini Live 请求过于频繁，约 60 秒后可再用。",
+                        "model": "Gemini Live 模型不存在或不支持。",
+                        "invalid": "Gemini Live 请求或响应无效。",
+                        "timeout": "Gemini Live 请求超时。",
+                        "server": "Gemini Live 暂时不可用。",
+                        "network": "Gemini Live 连接失败。",
+                        "silent": "没有返回音频。",
+                        "incomplete": "文字没有完整读出。",
+                        "interrupted": "生成被打断。",
+                        "japanese": "Gemini Live 不支持日语文本，将尝试下一个朗读服务。",
+                        "empty_text": "没有要朗读的文字。",
+                        "exhausted": "Gemini Live 未能完整读出第 {{index}}/{{total}} 段：尝试 {{attempts}} 次，沉默 {{silent}} 次，没有读完 {{incomplete}} 次，其他错误 {{other}} 次。"
+                    },
+                    "title": "Gemini Live 朗读",
+                    "api_key": "API Key",
+                    "api_key_hint": "使用 Google AI Studio API Key。",
+                    "model": "模型",
+                    "model_hint": "默认 gemini-3.8-live。",
+                    "voice": "音色",
+                    "attempts": "每段最多尝试次数",
+                    "attempts_hint": "中文偶尔会沉默或只读开头，重试可以解决大部分情况；每次失败约多等 2–3 秒。",
+                    "prompt_zh": "中文复述提示词",
+                    "prompt_other": "其他语言复述提示词",
+                    "restore_prompts": "恢复默认提示词",
+                    "service_hint": "Live 模型不是专门的朗读模型，本服务让它原样复述文字。不支持日语；建议在朗读服务列表中把 Gemini TTS 或 Azure 放在它后面兜底。长文本全部生成完后才开始播放。",
+                    "privacy_hint": "保存不会发送请求；试听和重试会消耗额度。免费层的请求内容可能被 Google 用于改进产品。",
+                    "test_zh": "试听中文",
+                    "test_en": "试听英文",
+                    "test_success": "试听音频已生成。",
+                    "test_failed": "试听失败：",
+                    "save_failed": "保存失败，请重试。",
+                    "key_required": "API Key 不能为空。",
+                    "model_required": "模型不能为空。"
+                }
+            },
+            "collection": {
+                "anki": {
+                    "title": "Anki",
+                    "port": "端口号"
+                },
+                "eudic": {
+                    "title": "欧路词典",
+                    "name": "生词本名称",
+                    "token": "Token"
+                }
+            },
+            "meta": {
+                "google_cloud": {
+                    "summary": "Google Cloud 官方翻译与语音。创建项目、启用对应 API 后，填入受限制的 API Key。",
+                    "quota": "翻译每月 50 万字符；语音按系列共享额度；Vision 按识别功能计费。超额可自动收费，详见指南。"
+                },
+                "google_ocr": {
+                    "summary": "使用 Cloud Vision API Key；与 Google AI Studio 的 Gemini Key 不同。先启用 Cloud Vision API，再填入 Key。",
+                    "quota": "文字识别、文档文字识别每种功能每月前 1000 单位免费；多页文件每页算一个单位，超额收费。"
+                },
+                "gemini_free": {
+                    "summary": "Google AI Studio 免费层翻译。创建 Key，按实际可用的免费模型配置列表；轮询不能增加项目共享额度。",
+                    "quota": "部分模型提供免费层；每分钟、每日限额以 AI Studio 当前项目为准。免费层内容可能用于改进产品。"
+                },
+                "geminipro": {
+                    "summary": "使用 Gemini Developer API。申请 AI Studio Key，选择官方价格页仍提供免费层的可用模型。",
+                    "quota": "部分模型提供免费层；每分钟、每日限额以 AI Studio 当前项目为准。免费层内容可能用于改进产品。"
+                },
+                "gemini": {
+                    "summary": "Gemini 语音合成使用 AI Studio Key。填入 Key，选择免费层可用的 TTS 模型与音色。试听也消耗额度。",
+                    "quota": "部分模型提供免费层；每分钟、每日限额以 AI Studio 当前项目为准。免费层内容可能用于改进产品。"
+                },
+                "gemini_live": {
+                    "summary": "Gemini Live 朗读使用 AI Studio Key，通过实时音频模型播放。填入 Key，确认项目可用模型；当前服务不支持日语。",
+                    "quota": "部分模型提供免费层；每分钟、每日限额以 AI Studio 当前项目为准。免费层内容可能用于改进产品。"
+                },
+                "azure": {
+                    "summary": "分别创建 Translator 或 Speech 资源并选 F0。填入该资源的 Key、区域；自定义终结点按表单提示填写。",
+                    "quota": "F0：Translator 每月 200 万字符，Speech 神经网络语音每月 50 万字符；额度不可互换。"
+                },
+                "azure_ocr": {
+                    "summary": "Vision Read 与 Document Read 需要各自资源的 Key、终结点；先选择识别引擎，再填写对应资源，定价层选 F0。",
+                    "quota": "Vision F0 每月 5000 次、每分钟 20 次；Document Intelligence F0 每月 500 页，单次仅处理前两页。"
+                },
+                "openai": {
+                    "summary": "可连接官方 OpenAI 或第三方兼容接口。请求地址填写完整的 chat/completions 地址，并使用同一站点的 Key 和模型 ID。"
+                },
+                "openrouter": {
+                    "summary": "OpenRouter 语音中转。创建 Key，选择支持音频输出的模型；翻译免费模型不代表语音模型免费。"
+                },
+                "deepl": {
+                    "summary": "官方 API：申请 DeepL API 计划，类型选 API 并填入 Auth Key。免 Key 模式和 DeepLX 与官方 API 计划不同，可能限流。",
+                    "quota": "免费额度取决于当前 DeepL API 计划；请在账户的使用量与限制页确认，勿将网页订阅当作 API 订阅。"
+                },
+                "baidu": {
+                    "summary": "翻译：开通通用翻译 API，填 APP ID、密钥。OCR：在百度智能云创建对应识别应用，填 API Key（client_id）与 Secret Key（client_secret）。两套凭据不能互换。",
+                    "quota": "未能确认持续的月免费额度；开通前在官方控制台核对试用期限、额度和超额计费。"
+                },
+                "baidu_field": {
+                    "summary": "先在百度翻译平台单独开通领域翻译 API；填 APP ID、密钥并选择已开通领域。通用翻译额度不保证适用于领域翻译。",
+                    "quota": "未能确认持续的月免费额度；开通前在官方控制台核对试用期限、额度和超额计费。"
+                },
+                "baidu_accurate": {
+                    "summary": "在百度智能云开通对应 OCR 接口并创建应用。填应用的 API Key（client_id）、Secret Key（client_secret）；不同识别档位的额度分开核对。",
+                    "quota": "未能确认持续的月免费额度；开通前在官方控制台核对试用期限、额度和超额计费。"
+                },
+                "baidu_img": {
+                    "summary": "使用百度图片翻译 API 提取图片文字。需单独开通图片翻译，填翻译平台的 APP ID、密钥；不是百度 OCR 的 client_id / client_secret。",
+                    "quota": "未能确认持续的月免费额度；开通前在官方控制台核对试用期限、额度和超额计费。"
+                },
+                "tencent": {
+                    "summary": "翻译：开通机器翻译；OCR：开通对应文字识别接口。在访问管理创建 SecretId、SecretKey，按当前服务选择权限与区域。",
+                    "quota": "腾讯翻译自 2026-10-01 起停止发放新的免费资源包，已有资源包按有效期使用。OCR 额度按接口单独核对。"
+                },
+                "tencent_accurate": {
+                    "summary": "开通对应腾讯云 OCR 接口，在访问管理获取 SecretId、SecretKey；使用国内免费资源包时注意地域及接口匹配。",
+                    "quota": "文字识别有按接口分组的月免费资源包；高精度、图片翻译等接口不能假定共用或额度相同。"
+                },
+                "tencent_img": {
+                    "summary": "使用腾讯云图片翻译 API 提取图片文字。开通机器翻译服务，填 SecretId、SecretKey；该接口使用翻译资源包，不属于通用 OCR 额度。",
+                    "quota": "文字识别有按接口分组的月免费资源包；高精度、图片翻译等接口不能假定共用或额度相同。"
+                },
+                "alibaba": {
+                    "summary": "开通阿里云机器翻译通用版，创建仅有翻译权限的 RAM AccessKey，填 AccessKey ID 与 Secret。",
+                    "quota": "通用版每月 100 万字符免费；用完后可能进入后付费。不同站点价格不同，开通前核对账单设置。"
+                },
+                "volcengine": {
+                    "summary": "开通火山引擎机器翻译或对应 OCR 服务，创建限定权限的 Access Key ID、Secret Access Key；按服务表单填写。",
+                    "quota": "未能确认持续的月免费额度；开通前在官方控制台核对试用期限、额度和超额计费。"
+                },
+                "volcengine_multi_lang": {
+                    "summary": "单独开通火山引擎多语种 OCR，填 Access Key ID、Secret Access Key。通用 OCR 额度不保证适用于多语种接口。",
+                    "quota": "未能确认持续的月免费额度；开通前在官方控制台核对试用期限、额度和超额计费。"
+                },
+                "iflytek": {
+                    "summary": "在讯飞开放平台创建应用，单独开通当前 OCR 产品；按表单填写 APPID、APIKey、APISecret（不同产品所需字段不同）。",
+                    "quota": "未能确认持续的月免费额度；开通前在官方控制台核对试用期限、额度和超额计费。"
+                },
+                "iflytek_intsig": {
+                    "summary": "在讯飞开放平台创建应用，单独开通当前 OCR 产品；按表单填写 APPID、APIKey、APISecret（不同产品所需字段不同）。",
+                    "quota": "未能确认持续的月免费额度；开通前在官方控制台核对试用期限、额度和超额计费。"
+                },
+                "iflytek_latex": {
+                    "summary": "在讯飞开放平台创建应用，单独开通当前 OCR 产品；按表单填写 APPID、APIKey、APISecret（不同产品所需字段不同）。",
+                    "quota": "未能确认持续的月免费额度；开通前在官方控制台核对试用期限、额度和超额计费。"
+                },
+                "caiyun": {
+                    "summary": "在彩云科技开放平台申请小译 Token，填入 Token 字段。彩云小译登录账户不是 API Token。",
+                    "quota": "新用户试用 100 万字，有效期一个月；不是每月续发的额度。用完后按平台当前规则计费。"
+                },
+                "niutrans": {
+                    "summary": "在小牛翻译开放平台开通文本翻译 API，获取 API Key 并填入。网页翻译账号与 API 凭据不同。",
+                    "quota": "未能确认持续的月免费额度；开通前在官方控制台核对试用期限、额度和超额计费。"
+                },
+                "youdao": {
+                    "summary": "在有道智云创建应用并绑定自然语言翻译服务，填应用 ID 与应用密钥。确认额度有效期和充值设置。",
+                    "quota": "未能确认持续的月免费额度；开通前在官方控制台核对试用期限、额度和超额计费。"
+                },
+                "chatglm": {
+                    "summary": "在智谱开放平台创建 API Key，填入后按账户可用模型选择。现有模型列表保持原样，使用前核对所选模型价格。",
+                    "quota": "未能确认持续的月免费额度；开通前在官方控制台核对试用期限、额度和超额计费。"
+                },
+                "simple_latex": {
+                    "summary": "在 SimpleTex 的 API 管理页面申请 UAT Token 并填入 Token。请先确认当前账户可用的公式识别接口与额度。",
+                    "quota": "未能确认持续的月免费额度；开通前在官方控制台核对试用期限、额度和超额计费。"
+                },
+                "eudic": {
+                    "summary": "登录欧路词典的 OpenAPI 授权页获取 Token，填入生词本名称和 Token；不要填写账户密码。"
+                },
+                "anki": {
+                    "summary": "先安装并启动桌面版 Anki，再安装 AnkiConnect 插件。默认连接本机 8765 端口；允许 Aries 的连接请求。"
+                },
+                "ollama": {
+                    "summary": "安装 Ollama 并下载本地模型，保持服务运行；在 Aries 填模型名和本机服务地址。本地模式不需要 Key，云模型另计费。"
+                },
+                "system": {
+                    "summary": "本机系统文字识别，无需 API Key。支持的语言取决于操作系统已安装的识别语言包。"
+                },
+                "tesseract": {
+                    "summary": "本地 Tesseract 文字识别，无需 API Key。首次使用可能需要下载语言数据。"
+                },
+                "qrcode": {
+                    "summary": "本地识别二维码，无需 API Key。"
+                },
+                "transmart": {
+                    "summary": "无需 Key 的腾讯交互翻译，公开接口可能限流；不是腾讯云付费机器翻译 API。"
+                }
+            },
+            "guide": {
+                "about": "服务说明",
+                "apply": "申请 Key",
+                "install": "安装插件",
+                "setup": "查看安装步骤",
+                "view": "查看开通指南",
+                "title": "开通指南",
+                "load_failed": "指南加载失败，请关闭后重试。",
+                "official": "官方说明"
+            },
+            "recommendations": {
+                "title": "推荐的接口服务",
+                "website": "打开网站",
+                "domestic": "国内",
+                "overseas": "国外",
+                "openrouter": "一个 Key 使用多家模型；模型 ID 带 :free 的免费模型有每日次数限制，以当前模型页和账户限额为准。",
+                "chatanywhere": "提供国内与国外地址，可申请每日刷新的免费额度；支持模型、额度和网络可用性以官网为准。",
+                "tuzi": "价格很低的中转站点；请在官方价格页比较当前模型价格。",
+                "privacy": "第三方中转服务，请求内容会经过对方服务器，不建议翻译含个人信息或机密的内容。",
+                "relay_note": "中转站的稳定性和隐私由站点自身负责，Aries 无法保证。也可选择 OpenAI、Google、微软官方接口，并核对其隐私与计费条款。",
+                "tags": {
+                    "free_models": "免费模型",
+                    "daily_quota": "每日免费额度",
+                    "privacy": "隐私风险",
+                    "reputable": "正规平台",
+                    "very_cheap": "特别低价"
+                },
+                "hint": "点开查看地址、额度和注意事项",
+                "current": "当前使用"
+            },
+            "errors": {
+                "details": "查看原始报错（已隐藏密钥）",
+                "unauthorized": "身份验证失败。",
+                "unauthorized_advice": "检查 Key 是否完整、有效，并确认它来自当前接口站点。",
+                "forbidden": "当前账户或 Key 没有调用权限。",
+                "forbidden_advice": "确认已开通服务、模型权限和 Key 的权限范围。",
+                "google_cloud_forbidden_advice": "检查项目结算、对应 API 是否启用，以及 Key 的 API 限制是否包含该服务。",
+                "azure_forbidden_advice": "确认 Key、区域、终结点属于同一资源，且资源类型与服务一致。",
+                "not_found": "接口地址或模型不存在。",
+                "not_found_advice": "核对完整请求地址和模型 ID；模型可能已停用或账户不可用。",
+                "rate_limit": "调用频率或免费额度达到上限。",
+                "rate_limit_advice": "稍后重试，查看控制台的每分钟与每日限额；免费层不要自动升级为付费层。",
+                "balance": "余额或付费额度不足。",
+                "balance_advice": "检查账户余额、Key 的消费上限与账单；确认费用后再调整。",
+                "region": "当前地区不支持此服务。",
+                "region_advice": "查看官网支持的国家与区域，选择可用区域的服务资源。",
+                "timeout": "请求超时。",
+                "timeout_advice": "检查网络与代理，缩短测试文本，稍后重试。",
+                "network": "无法连接服务。",
+                "network_advice": "检查接口地址、网络、代理与防火墙。",
+                "required": "缺少必要配置。",
+                "required_advice": "补齐表单中必填的凭据、地址或模型。",
+                "other": "服务测试失败。",
+                "other_advice": "检查服务设置和官方状态；展开详情查看已隐藏密钥的原始报错。"
+            },
+            "tags": {
+                "all": "全部标签",
+                "free": "免费",
+                "free_quota": "免费额度",
+                "local": "本地",
+                "relay": "中转 / 兼容接口",
+                "filter": "按标签筛选"
+            },
+            "form": {
+                "missing": "请补齐：{{fields}}"
+            },
+            "empty": {
+                "description": "尚未添加服务。添加一个内置服务即可开始，也可以安装自己的插件。"
+            }
+        },
+        "read_aloud": {
+            "title": "朗读",
+            "playback_rate": "朗读速度",
+            "pause": "暂停",
+            "resume": "继续",
+            "replay": "重新播放",
+            "progress": "播放进度",
+            "stop": "停止朗读",
+            "synthesizing": "正在合成…",
+            "fallback": {
+                "failed": "「{{service}}」朗读失败：{{reason}}",
+                "switched": "已改用「{{service}}」",
+                "all_failed": "所有朗读服务均失败",
+                "quota_daily": "今日额度已用完，将于 {{time}} 重置。",
+                "rate_limited": "请求过于频繁，约 {{seconds}} 秒后可再用。",
+                "auth": "API Key 无效或无权限。",
+                "api_key_invalid": "API Key 无效，请在服务设置中检查。"
+            },
+            "status": {
+                "loading": "正在生成语音…",
+                "error": "朗读失败"
+            },
+            "volume": "音量",
+            "mute": "静音",
+            "unmute": "取消静音"
+        },
+        "translate": {
+            "translate": "翻译",
+            "add_collection_success": "添加成功",
+            "recognizing": "识别中…",
+            "speak": "朗读",
+            "copy": "复制",
+            "retry": "重试",
+            "delete_newline": "删除换行",
+            "translate_back": "翻译回原文",
+            "pin": "置顶窗口",
+            "unpin": "取消置顶",
+            "source_language": "源语言",
+            "target_language": "目标语言",
+            "swap_language": "交换语言",
+            "select_service": "切换翻译服务",
+            "expand": "展开",
+            "collapse": "收起"
+        },
+        "recognize": {
+            "recognize": "重新识别",
+            "translate": "翻译",
+            "copy_img": "复制图片",
+            "copy_text": "复制",
+            "delete_newline": "删除换行",
+            "delete_space": "删除空格",
+            "title": "文字识别"
+        },
+        "screenshot": {
+            "hint": "拖动选择区域，松开确认，右键取消"
+        }
+    }
+}

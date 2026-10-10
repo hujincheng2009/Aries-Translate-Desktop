@@ -1,0 +1,1092 @@
+{
+    "translation": {
+        "common": {
+            "delete": "Delete",
+            "ok": "Ok",
+            "cancel": "Cancel",
+            "save": "Save",
+            "write_clipboard": "Write to Clipboard",
+            "plugin": "Plugin",
+            "coming": "Coming soon…",
+            "clear": "Clear",
+            "minimize": "Minimize",
+            "maximize": "Maximize",
+            "restore": "Restore",
+            "close": "Close",
+            "show_secret": "Show value",
+            "hide_secret": "Hide value",
+            "app_name": "Aries"
+        },
+        "languages": {
+            "auto": "Auto Detect",
+            "zh_cn": "Simplified Chinese",
+            "zh_tw": "Traditional Chinese",
+            "ja": "Japanese",
+            "en": "English",
+            "ko": "Korean",
+            "fr": "French",
+            "es": "Spanish",
+            "ru": "Russian",
+            "de": "German",
+            "it": "Italian",
+            "tr": "Turkish",
+            "pt_pt": "Portuguese",
+            "pt_br": "Portuguese (Brazil)",
+            "vi": "Vietnamese",
+            "id": "Indonesian",
+            "th": "Thai",
+            "ms": "Malay",
+            "ar": "Arabic",
+            "hi": "Hindi",
+            "mn_mo": "Mongolian",
+            "mn_cy": "Mongolian(Cyrillic)",
+            "km": "Khmer",
+            "nb_no": "Norwegian Bokmål",
+            "nn_no": "Norwegian Nynorsk",
+            "fa": "Persian",
+            "sv": "Swedish",
+            "pl": "Polish",
+            "nl": "Dutch",
+            "uk": "Ukrainian",
+            "he": "Hebrew"
+        },
+        "config": {
+            "general": {
+                "label": "General",
+                "title": "General Settings",
+                "auto_start": "Auto Startup",
+                "check_update": "Check for updates at startup",
+                "server_port": "Listening Port",
+                "server_port_change": "The listening port has been changed, Please restart the application for the changes to take effect",
+                "app_language": "Display Language",
+                "app_theme": "Theme",
+                "app_accent": "Accent color",
+                "app_accent_desc": "Color for switches, primary buttons and selected controls",
+                "accents": {
+                    "neutral": "Default",
+                    "aries": "Aries",
+                    "blue": "Blue",
+                    "teal": "Teal",
+                    "orange": "Orange",
+                    "violet": "Violet"
+                },
+                "app_font": "Font",
+                "app_fallback_font": "Fallback Font",
+                "font_size": {
+                    "10": "Extra Small (10px)",
+                    "12": "Very Small (12px)",
+                    "14": "Small (14px)",
+                    "16": "Standard (16px)",
+                    "18": "Large (18px)",
+                    "20": "Very Large (20px)",
+                    "24": "Extra Large (24px)",
+                    "title": "Font Size"
+                },
+                "default_font": "Default",
+                "theme": {
+                    "light": "Light",
+                    "dark": "Dark",
+                    "system": "System"
+                },
+                "transparent": "Transparent Effect",
+                "dev_mode": "Developer Mode",
+                "proxy": {
+                    "title": "Proxy",
+                    "host": "Host",
+                    "port": "Port",
+                    "username": "Username",
+                    "password": "Password",
+                    "no_proxy": "No Proxy",
+                    "enable": "Enable Proxy",
+                    "enable_desc": "Fill in the host and port first",
+                    "unsupported": "Not supported in the Personal edition",
+                    "no_proxy_hint": "Separate multiple entries with commas"
+                },
+                "proxy_change": "The proxy has been changed, Restart the application for the changes to take effect",
+                "proxy_error": "Please fill in the host and port",
+                "tray_click_event": "Tray Click Event",
+                "event": {
+                    "config": "Preference",
+                    "translate": "Translate",
+                    "disable": "Disable",
+                    "ocr_recognize": "Text Recognition",
+                    "ocr_translate": "Screenshot Translation"
+                },
+                "check_update_desc": "Automatic updates are disabled in the Personal edition",
+                "auto_start_desc": "Run in the background after you sign in",
+                "server_port_desc": "Local HTTP port for external programs. Restart to apply changes",
+                "app_font_desc": "Font used for the interface and translations",
+                "app_fallback_font_desc": "Used when the main font lacks a glyph",
+                "transparent_desc": "Use a translucent sidebar background",
+                "dev_mode_desc": "Show debugging tools and verbose logs",
+                "tray_click_event_desc": "Action when the tray icon is clicked",
+                "section": {
+                    "startup": "Startup",
+                    "startup_desc": "App launch, updates and external calls",
+                    "appearance": "Appearance",
+                    "appearance_desc": "Language, theme and fonts",
+                    "tray": "System Tray",
+                    "tray_desc": "Windows only",
+                    "proxy_desc": "Restart the app for changes to take effect"
+                }
+            },
+            "translate": {
+                "label": "Translate",
+                "title": "Translation Settings",
+                "source_language": "Source Language",
+                "target_language": "Target Language",
+                "second_language": "Secondary Target Language",
+                "auto_copy": "Auto Copy",
+                "source": "Source",
+                "target": "Target",
+                "source_target": "Source+Target",
+                "disable": "Disable",
+                "history_disable": "Disable History",
+                "incremental_translate": "Incremental Translation",
+                "dynamic_translate": "Dynamic Translation",
+                "delete_newline": "Delete Newline",
+                "remember_language": "Remember Target Language",
+                "font_size": {
+                    "10": "Very Very Small (10px)",
+                    "12": "Very Small (12px)",
+                    "14": "Small (14px)",
+                    "16": "Standard (16px)",
+                    "18": "Large (18px)",
+                    "20": "Very Large (20px)",
+                    "24": "Very Very Large (24px)",
+                    "title": "Font Size"
+                },
+                "window_position": "Window Position",
+                "mouse": "Follow the Mouse",
+                "pre_state": "Remember Position",
+                "remember_window_size": "Remember Window Size",
+                "close_on_blur": "Close window when focus lost",
+                "always_on_top": "Always on Top",
+                "hide_source": "Hide Source Area",
+                "hide_language": "Hide Language Area",
+                "hide_window": "Hide Translation Window",
+                "follow_ocr_language": "Follow specified OCR language",
+                "follow_ocr_language_hint": "Use the specified OCR language when the translation source is automatic. Automatic OCR and incremental translation still use detection.",
+                "detect_engine": "Language Detection Engine",
+                "baidu": "Baidu",
+                "tencent": "Tencent",
+                "niutrans": "NiuTrans",
+                "google": "Google",
+                "bing": "Bing",
+                "yandex": "Yandex",
+                "local": "Local",
+                "second_language_desc": "Used when the source text is already in the target language",
+                "section": {
+                    "language": "Languages",
+                    "language_desc": "Default languages for the translation window",
+                    "behavior": "Behavior",
+                    "window": "Window"
+                },
+                "auto_read_aloud": "Read translations automatically",
+                "auto_read_aloud_description": "Read the first successful text result in card order. Manual reading cancels automatic reading for this round."
+            },
+            "recognize": {
+                "label": "Recognize",
+                "title": "Recognition Settings",
+                "language": "Recognition Language",
+                "delete_newline": "Auto Delete Newline",
+                "auto_copy": "Auto Copy",
+                "close_on_blur": "Close window when focus lost",
+                "hide_window": "Hide Recognition Window",
+                "auto_copy_desc": "Write the result to the clipboard after recognition",
+                "hide_window_desc": "With Auto Copy on, the result is shown as a system notification",
+                "section": {
+                    "title": "Recognition",
+                    "description": "Default behavior of the text recognition window"
+                }
+            },
+            "hotkey": {
+                "label": "Hotkey",
+                "title": "Hotkey Settings",
+                "selection_translate": "Selection Translation",
+                "input_translate": "Text Translation",
+                "replace_translate": "Replace Translation",
+                "read_aloud": "Read Aloud",
+                "ocr_recognize": "Text Recognition",
+                "ocr_translate": "Screenshot Translation",
+                "is_register": "The hotkey is already registered",
+                "success": "Hotkey register success",
+                "set_hotkey": "Press to Set Hotkey",
+                "selection_translate_desc": "Translate the selected text",
+                "input_translate_desc": "Open the translation window for manual input",
+                "replace_translate_desc": "Replace the selected text with its translation",
+                "read_aloud_desc": "Read the selected text aloud",
+                "ocr_recognize_desc": "Capture a screenshot and recognize its text",
+                "ocr_translate_desc": "Recognize a screenshot and translate it right away",
+                "clear": "Clear hotkey",
+                "section": {
+                    "title": "Global Hotkeys",
+                    "description": "Click a field and press a key combination to record it; press Backspace to clear",
+                    "behavior": "Behavior"
+                },
+                "disable_in_fullscreen": "Disable shortcuts in fullscreen apps",
+                "disable_in_fullscreen_description": "Ignore Aries global shortcuts while the foreground app is fullscreen, such as games, videos or presentations."
+            },
+            "service": {
+                "label": "Service",
+                "title": "Service Settings",
+                "translate": "Translate",
+                "tts": "TTS",
+                "recognize": "Recognize",
+                "collection": "Collection",
+                "least": "Please keep at least one",
+                "on_demand": "On demand",
+                "on_demand_tooltip": "Do not invoke this service for new content; expand its result card to process only the current content.",
+                "on_demand_background_warning": "For hidden-window or clipboard-monitor workflows that need automatic results, keep at least one enabled translation service that is not set to On demand.",
+                "add_builtin_service": "Add Builtin Service",
+                "add_external_service": "Add Extension",
+                "add_service": "Add Service",
+                "test_failed": "Test Failed",
+                "install_plugin": "Install Plugin",
+                "view_plugin_list": "View Plugin List",
+                "uninstall_success": "Plugin Uninstall Successfully",
+                "homepage": "Homepage",
+                "edit": "Edit",
+                "add": "Add",
+                "delete_title": "Delete \"{{name}}\"?",
+                "delete_desc": "The configuration of this service will be removed as well.",
+                "add_service_desc": "Choose a {{type}} service to add. You can add the same service several times and configure each one separately.",
+                "search_placeholder": "Search services",
+                "total_count": "{{n}} services",
+                "no_match": "No matching services",
+                "type_translate": "translation",
+                "type_recognize": "text recognition",
+                "type_tts": "text-to-speech",
+                "type_collection": "vocabulary book",
+                "add_plugin_title": "Add Extension",
+                "add_plugin_desc": "Install a .potext plugin file, or pick one from the plugin list.",
+                "translate_title": "Translation Services",
+                "translate_desc": "Drag to reorder. The translation window shows results in this order.",
+                "recognize_title": "Text Recognition Services",
+                "recognize_desc": "Drag to reorder. The recognition window uses the first service by default.",
+                "tts_title": "Text-to-Speech Services",
+                "tts_desc": "Drag to reorder. If reading aloud fails, the next service is tried in turn.",
+                "collection_title": "Vocabulary Book",
+                "collection_desc": "Once added, you can save words from translation results with one click.",
+                "removed": "Service removed"
+            },
+            "history": {
+                "search_placeholder": "Search source or translation",
+                "clear_all": "Clear History",
+                "clear_title": "Clear all history?",
+                "clear_desc": "This cannot be undone. All translation history will be deleted.",
+                "empty": "No history yet",
+                "no_match": "No matching records",
+                "col_text": "Source",
+                "col_language": "Languages",
+                "col_result": "Translation",
+                "col_time": "Time",
+                "total": "{{total}} records, {{size}} per page",
+                "prev": "Previous",
+                "next": "Next",
+                "add_to_collection": "Add to vocabulary",
+                "label": "History",
+                "title": "History"
+            },
+            "backup": {
+                "section": {
+                    "title": "Backup & Restore",
+                    "description": "Back up your settings to WebDAV, Aliyun Drive or a local file"
+                },
+                "type_desc": "WebDAV, Aliyun Drive or local",
+                "backup_now": "Back Up Now",
+                "list_desc": "Pick a backup to restore on this device",
+                "restore_item": "Restore",
+                "delete_title": "Delete this backup?",
+                "delete_desc": "\"{{name}}\" will be permanently deleted from the cloud.",
+                "label": "Backup",
+                "title": "Backup Settings",
+                "type": "Service Type",
+                "webdav": "WebDav",
+                "local": "Local",
+                "webdav_url": "WebDav URL",
+                "username": "Username",
+                "password": "Password",
+                "backup": "Backup",
+                "restore": "Restore",
+                "list": "Backup List",
+                "load_success": "Load Backup Success",
+                "backup_success": "Backup Success",
+                "empty": "You have not backed up yet",
+                "legacy": "Legacy backup"
+            },
+            "about": {
+                "tagline": "Cross-platform software for text selection translation and OCR",
+                "visit": "Visit",
+                "open": "Open",
+                "feedback_desc": "Report an issue or send an email",
+                "community_desc": "Join the user community",
+                "view_log_desc": "Open the folder that holds the logs",
+                "view_config_desc": "Open the folder that holds the config",
+                "label": "About",
+                "title": "About Application",
+                "website": "Website",
+                "github": "GitHub",
+                "feedback": "Feedback",
+                "issue": "Issue",
+                "email": "Email",
+                "community": "Community",
+                "check_update": "Check Update",
+                "view_log": "View Log",
+                "view_config": "View Config",
+                "qq_channel": "QQ Channel",
+                "qq_group": "QQ Group",
+                "telegram": "Telegram",
+                "discussion": "Github Discussion",
+                "discussion_short": "Discussions",
+                "license_title": "License and origin",
+                "copyright": "Copyright © 2026 Myster_Jin",
+                "original_copyright": "Original copyright belongs to pot-app contributors; original notices continue to apply.",
+                "license_description": "Aries is a modified version of the open source project pot-desktop, distributed under GNU GPL-3.0 WITHOUT ANY WARRANTY. Modified on 2026-10-08.",
+                "source_access": "Corresponding Source is supplied with every release as a source ZIP; access to the private repository requires authorization.",
+                "view_license": "View license",
+                "get_source": "Get source"
+            },
+            "sidebar": {
+                "settings": "Settings",
+                "data": "Data"
+            }
+        },
+        "updater": {
+            "title": "Check Update",
+            "latest": "## The latest version is installed",
+            "progress": "Download Progress",
+            "update": "Update",
+            "downloading": "Downloading…",
+            "installing": "Installing…",
+            "cancel": "Cancel",
+            "installed": "Install completed, Restart the application for the changes to take effect"
+        },
+        "services": {
+            "help": "Configuration Guide",
+            "no_need": "No configuration required",
+            "instance_name": "Configuration Name",
+            "instance_name_hint": "Used to tell several instances apart in the list and the translate window",
+            "view_guide": "View Configuration Guide",
+            "translate": {
+                "deepl": {
+                    "title": "DeepL",
+                    "custom_url": "DeepLX URL",
+                    "auth_key": "Auth Key",
+                    "type": "Service Type",
+                    "free": "Free",
+                    "api": "Auth Key",
+                    "deeplx": "DeepLX"
+                },
+                "google": {
+                    "title": "Google",
+                    "custom_url": "Custom URL"
+                },
+                "bing": {
+                    "title": "Bing"
+                },
+                "ollama": {
+                    "title": "Ollama",
+                    "install_ollama": "Unable to connect to local ollama, please download, install and start ollama first. If you use ollama that is not on this machine, please change the request address.",
+                    "install_ollama_link": "Download Ollama",
+                    "request_path": "Request Path",
+                    "stream": "Stream Mode",
+                    "model": "Model",
+                    "install_model": "Install",
+                    "ready": "Ready",
+                    "not_installed": "This model has not been installed yet, click to download and install now",
+                    "supported_models": "Click to see a list of Ollama available models",
+                    "prompt_description": "By customizing the Prompt, you can customize the behavior of AI. $text $from $to $detect will be replaced with the text to be translated, source language, target language and detected language.",
+                    "add": "Add Prompt"
+                },
+                "openai": {
+                    "title": "OpenAI",
+                    "service": "Service Provider",
+                    "openai": "OpenAI",
+                    "azure": "Azure",
+                    "request_path": "Request Path",
+                    "api_key": "Api Key",
+                    "model": "Model",
+                    "stream": "Stream Mode",
+                    "prompt_description": "By customizing the Prompt, you can customize the behavior of OpenAI. $text $from $to $detect will be replaced with the text to be translated, source language, target language and detected language.",
+                    "add": "Add Prompt",
+                    "openrouter": "OpenRouter",
+                    "chatanywhere": "ChatAnywhere",
+                    "tuzi": "Tuzi API",
+                    "address_preserved": "Your custom address has been kept.",
+                    "use_default_address": "Use the {{name}} default address",
+                    "get_key": "Get Key",
+                    "provider_hint": {
+                        "openai": "Use the official OpenAI endpoint with a key and model from the same provider.",
+                        "azure": "Enter the full Azure deployment URL. Your address and API version parameter are retained.",
+                        "openrouter": "Uses the OpenRouter compatible API. Model IDs should include the provider prefix.",
+                        "chatanywhere": "Defaults to the China endpoint. Outside China, change the domain to api.chatanywhere.org.",
+                        "tuzi": "This relay processes request content. Check its privacy and logging policies before sending sensitive text."
+                    }
+                },
+                "geminipro": {
+                    "title": "Gemini Pro",
+                    "request_path": "Request Path",
+                    "api_key": "Api Key",
+                    "stream": "Stream Mode",
+                    "prompt_description": "By customizing the Prompt, you can customize the behavior of Gemini Pro. $text $from $to $detect will be replaced with the text to be translated, source language, target language and detected language.",
+                    "add": "Add Prompt"
+                },
+                "chatglm": {
+                    "title": "ChatGLM",
+                    "model": "Model",
+                    "chatglm_turbo": "ChatGLM Turbo",
+                    "chatglm_pro": "ChatGLM Pro",
+                    "chatglm_std": "ChatGLM Std",
+                    "chatglm_lite": "ChatGLM Lite",
+                    "api_key": "Api Key",
+                    "prompt_description": "By customizing the Prompt, you can customize the behavior of AI. $text $from $to $detect will be replaced with the text to be translated, source language, target language and detected language.",
+                    "add": "Add Prompt"
+                },
+                "yandex": {
+                    "title": "Yandex"
+                },
+                "transmart": {
+                    "title": "TranSmart",
+                    "username": "Username",
+                    "token": "Token"
+                },
+                "baidu": {
+                    "title": "Baidu",
+                    "appid": "App ID",
+                    "secret": "Secret"
+                },
+                "baidu_field": {
+                    "title": "Baidu Field",
+                    "it": "Information Technology",
+                    "finance": "Finance and Economics",
+                    "machinery": "Machinery Manufacturing",
+                    "senimed": "Biomedicine",
+                    "novel": "Network literature",
+                    "academic": "Academic Paper",
+                    "aerospace": "Aerospace",
+                    "wiki": "Humanities and Social Sciences",
+                    "news": "News and Information",
+                    "law": "Laws and Regulations",
+                    "contract": "Contract"
+                },
+                "alibaba": {
+                    "title": "Alibaba",
+                    "accesskey_id": "AccessKey ID",
+                    "accesskey_secret": "AccessKey Secret"
+                },
+                "tencent": {
+                    "title": "Tencent",
+                    "secret_id": "Secret ID",
+                    "secret_key": "Secret Key"
+                },
+                "volcengine": {
+                    "title": "VolcEngine",
+                    "appid": "App ID",
+                    "secret": "Secret"
+                },
+                "niutrans": {
+                    "title": "NiuTrans",
+                    "https": "Use Https",
+                    "apikey": "API Key"
+                },
+                "youdao": {
+                    "title": "Youdao",
+                    "appkey": "App ID",
+                    "key": "Key"
+                },
+                "bing_dict": {
+                    "title": "Bing Dictionary"
+                },
+                "cambridge_dict": {
+                    "title": "Cambridge Dictionary"
+                },
+                "caiyun": {
+                    "title": "Caiyun",
+                    "token": "Token"
+                },
+                "gemini_free": {
+                    "errors": {
+                        "auth": "API Key is invalid or access is denied.",
+                        "billing": "Prepaid balance is exhausted.",
+                        "region": "Free tier is unavailable in this region.",
+                        "network": "Network request failed.",
+                        "blocked": "Content was blocked.",
+                        "quota_daily": "Daily quota exhausted; resets at {{time}}.",
+                        "rate_limited": "Rate limited; retry in about {{seconds}} seconds.",
+                        "not_found": "Model does not exist.",
+                        "unavailable": "Gemini is temporarily unavailable.",
+                        "timeout": "Request timed out.",
+                        "invalid_request": "Invalid request.",
+                        "empty": "No translation returned.",
+                        "other": "Request failed.",
+                        "all_failed": "All models failed.",
+                        "partial": "Partial translation has already been output."
+                    },
+                    "title": "Gemini Free API",
+                    "api_key": "API Key",
+                    "api_key_hint": "Use a Google AI Studio API Key.",
+                    "request_path": "Request URL",
+                    "request_path_hint": "Base URL, without a model name.",
+                    "stream": "Stream output",
+                    "thinking": "Thinking level",
+                    "thinking_lowest": "Lowest",
+                    "thinking_low": "Low",
+                    "thinking_medium": "Medium",
+                    "thinking_high": "High",
+                    "thinking_default": "Model default",
+                    "thinking_hint": "Lowest automatically uses low when minimal is unsupported.",
+                    "models": "Models (in priority order)",
+                    "add_model": "Enter a model ID",
+                    "delete": "Delete model",
+                    "quota_hint": "Check quotas in AI Studio. Daily quotas reset at midnight Pacific time.",
+                    "status_daily": "Daily quota exhausted · resets at {{time}}",
+                    "status_rate": "Rate limited · about {{seconds}} seconds",
+                    "status_missing": "Model does not exist",
+                    "status_success": "Last success {{time}}",
+                    "status_unused": "Not used",
+                    "system_prompt": "System prompt",
+                    "user_prompt": "User template",
+                    "variables": "$text, $from, $to and $detect become source text, source language, target language and detected language.",
+                    "restore_prompts": "Restore default prompts",
+                    "privacy": "Saving sends no requests. Testing uses one request per model (thinking fallback may retry). Google may use free-tier request content to improve products.",
+                    "test_all": "Test all models",
+                    "testing": "Testing…",
+                    "test_success": "Success · {{ms}} ms",
+                    "key_required": "API Key is required.",
+                    "models_required": "At least one model is required.",
+                    "text_required": "User template must contain $text."
+                },
+                "google_cloud_translate": {
+                    "title": "Google Cloud Translation",
+                    "api_key": "API key",
+                    "api_key_hint": "The key is sent in the x-goog-api-key header, never in the URL, and stored in Aries's local configuration. Restrict the key to the Cloud Translation API in the Google Cloud console and set a daily quota cap.",
+                    "billing_hint": "Uses Cloud Translation Basic (NMT model). The first 500,000 characters per month are free (a monthly $10 credit shared by Basic and Advanced, not carried over); beyond that, $20 per 1M characters, and billing must be enabled. Source language detection is not billed separately. Unlike the built-in Google Translate, only the translation is returned, without dictionary entries, phonetics, or examples.",
+                    "test": "Test translation",
+                    "test_success": "Google Cloud Translation test succeeded:",
+                    "test_failed": "Google Cloud Translation test failed:"
+                },
+                "azure_translate": {
+                    "title": "Azure Translator",
+                    "key": "Resource key",
+                    "key_hint": "The key from the Translator resource's \"Keys and Endpoint\" page in the Azure portal. It is sent in the Ocp-Apim-Subscription-Key header and stored in Aries's local configuration.",
+                    "region": "Region (optional)",
+                    "region_hint": "The resource's region, such as westeurope. Leave it empty for a Global resource.",
+                    "billing_hint": "The free quota applies only to the F0 pricing tier: 2M characters per month (text translation, language detection, dictionary, and transliteration combined), at most 2M characters per hour spread evenly. When it runs out, requests are rejected and nothing is charged. S1 and other tiers are billed from the first character, so check the resource's pricing tier in the Azure portal. Unlike the built-in Bing Translate, this service uses your own resource key.",
+                    "test": "Test translation",
+                    "test_success": "Azure Translator test succeeded:",
+                    "test_failed": "Azure Translator test failed:"
+                }
+            },
+            "recognize": {
+                "system": {
+                    "title": "System OCR"
+                },
+                "tesseract": {
+                    "title": "Tesseract.js"
+                },
+                "baidu_ocr": {
+                    "title": "Baidu OCR",
+                    "client_id": "API Key",
+                    "client_secret": "Secret Key"
+                },
+                "baidu_accurate_ocr": {
+                    "title": "Baidu OCR (Accurate)",
+                    "client_id": "API Key",
+                    "client_secret": "Secret Key"
+                },
+                "baidu_img_ocr": {
+                    "title": "Baidu Image Translation",
+                    "appid": "App ID",
+                    "secret": "Secret"
+                },
+                "iflytek_ocr": {
+                    "title": "iFlyTek OCR",
+                    "appid": "App ID",
+                    "apisecret": "API Secret",
+                    "apikey": "API Key"
+                },
+                "iflytek_intsig_ocr": {
+                    "title": "iFlyTek OCR (Intsig)",
+                    "appid": "App ID",
+                    "apisecret": "API Secret",
+                    "apikey": "API Key"
+                },
+                "iflytek_latex_ocr": {
+                    "title": "iFlyTek LaTeX",
+                    "appid": "App ID",
+                    "apisecret": "API Secret",
+                    "apikey": "API Key"
+                },
+                "simple_latex_ocr": {
+                    "title": "Simple LaTeX",
+                    "token": "Token"
+                },
+                "tencent_ocr": {
+                    "title": "Tencent OCR",
+                    "secret_id": "Secret ID",
+                    "secret_key": "Secret Key"
+                },
+                "tencent_accurate_ocr": {
+                    "title": "Tencent OCR (Accurate)",
+                    "secret_id": "Secret ID",
+                    "secret_key": "Secret Key"
+                },
+                "tencent_img_ocr": {
+                    "title": "Tencent Image Translation",
+                    "secret_id": "Secret ID",
+                    "secret_key": "Secret Key"
+                },
+                "volcengine_ocr": {
+                    "title": "VolcEngine OCR",
+                    "appid": "App ID",
+                    "secret": "Secret"
+                },
+                "volcengine_multi_lang_ocr": {
+                    "title": "VolcEngine OCR (Multi Language)",
+                    "appid": "App ID",
+                    "secret": "Secret"
+                },
+                "qrcode": {
+                    "title": "QR Code"
+                },
+                "google_ocr": {
+                    "title": "Google OCR",
+                    "api_key": "API key",
+                    "api_key_hint": "The key is sent in the x-goog-api-key header, never in the URL, and stored in Aries's local configuration.",
+                    "billing_hint": "The test sends a sample image to Google Cloud Vision once in the current mode and counts toward that mode's quota.",
+                    "test": "Test recognition",
+                    "test_success": "Google OCR test succeeded",
+                    "test_failed": "Google OCR test failed:",
+                    "detection_type": "Recognition mode",
+                    "detection_text_detection": "General (TEXT_DETECTION) · screenshots, short text, UI text",
+                    "detection_document_text_detection": "Document (DOCUMENT_TEXT_DETECTION) · dense text, articles, scanned pages",
+                    "detection_type_hint": "Each mode has its own 1,000 free units per month; beyond that, $1.50 per 1,000."
+                },
+                "azure_ocr": {
+                    "title": "Azure OCR",
+                    "engine": "Recognition engine",
+                    "engine_vision_read": "Image OCR (Azure Vision) · F0 5,000 per month",
+                    "engine_document_read": "Document OCR (Document Intelligence) · F0 500 pages per month",
+                    "engine_vision_read_hint": "Returns the result in one request; suits screenshots, UI text, and short text. The free tier allows 20 requests per minute. Microsoft has announced that Image Analysis 4.0 retires on 2028-09-25. Requires an Azure Vision (Computer Vision) resource in a region that supports Image Analysis 4.0.",
+                    "engine_document_read_hint": "Submits the image and polls for the result (usually 1–3 seconds) at a higher resolution; suits dense text, articles, and scanned pages. Requires a Document Intelligence resource.",
+                    "endpoint": "Resource endpoint",
+                    "key": "Resource key",
+                    "endpoint_hint": "Each engine needs its own Azure resource. The endpoint and key are on the resource's \"Keys and Endpoint\" page; add two instances to use both. The key is sent in the Ocp-Apim-Subscription-Key header.",
+                    "billing_hint": "The free quota applies only to the F0 pricing tier. When it runs out, requests are rejected and nothing is charged; S0 and other tiers are billed from the first call. Free-tier images must be at most 4 MB. The test sends a sample image once with the current engine.",
+                    "test": "Test recognition",
+                    "test_success": "Azure OCR test succeeded:",
+                    "test_failed": "Azure OCR test failed:"
+                }
+            },
+            "tts": {
+                "lingva_tts": {
+                    "title": "Lingva",
+                    "request_path": "Request Path"
+                },
+                "azure_tts": {
+                    "title": "Microsoft Azure Speech",
+                    "key": "Speech resource key",
+                    "key_hint": "Stored in Aries's local configuration. Do not share your config file.",
+                    "region": "Region",
+                    "endpoint": "Resource endpoint (optional)",
+                    "endpoint_hint": "Leave empty to use the regional endpoint. Enter the endpoint from your Azure Speech resource for a private or custom resource endpoint.",
+                    "language": "Voice language",
+                    "voice": "Voice",
+                    "automatic_voice": "Automatic",
+                    "load_voices": "Load available voices",
+                    "voices_loaded": "Azure voices loaded",
+                    "billing_hint": "Saving does not synthesize speech. The test sends a short request to Azure. The F0 tier includes 0.5M characters of neural speech per month, after which requests are rejected; S0 is billed from the first character. The free tier lists only standard neural voices; whether HD voices count toward it depends on Microsoft's terms.",
+                    "test": "Test voice"
+                },
+                "openrouter_tts": {
+                    "title": "OpenRouter Text-to-Speech",
+                    "api_key": "API key",
+                    "api_key_hint": "Stored in Aries's local configuration. Do not share your config file.",
+                    "model": "Model ID",
+                    "model_hint": "Enter an OpenRouter model that supports speech output.",
+                    "voice": "Voice (optional)",
+                    "voice_placeholder": "Leave blank to use the model default",
+                    "voice_hint": "Available voices depend on the model. OpenRouter handles the language from the text.",
+                    "speed": "Synthesis speed",
+                    "billing_hint": "Saving does not synthesize speech. A test calls OpenRouter and may incur usage charges.",
+                    "test": "Test voice",
+                    "test_success": "OpenRouter test succeeded",
+                    "test_failed": "OpenRouter test failed:"
+                },
+                "gemini_tts": {
+                    "title": "Gemini Text-to-Speech",
+                    "api_key": "AI Studio API Key",
+                    "api_key_hint": "Stored in Aries's local configuration. Do not share your config file.",
+                    "model": "Model ID",
+                    "model_hint": "Defaults to gemini-3.8-flash-lite-tts. For higher quality at lower speed, use gemini-3.8-flash-tts.",
+                    "voice": "Voice",
+                    "custom_voice": "Custom voice ID",
+                    "style": "Speaking style (optional)",
+                    "style_hint": "For example, speaking slowly. You can also adjust playback speed in the reading window.",
+                    "billing_hint": "Saving does not synthesize speech. Testing calls the Gemini API and may use free quota or incur charges. Free-tier requests may be used by Google to improve products. Interaction storage is disabled (store: false).",
+                    "test": "Test voice",
+                    "test_success": "Gemini test succeeded",
+                    "test_failed": "Gemini test failed:"
+                },
+                "google_cloud_tts": {
+                    "title": "Google Cloud Text-to-Speech",
+                    "credential": "API key or access token",
+                    "credential_hint": "Stored in Aries's local configuration. API keys use x-goog-api-key; access tokens use Bearer authentication.",
+                    "auth_type": "Authentication",
+                    "api_key_auth": "Google API key",
+                    "bearer_auth": "OAuth Bearer token",
+                    "request_path": "Request URL",
+                    "request_path_hint": "Defaults to the Google Cloud Text-to-Speech v1 endpoint. A compatible custom URL is also supported.",
+                    "voice": "Voice",
+                    "audio_encoding": "Audio format",
+                    "speaking_rate": "Synthesis speed",
+                    "pitch": "Pitch (optional)",
+                    "volume_gain_db": "Volume gain dB (optional)",
+                    "sample_rate_hertz": "Sample rate Hz (optional)",
+                    "effects_profile_id": "Device effect IDs (comma-separated, optional)",
+                    "billing_hint": "Saving does not synthesize speech. Tests and reading are billed per character, and each family's monthly free quota is shown in its name. Standard and WaveNet, and Neural2 and Polyglot, share a billing SKU, so their free quotas may be counted together. Usage beyond the quota is charged automatically and requires billing to be enabled in Google Cloud.",
+                    "test": "Test voice",
+                    "test_success": "Google Cloud TTS test succeeded",
+                    "test_failed": "Google Cloud TTS test failed:",
+                    "default_voice": "Default voice",
+                    "default_voice_hint": "Used for languages without their own voice. Simplified Chinese, English, and Polish use fixed Standard or Chirp 3 HD voices; for other languages, Standard picks the first Standard voice of that language with the chosen gender (the voice list is read once).",
+                    "voice_by_language": "Voice per language",
+                    "voice_by_language_hint": "Reading uses the voice set for the detected language. Choose the language, region, voice family, and gender in turn, then pick a voice from the filtered list. Only families with a monthly free quota are listed.",
+                    "load_voices": "Load available voices",
+                    "voices_loaded": "Loaded {{count}} available voices",
+                    "load_voices_hint": "Load the voice list to filter step by step. Reading the voice list is not billed per character.",
+                    "language": "Reading language",
+                    "region": "Region",
+                    "family": "Voice family",
+                    "family_all": "All families",
+                    "family_standard": "Standard · 4M characters free per month (shared with WaveNet)",
+                    "family_wavenet": "WaveNet · 4M characters free per month (shared with Standard)",
+                    "family_neural2": "Neural2 · 1M characters free per month (shared with Polyglot)",
+                    "family_polyglot": "Polyglot (Preview) · 1M characters free per month (shared with Neural2)",
+                    "family_chirp3_hd": "Chirp 3 HD · 1M characters free per month",
+                    "family_studio": "Studio · 1M characters free per month, then $160 per 1M",
+                    "gender": "Gender",
+                    "gender_all": "All",
+                    "gender_female": "Female",
+                    "gender_male": "Male",
+                    "gender_neutral": "Neutral",
+                    "use_default_voice": "Use the default voice",
+                    "voice_set": "set",
+                    "audio_controls_hint": "Chirp 3 HD and Studio voices ignore pitch; speed applies to every family. You can also change the speed with the playback rate in the reading window.",
+                    "long_text_hint": "Long text is split automatically; overlong sentences are split further when needed. Segments are combined into one WAV with full progress and seeking. Please wait until synthesis finishes."
+                },
+                "gemini_live_tts": {
+                    "errors": {
+                        "auth": "Gemini Live API Key is invalid or access is denied.",
+                        "quota": "Gemini Live rate limit reached; retry in about 60 seconds.",
+                        "model": "Gemini Live model does not exist or is unsupported.",
+                        "invalid": "Invalid Gemini Live request or response.",
+                        "timeout": "Gemini Live request timed out.",
+                        "server": "Gemini Live is temporarily unavailable.",
+                        "network": "Gemini Live connection failed.",
+                        "silent": "No audio returned.",
+                        "incomplete": "The text was not read completely.",
+                        "interrupted": "Generation was interrupted.",
+                        "japanese": "Gemini Live does not support Japanese text; the next read-aloud service will be tried.",
+                        "empty_text": "Text to read is required.",
+                        "exhausted": "Gemini Live could not fully read segment {{index}}/{{total}}: {{attempts}} attempts, {{silent}} silent, {{incomplete}} incomplete, {{other}} other errors."
+                    },
+                    "title": "Gemini Live Read Aloud",
+                    "api_key": "API Key",
+                    "api_key_hint": "Use a Google AI Studio API Key.",
+                    "model": "Model",
+                    "model_hint": "Default: gemini-3.8-live.",
+                    "voice": "Voice",
+                    "attempts": "Maximum attempts per segment",
+                    "attempts_hint": "Chinese may occasionally be silent or incomplete. Retrying resolves most cases; a failed attempt usually adds about 2–3 seconds.",
+                    "prompt_zh": "Chinese repeat prompt",
+                    "prompt_other": "Other-language repeat prompt",
+                    "restore_prompts": "Restore default prompts",
+                    "service_hint": "Live is a conversational model; this service asks it to repeat your text exactly. Japanese is unsupported. Put Gemini TTS or Azure after it as a fallback. Playback starts after all segments have been generated.",
+                    "privacy_hint": "Saving sends no requests. Previews and retries consume quota. Google may use free-tier request content to improve its products.",
+                    "test_zh": "Preview Chinese",
+                    "test_en": "Preview English",
+                    "test_success": "Preview audio generated.",
+                    "test_failed": "Preview failed:",
+                    "save_failed": "Could not save. Please retry.",
+                    "key_required": "API Key is required.",
+                    "model_required": "Model is required."
+                }
+            },
+            "collection": {
+                "anki": {
+                    "title": "Anki",
+                    "port": "Port"
+                },
+                "eudic": {
+                    "title": "Eudic",
+                    "name": "Collection Name",
+                    "token": "Token"
+                }
+            },
+            "meta": {
+                "google_cloud": {
+                    "summary": "Official Google Cloud translation and speech. Create a project, enable the matching API, and enter a restricted API key.",
+                    "quota": "Translation: 500,000 characters/month. Speech quotas depend on voice family; Vision is billed by feature. Overage can incur charges; see the guide."
+                },
+                "google_ocr": {
+                    "summary": "Uses a Cloud Vision API key, separate from Gemini AI Studio keys. Enable Cloud Vision API, then enter the key.",
+                    "quota": "Text Detection and Document Text Detection each include the first 1,000 units/month. Each document page is one unit; overage is billed."
+                },
+                "gemini_free": {
+                    "summary": "Translation with the Google AI Studio free tier. Create a key and list available free models. Rotation does not increase shared project quotas.",
+                    "quota": "Some models offer a free tier. Check current RPM/RPD limits for your project in AI Studio. Free-tier content may be used to improve products."
+                },
+                "geminipro": {
+                    "summary": "Uses the Gemini Developer API. Obtain an AI Studio key and select an available model with a free tier on the official pricing page.",
+                    "quota": "Some models offer a free tier. Check current RPM/RPD limits for your project in AI Studio. Free-tier content may be used to improve products."
+                },
+                "gemini": {
+                    "summary": "Gemini speech synthesis uses an AI Studio key. Select a TTS model available on the free tier and a voice. Previews consume quota.",
+                    "quota": "Some models offer a free tier. Check current RPM/RPD limits for your project in AI Studio. Free-tier content may be used to improve products."
+                },
+                "gemini_live": {
+                    "summary": "Gemini Live speech uses an AI Studio key and a live audio model. Check model availability for your project; this service currently excludes Japanese.",
+                    "quota": "Some models offer a free tier. Check current RPM/RPD limits for your project in AI Studio. Free-tier content may be used to improve products."
+                },
+                "azure": {
+                    "summary": "Create separate Translator or Speech resources on F0. Enter the matching resource key and region; follow field hints for custom endpoints.",
+                    "quota": "F0: Translator 2 million characters/month; Speech neural voices 500,000 characters/month. Quotas are separate."
+                },
+                "azure_ocr": {
+                    "summary": "Vision Read and Document Read use keys and endpoints from their own resources. Select the engine, then enter its resource credentials; choose F0.",
+                    "quota": "Vision F0: 5,000 transactions/month, 20/minute. Document Intelligence F0: 500 pages/month, first two pages per request."
+                },
+                "openai": {
+                    "summary": "Connect to official OpenAI or a compatible third-party endpoint. Enter the complete chat/completions URL with a key and model ID from the same provider."
+                },
+                "openrouter": {
+                    "summary": "OpenRouter speech relay. Create a key and select a model supporting audio output; free text models do not imply free speech models."
+                },
+                "deepl": {
+                    "summary": "Official API: subscribe to a DeepL API plan, choose API mode, and enter the Auth Key. Keyless mode and DeepLX are separate and may be rate limited.",
+                    "quota": "Free allowance depends on your current DeepL API plan. Confirm usage and limits in your account; a website subscription is not an API subscription."
+                },
+                "baidu": {
+                    "summary": "Translation: enable General Translation and enter APP ID and secret. OCR: create the matching Baidu AI application and enter API Key (client_id) and Secret Key (client_secret). Credentials are not interchangeable.",
+                    "quota": "Recurring monthly free quota has not been verified. Check trial duration, allowance, and overage billing in the official console before enabling."
+                },
+                "baidu_field": {
+                    "summary": "Enable Baidu Domain Translation separately. Enter APP ID and secret, then select an enabled domain. General Translation allowances may not apply.",
+                    "quota": "Recurring monthly free quota has not been verified. Check trial duration, allowance, and overage billing in the official console before enabling."
+                },
+                "baidu_accurate": {
+                    "summary": "Enable the matching Baidu OCR endpoint and create an application. Enter API Key (client_id) and Secret Key (client_secret); check quota for each OCR tier separately.",
+                    "quota": "Recurring monthly free quota has not been verified. Check trial duration, allowance, and overage billing in the official console before enabling."
+                },
+                "baidu_img": {
+                    "summary": "Extracts text through Baidu Picture Translation. Enable that API and enter translation APP ID and secret, not OCR client_id/client_secret.",
+                    "quota": "Recurring monthly free quota has not been verified. Check trial duration, allowance, and overage billing in the official console before enabling."
+                },
+                "tencent": {
+                    "summary": "Enable Machine Translation or the matching OCR endpoint. Create SecretId and SecretKey in access management, with permissions and region for that service.",
+                    "quota": "Tencent Translation stopped issuing new free packages on 2026-10-01; existing packages remain usable until expiry. OCR allowances depend on the endpoint."
+                },
+                "tencent_accurate": {
+                    "summary": "Enable the matching Tencent OCR endpoint and obtain SecretId and SecretKey from access management. Match region and endpoint to your free package.",
+                    "quota": "OCR monthly free packages are grouped by endpoint. Do not assume that high-accuracy OCR and image translation share identical allowances."
+                },
+                "tencent_img": {
+                    "summary": "Extracts text through Tencent Image Translation. Enable Machine Translation and enter SecretId/SecretKey. It uses translation packages, separate from general OCR allowances.",
+                    "quota": "OCR monthly free packages are grouped by endpoint. Do not assume that high-accuracy OCR and image translation share identical allowances."
+                },
+                "alibaba": {
+                    "summary": "Enable Alibaba Cloud Machine Translation General Edition. Create a RAM AccessKey restricted to translation, then enter AccessKey ID and Secret.",
+                    "quota": "General Edition includes 1 million characters/month. Overage may switch to pay-as-you-go; pricing varies by site. Check billing settings first."
+                },
+                "volcengine": {
+                    "summary": "Enable Volcengine translation or the matching OCR service. Create a restricted Access Key ID and Secret Access Key, then fill the service form.",
+                    "quota": "Recurring monthly free quota has not been verified. Check trial duration, allowance, and overage billing in the official console before enabling."
+                },
+                "volcengine_multi_lang": {
+                    "summary": "Enable Volcengine multilingual OCR separately, then enter Access Key ID and Secret Access Key. General OCR quotas may not apply.",
+                    "quota": "Recurring monthly free quota has not been verified. Check trial duration, allowance, and overage billing in the official console before enabling."
+                },
+                "iflytek": {
+                    "summary": "Create an iFlytek application and enable this OCR product separately. Enter APPID, APIKey, and APISecret as requested by the form; fields vary by product.",
+                    "quota": "Recurring monthly free quota has not been verified. Check trial duration, allowance, and overage billing in the official console before enabling."
+                },
+                "iflytek_intsig": {
+                    "summary": "Create an iFlytek application and enable this OCR product separately. Enter APPID, APIKey, and APISecret as requested by the form; fields vary by product.",
+                    "quota": "Recurring monthly free quota has not been verified. Check trial duration, allowance, and overage billing in the official console before enabling."
+                },
+                "iflytek_latex": {
+                    "summary": "Create an iFlytek application and enable this OCR product separately. Enter APPID, APIKey, and APISecret as requested by the form; fields vary by product.",
+                    "quota": "Recurring monthly free quota has not been verified. Check trial duration, allowance, and overage billing in the official console before enabling."
+                },
+                "caiyun": {
+                    "summary": "Apply for a Lingocloud token on the Caiyun developer platform and enter it in Token. A Lingocloud login account is not an API token.",
+                    "quota": "New-user trial: 1 million characters, valid for one month. This is not a recurring monthly allowance; subsequent billing follows current platform rules."
+                },
+                "niutrans": {
+                    "summary": "Enable the NiuTrans text translation API and enter its API key. Website login credentials are separate from API credentials.",
+                    "quota": "Recurring monthly free quota has not been verified. Check trial duration, allowance, and overage billing in the official console before enabling."
+                },
+                "youdao": {
+                    "summary": "Create a Youdao AI application and attach Natural Language Translation. Enter application ID and secret; check allowance expiry and billing settings.",
+                    "quota": "Recurring monthly free quota has not been verified. Check trial duration, allowance, and overage billing in the official console before enabling."
+                },
+                "chatglm": {
+                    "summary": "Create a BigModel API key and choose a model available to your account. The existing model list is preserved; check the selected model price before use.",
+                    "quota": "Recurring monthly free quota has not been verified. Check trial duration, allowance, and overage billing in the official console before enabling."
+                },
+                "simple_latex": {
+                    "summary": "Apply for a UAT token in SimpleTex API management, then enter Token. Confirm your available formula-recognition endpoint and allowance first.",
+                    "quota": "Recurring monthly free quota has not been verified. Check trial duration, allowance, and overage billing in the official console before enabling."
+                },
+                "eudic": {
+                    "summary": "Sign in to the Eudic OpenAPI authorization page for a token. Enter the wordbook name and token, not your account password."
+                },
+                "anki": {
+                    "summary": "Install and launch desktop Anki, then install AnkiConnect. The default connection uses local port 8765; allow Aries connection requests."
+                },
+                "ollama": {
+                    "summary": "Install Ollama and download a local model. Keep its service running and enter the model name and local address. Local mode needs no key; cloud models have separate billing."
+                },
+                "system": {
+                    "summary": "Local system OCR, without an API key. Language support depends on installed OS recognition language packs."
+                },
+                "tesseract": {
+                    "summary": "Local Tesseract OCR without an API key. First use may download language data."
+                },
+                "qrcode": {
+                    "summary": "Recognizes QR codes locally without an API key."
+                },
+                "transmart": {
+                    "summary": "Keyless Tencent interactive translation; the public endpoint may be rate limited. It is separate from Tencent Cloud Machine Translation."
+                }
+            },
+            "guide": {
+                "about": "About this service",
+                "apply": "Get a key",
+                "install": "Install add-on",
+                "setup": "Set up",
+                "view": "Setup guide",
+                "title": "Setup guide",
+                "load_failed": "Guide failed to load. Close and try again.",
+                "official": "Official documentation"
+            },
+            "recommendations": {
+                "title": "Recommended API providers",
+                "website": "Open website",
+                "domestic": "China",
+                "overseas": "Overseas",
+                "openrouter": "One key for models from many providers. Model IDs ending in :free have daily request caps; check the current model page and account limits.",
+                "chatanywhere": "Offers China and overseas endpoints with a daily free allowance. Check the official site for supported models, limits, and connectivity.",
+                "tuzi": "A very low-priced relay provider; compare current model prices on its official pricing page.",
+                "privacy": "Third-party relay: requests pass through its servers. Avoid translating personal information or confidential content.",
+                "relay_note": "Relay providers control their reliability and privacy; Aries cannot guarantee them. Official OpenAI, Google, and Microsoft APIs are alternatives; review their privacy and billing terms.",
+                "tags": {
+                    "free_models": "Free models",
+                    "daily_quota": "Daily free quota",
+                    "privacy": "Privacy risk",
+                    "reputable": "Reputable",
+                    "very_cheap": "Very low price"
+                },
+                "hint": "Expand for addresses, allowances and notes",
+                "current": "In use"
+            },
+            "errors": {
+                "details": "Error details (credentials hidden)",
+                "unauthorized": "Authentication failed.",
+                "unauthorized_advice": "Check that the key is complete, valid, and issued by this endpoint provider.",
+                "forbidden": "Your account or key lacks permission.",
+                "forbidden_advice": "Check service activation, model access, and key permissions.",
+                "google_cloud_forbidden_advice": "Check project billing, API activation, and whether key restrictions allow this API.",
+                "azure_forbidden_advice": "Match the key, region, and endpoint to one resource of the correct service type.",
+                "not_found": "Endpoint or model was not found.",
+                "not_found_advice": "Check the full endpoint and exact model ID; the model may be retired or unavailable to your account.",
+                "rate_limit": "Request rate or quota limit reached.",
+                "rate_limit_advice": "Wait, then check per-minute and daily limits in the console. Do not automatically upgrade a free tier to paid.",
+                "balance": "Insufficient balance or spending allowance.",
+                "balance_advice": "Check account balance, key spending caps, and billing before changing limits.",
+                "region": "This service is unavailable in your region.",
+                "region_advice": "Check supported countries and regions, then select a resource available in your region.",
+                "timeout": "The request timed out.",
+                "timeout_advice": "Check network and proxy settings, shorten the test text, and retry later.",
+                "network": "Cannot connect to the service.",
+                "network_advice": "Check the endpoint URL, network, proxy, and firewall.",
+                "required": "Required configuration is missing.",
+                "required_advice": "Complete the required credentials, endpoint, or model fields.",
+                "other": "The service test failed.",
+                "other_advice": "Check configuration and provider status; expand details for the error with credentials hidden."
+            },
+            "tags": {
+                "all": "All tags",
+                "free": "Free",
+                "free_quota": "Free allowance",
+                "local": "Local",
+                "relay": "Relay / compatible API",
+                "filter": "Filter by tag"
+            },
+            "form": {
+                "missing": "Complete: {{fields}}"
+            },
+            "empty": {
+                "description": "No services added yet. Add a built-in service to get started, or install your own extension."
+            }
+        },
+        "read_aloud": {
+            "title": "Read Aloud",
+            "playback_rate": "Playback speed",
+            "pause": "Pause",
+            "resume": "Resume",
+            "replay": "Replay",
+            "progress": "Playback progress",
+            "stop": "Stop reading",
+            "synthesizing": "Synthesizing…",
+            "fallback": {
+                "failed": "“{{service}}” failed: {{reason}}",
+                "switched": "Switched to “{{service}}”",
+                "all_failed": "All read-aloud services failed",
+                "quota_daily": "Daily quota exhausted; resets at {{time}}.",
+                "rate_limited": "Too many requests; available again in about {{seconds}} seconds.",
+                "auth": "API Key is invalid or access is denied.",
+                "api_key_invalid": "API Key is invalid; check service settings."
+            },
+            "status": {
+                "loading": "Generating speech…",
+                "error": "Read aloud failed"
+            },
+            "volume": "Volume",
+            "mute": "Mute",
+            "unmute": "Unmute"
+        },
+        "translate": {
+            "translate": "Translate",
+            "add_collection_success": "Add to collection successfully",
+            "recognizing": "Recognizing…",
+            "speak": "Speak",
+            "copy": "Copy",
+            "retry": "Try again",
+            "delete_newline": "Delete Newline",
+            "translate_back": "Translation back to the original",
+            "pin": "Pin window",
+            "unpin": "Unpin window",
+            "source_language": "Source language",
+            "target_language": "Target language",
+            "swap_language": "Swap languages",
+            "select_service": "Switch translation service",
+            "expand": "Expand",
+            "collapse": "Collapse"
+        },
+        "recognize": {
+            "recognize": "Recognize",
+            "translate": "Translate",
+            "copy_img": "Copy Image",
+            "copy_text": "Copy",
+            "delete_newline": "Delete Newline",
+            "delete_space": "Delete Space",
+            "title": "Text Recognition"
+        },
+        "screenshot": {
+            "hint": "Drag to select an area, release to confirm, right-click to cancel"
+        }
+    }
+}

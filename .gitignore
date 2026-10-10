@@ -1,0 +1,32 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+releases/
+output/
+*.local
+
+# Editor directories and files
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Local verification output and standalone plugin projects
+output/
+plugins/
+
+# Codex UI concept experiments
+design/pot-ui-refresh/
+.playwright-cli/

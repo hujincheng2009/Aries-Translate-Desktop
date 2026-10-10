@@ -1,0 +1,7 @@
+# Dependency install scripts allowed by pnpm (pnpm 10+ blocks them by default).
+allowBuilds:
+  esbuild: true
+  tesseract.js: false
+
+# `pnpm build` / `pnpm dev` run the script directly instead of first re-checking (and re-installing) dependencies.
+verifyDepsBeforeRun: false

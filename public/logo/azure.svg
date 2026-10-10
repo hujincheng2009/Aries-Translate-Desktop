@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="azure" x1="7" y1="8" x2="56" y2="57" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#50E6FF"/>
+      <stop offset="1" stop-color="#0078D4"/>
+    </linearGradient>
+  </defs>
+  <path d="M29.4 7 10 48.8h15.1L46.6 7H29.4Z" fill="url(#azure)"/>
+  <path d="M35.6 34.5 49 57H64L44.2 23.8l-8.6 10.7Z" fill="#0078D4"/>
+  <path d="M0 57h46.6l-8.8-14.1H7.3L0 57Z" fill="#00A4EF"/>
+</svg>
