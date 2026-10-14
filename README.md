@@ -1,10 +1,11 @@
 # Aries
 
-Aries 是由 Myster_Jin 维护的桌面划词翻译、文字识别和朗读应用，基于 Tauri v1 与 React 18。当前版本为 1.0.11。
+Aries 是由 Myster_Jin 维护的桌面划词翻译、文字识别和朗读应用，基于 Tauri v1 与 React 18。当前版本为 1.1.0，新增划词助手。
 
 ## 功能
 
 -   **划词翻译**：选中文字按快捷键即可翻译，多个服务同时给出结果，并支持流式输出。
+-   **划词助手**（Windows）：在任何软件里选中文字，鼠标旁边就会出现一个小图标，展开后可以翻译、替换翻译、复制或朗读，不用记快捷键。显示方式、按钮和弹出位置都可以设置，也可以排除指定软件。默认关闭。
 -   **输入翻译**：打开输入框，直接输入或粘贴要翻译的内容。
 -   **截图识别与翻译**：框选屏幕区域识别文字，可以一步翻译；也能识别二维码和数学公式（LaTeX）。
 -   **替换翻译**：把选中的文字直接替换成译文，适合在输入框里写外语。
@@ -16,7 +17,7 @@ Aries 是由 Myster_Jin 维护的桌面划词翻译、文字识别和朗读应�
 
 ## 下载与源码
 
-Windows x64 安装包和对应源码 ZIP 同版本提供，见 [Aries 1.0.11 发布页](https://github.com/hujincheng2009/Aries-Translate-Desktop/releases/tag/aries-1.0.11)。分发安装包时应一并提供对应版本的源码 ZIP。
+Windows x64 安装包和对应源码 ZIP 同版本提供，见 [Aries 1.1.0 发布页](https://github.com/hujincheng2009/Aries-Translate-Desktop/releases/tag/aries-1.1.0)。分发安装包时应一并提供对应版本的源码 ZIP。
 
 ## 构建
 

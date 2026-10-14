@@ -1,10 +1,11 @@
 # Aries
 
-Aries is a desktop selection translation, OCR and read-aloud app maintained by Myster_Jin, built with Tauri v1 and React 18. Current version: 1.0.11.
+Aries is a desktop selection translation, OCR and read-aloud app maintained by Myster_Jin, built with Tauri v1 and React 18. Current version: 1.1.0, which adds the selection assistant.
 
 ## Features
 
 -   **Selection translation**: select text and press a hotkey. Several services answer side by side, with streaming output.
+-   **Selection assistant** (Windows): select text in any program and a small icon appears next to the mouse. Expand it to translate, replace with the translation, copy or read aloud, with no hotkey to remember. Display style, buttons and position are configurable, and programs can be excluded. Off by default.
 -   **Input translation**: type or paste text into the input window.
 -   **Screenshot OCR and translation**: select a screen region to recognise its text and translate it in one step. QR codes and math formulas (LaTeX) are also recognised.
 -   **Replacement translation**: replace the selected text with its translation in place, handy when writing in another language.
@@ -16,7 +17,7 @@ Aries is a desktop selection translation, OCR and read-aloud app maintained by M
 
 ## Downloads and source
 
-Each Windows x64 installer is accompanied by its matching source ZIP. See the [Aries 1.0.11 release page](https://github.com/hujincheng2009/Aries-Translate-Desktop/releases/tag/aries-1.0.11). Supply the matching source ZIP when distributing an installer.
+Each Windows x64 installer is accompanied by its matching source ZIP. See the [Aries 1.1.0 release page](https://github.com/hujincheng2009/Aries-Translate-Desktop/releases/tag/aries-1.1.0). Supply the matching source ZIP when distributing an installer.
 
 ## Build
 
