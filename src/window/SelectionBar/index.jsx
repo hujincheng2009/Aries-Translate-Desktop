@@ -1,4 +1,3 @@
-import { Check, CircleAlert, Copy, Languages, LoaderCircle, Replace, Volume2 } from 'lucide-react';
 import React, { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { listen } from '@tauri-apps/api/event';
@@ -6,17 +5,11 @@ import { invoke } from '@tauri-apps/api/tauri';
 
 import { cn } from '@/lib/utils';
 import { normalizeActions } from '../../utils/selection_assistant';
+import { FADE_KEYFRAMES, FADE_MS, SelectionIcon, SelectionToolbar } from './Toolbar';
 
 // Floating icon / toolbar of the selection assistant (划词助手). The window never takes focus: Rust swallows
 // clicks on it and sends `selection_bar_click` / `selection_bar_pointer` with page coordinates instead, so the
 // program the user selected text in keeps its selection. Design: Figma "S · 划词助手（1.1.0）".
-
-const ACTION_ICONS = {
-    translate: Languages,
-    replace_translate: Replace,
-    copy: Copy,
-    read_aloud: Volume2,
-};
 
 const ERROR_KEYS = {
     no_text: 'selection_bar.error_no_text',
@@ -26,22 +19,6 @@ const ERROR_KEYS = {
 function actionAt(x, y) {
     const element = document.elementFromPoint(x, y);
     return element?.closest('[data-action]')?.dataset.action ?? null;
-}
-
-// Sizes are in px on purpose: the icon (32 px) and the toolbar (32 px high) must line up exactly, with the logo at
-// the same spot (6 px from the top-left) in both, so expanding does not make anything jump at any app font size.
-const FADE_MS = 120;
-const FADE_KEYFRAMES = '@keyframes selection-bar-fade { from { opacity: 0 } to { opacity: 1 } }';
-
-function Logo() {
-    return (
-        <img
-            alt=''
-            src='/icon.svg'
-            className='pointer-events-none size-[20px] shrink-0'
-            draggable={false}
-        />
-    );
 }
 
 export default function SelectionBar() {
@@ -145,62 +122,17 @@ export default function SelectionBar() {
         >
             <style>{FADE_KEYFRAMES}</style>
             {expanded ? (
-                <div
+                <SelectionToolbar
                     ref={contentRef}
-                    className='flex h-[32px] items-center gap-[2px] whitespace-nowrap rounded-[8px] border bg-card p-[2px] shadow-md'
-                >
-                    {showLogo && (
-                        <>
-                            <div className='flex size-[26px] items-center justify-center'>
-                                <Logo />
-                            </div>
-                            <div className='mx-[2px] h-[16px] w-px bg-border' />
-                        </>
-                    )}
-                    {actions.map((action) => {
-                        const state = status?.action === action ? status.status : null;
-                        const Icon =
-                            state === 'busy'
-                                ? LoaderCircle
-                                : state === 'copied'
-                                  ? Check
-                                  : state === 'error'
-                                    ? CircleAlert
-                                    : ACTION_ICONS[action];
-                        const label = state === 'copied' ? t('selection_bar.copied') : t(`selection_bar.${action}`);
-                        return (
-                            <div
-                                key={action}
-                                data-action={action}
-                                aria-label={label}
-                                style={{ animation: `selection-bar-fade ${FADE_MS}ms ease-out` }}
-                                className={cn(
-                                    'flex h-[26px] items-center gap-[6px] rounded-[6px] text-[13px] leading-none',
-                                    withLabels ? 'pl-[7px] pr-[9px]' : 'w-[26px] justify-center',
-                                    (hover === action || state) && 'bg-accent',
-                                    state === 'error' && 'text-destructive'
-                                )}
-                            >
-                                <Icon
-                                    className={cn(
-                                        'size-[16px] shrink-0',
-                                        state === 'busy' && 'animate-spin text-primary',
-                                        state === 'copied' && 'text-primary'
-                                    )}
-                                />
-                                {withLabels && <span>{label}</span>}
-                            </div>
-                        );
-                    })}
-                </div>
+                    actions={actions}
+                    withLabels={withLabels}
+                    showLogo={showLogo}
+                    hover={hover}
+                    status={status}
+                    animate
+                />
             ) : (
-                <div
-                    ref={contentRef}
-                    data-action='expand'
-                    className='flex size-[32px] items-center justify-center rounded-[8px] border bg-card shadow-md'
-                >
-                    <Logo />
-                </div>
+                <SelectionIcon ref={contentRef} />
             )}
             {(tooltipAction || errorMessage) && (
                 <div

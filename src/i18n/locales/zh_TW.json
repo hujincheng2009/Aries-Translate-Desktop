@@ -230,7 +230,17 @@
                 "loading_apps": "正在讀取程式清單…",
                 "no_apps": "沒有找到正在執行的程式",
                 "manual_placeholder": "例如 Photoshop.exe",
-                "add": "新增"
+                "add": "新增",
+                "preview": "預覽",
+                "preview_desc": "選取文字後會看到的樣子",
+                "preview_sample_before": "在任意軟體裡",
+                "preview_sample_selected": "選取一段文字",
+                "preview_sample_after": "，放開滑鼠後就會看到它。",
+                "preview_sample_hint": "調整下面的設定，這裡會同步變化。",
+                "preview_hover_hint": "滑鼠移上去後展開",
+                "preview_hide_after": "{{count}} 秒後自動消失",
+                "preview_never": "永不消失",
+                "preview_disabled": "劃詞助手已關閉，選取文字不會彈出"
             },
             "recognize": {
                 "label": "文字辨識",

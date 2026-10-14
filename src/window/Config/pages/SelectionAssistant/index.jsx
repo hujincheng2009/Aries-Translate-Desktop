@@ -31,6 +31,7 @@ import {
     toggleAction,
 } from '../../../../utils/selection_assistant';
 import { cn } from '@/lib/utils';
+import SelectionPreview from './Preview';
 
 const ACTION_ICONS = {
     translate: Languages,
@@ -196,6 +197,24 @@ export default function SelectionAssistant() {
             <SettingsSection
                 title={t('config.selection.section.basic')}
                 description={t('config.selection.section.basic_desc')}
+                lead={
+                    displayMode !== null &&
+                    buttonStyle !== null &&
+                    offsetX !== null &&
+                    offsetY !== null &&
+                    hideDelay !== null && (
+                        <SelectionPreview
+                            enabled={enable === true}
+                            displayMode={displayMode}
+                            buttonStyle={buttonStyle}
+                            showLogo={showLogo !== false}
+                            offsetX={offsetX}
+                            offsetY={offsetY}
+                            hideDelay={hideDelay}
+                            actions={enabled}
+                        />
+                    )
+                }
             >
                 <SettingRow
                     title={t('config.selection.enable')}
@@ -283,30 +302,6 @@ export default function SelectionAssistant() {
             </SettingsSection>
 
             <SettingsSection
-                title={t('config.selection.section.conditions')}
-                description={t('config.selection.section.conditions_desc')}
-            >
-                <SettingRow
-                    title={t('config.selection.disable_in_fullscreen')}
-                    description={t('config.selection.disable_in_fullscreen_desc')}
-                >
-                    <Switch
-                        checked={disableInFullscreen === true}
-                        onCheckedChange={setDisableInFullscreen}
-                    />
-                </SettingRow>
-                <SettingRow
-                    title={t('config.selection.compat_mode')}
-                    description={t('config.selection.compat_mode_desc')}
-                >
-                    <Switch
-                        checked={compatMode === true}
-                        onCheckedChange={setCompatMode}
-                    />
-                </SettingRow>
-            </SettingsSection>
-
-            <SettingsSection
                 title={t('config.selection.section.actions')}
                 description={t('config.selection.section.actions_desc')}
             >
@@ -381,6 +376,30 @@ export default function SelectionAssistant() {
                         )}
                     </Droppable>
                 </DragDropContext>
+            </SettingsSection>
+
+            <SettingsSection
+                title={t('config.selection.section.conditions')}
+                description={t('config.selection.section.conditions_desc')}
+            >
+                <SettingRow
+                    title={t('config.selection.disable_in_fullscreen')}
+                    description={t('config.selection.disable_in_fullscreen_desc')}
+                >
+                    <Switch
+                        checked={disableInFullscreen === true}
+                        onCheckedChange={setDisableInFullscreen}
+                    />
+                </SettingRow>
+                <SettingRow
+                    title={t('config.selection.compat_mode')}
+                    description={t('config.selection.compat_mode_desc')}
+                >
+                    <Switch
+                        checked={compatMode === true}
+                        onCheckedChange={setCompatMode}
+                    />
+                </SettingRow>
             </SettingsSection>
 
             <SettingsSection

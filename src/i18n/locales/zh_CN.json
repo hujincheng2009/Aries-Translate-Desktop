@@ -231,7 +231,17 @@
                 "loading_apps": "正在读取程序列表…",
                 "no_apps": "没有找到正在运行的程序",
                 "manual_placeholder": "例如 Photoshop.exe",
-                "add": "添加"
+                "add": "添加",
+                "preview": "预览",
+                "preview_desc": "选中文字后会看到的样子",
+                "preview_sample_before": "在任意软件里",
+                "preview_sample_selected": "选中一段文字",
+                "preview_sample_after": "，松开鼠标后就会看到它。",
+                "preview_sample_hint": "调整下面的设置，这里会同步变化。",
+                "preview_hover_hint": "鼠标移上去后展开",
+                "preview_hide_after": "{{count}} 秒后自动消失",
+                "preview_never": "永不消失",
+                "preview_disabled": "划词助手已关闭，选中文字不会弹出"
             },
             "recognize": {
                 "label": "文字识别",

@@ -231,7 +231,17 @@
                 "loading_apps": "Reading running programs…",
                 "no_apps": "No running programs found",
                 "manual_placeholder": "For example Photoshop.exe",
-                "add": "Add"
+                "add": "Add",
+                "preview": "Preview",
+                "preview_desc": "What you see after selecting text",
+                "preview_sample_before": "In any app, ",
+                "preview_sample_selected": "select some text",
+                "preview_sample_after": " and release the mouse.",
+                "preview_sample_hint": "Change the settings below and this preview follows.",
+                "preview_hover_hint": "Expands when you hover over it",
+                "preview_hide_after": "Hides after {{count}} s",
+                "preview_never": "Never hides",
+                "preview_disabled": "Selection assistant is off, nothing pops up"
             },
             "recognize": {
                 "label": "Recognize",
