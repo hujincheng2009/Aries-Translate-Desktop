@@ -185,6 +185,54 @@
                 "auto_read_aloud": "Read translations automatically",
                 "auto_read_aloud_description": "Read the first successful text result in card order. Manual reading cancels automatic reading for this round."
             },
+            "selection": {
+                "label": "Selection Assistant",
+                "title": "Selection Assistant",
+                "section": {
+                    "basic": "Basics",
+                    "basic_desc": "Show action buttons next to the mouse after you select text · Windows only",
+                    "conditions": "When to show",
+                    "conditions_desc": "Situations in which nothing pops up",
+                    "actions": "Buttons",
+                    "actions_desc": "Check the buttons to show and drag to reorder; keep at least one",
+                    "blacklist": "Excluded apps",
+                    "blacklist_desc": "Selecting text in these programs shows nothing"
+                },
+                "enable": "Enable selection assistant",
+                "enable_desc": "Does not appear in programs running as administrator",
+                "display_mode": "Display",
+                "display_mode_desc": "The small icon is less distracting; the toolbar saves a step",
+                "display_mode_icon": "Small icon first",
+                "display_mode_toolbar": "Toolbar right away",
+                "button_style": "Button style",
+                "button_style_desc": "Toolbar buttons show only icons, or icons with text",
+                "button_style_icon_text": "Icon + text",
+                "button_style_icon": "Icon only",
+                "show_logo": "Show the Aries icon on the toolbar",
+                "show_logo_desc": "The Aries icon at the left of the expanded toolbar; when off, only the buttons are shown",
+                "offset": "Position",
+                "offset_desc": "Distance from where the mouse button was released; negative values go left / up",
+                "hide_delay": "Hide after",
+                "hide_delay_desc": "How long the icon or toolbar stays while the mouse is not on it",
+                "seconds": "{{count}} s",
+                "never": "Never",
+                "disable_in_fullscreen": "Not in full-screen apps",
+                "disable_in_fullscreen_desc": "Nothing pops up in games, full-screen videos or presentations",
+                "compat_mode": "Compatibility mode",
+                "compat_mode_desc": "Also pop up in programs whose selection cannot be read (such as WeChat or VS Code); a button click briefly uses the clipboard and then restores it",
+                "action_desc_translate": "Open the translate window for the selected text",
+                "action_desc_replace_translate": "Replace the selected text with the first translation service's result",
+                "action_desc_copy": "Copy the selected text",
+                "action_desc_read_aloud": "Open the read-aloud window for the selected text",
+                "drag": "Drag to reorder",
+                "add_app": "Add app",
+                "add_app_desc": "Pick a running program or type an exe file name",
+                "add_app_hint": "Pick a running program or type an exe file name",
+                "loading_apps": "Reading running programs…",
+                "no_apps": "No running programs found",
+                "manual_placeholder": "For example Photoshop.exe",
+                "add": "Add"
+            },
             "recognize": {
                 "label": "Recognize",
                 "title": "Recognition Settings",
@@ -1087,6 +1135,16 @@
         },
         "screenshot": {
             "hint": "Drag to select an area, release to confirm, right-click to cancel"
+        },
+        "selection_bar": {
+            "translate": "Translate",
+            "replace_translate": "Replace",
+            "copy": "Copy",
+            "read_aloud": "Read aloud",
+            "copied": "Copied",
+            "error_no_text": "Could not get the selected text",
+            "error_window_changed": "The window changed; select the text again",
+            "error_generic": "Something went wrong"
         }
     }
 }

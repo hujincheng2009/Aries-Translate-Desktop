@@ -12,6 +12,7 @@ import Screenshot from './window/Screenshot';
 import Translate from './window/Translate';
 import Recognize from './window/Recognize';
 import ReadAloud from './window/ReadAloud';
+import SelectionBar from './window/SelectionBar';
 import Updater from './window/Updater';
 import { store } from './utils/store';
 import Config from './window/Config';
@@ -26,6 +27,7 @@ const windowMap = {
     read_aloud: <ReadAloud />,
     config: <Config />,
     updater: <Updater />,
+    selection_bar: <SelectionBar />,
 };
 
 export default function App() {

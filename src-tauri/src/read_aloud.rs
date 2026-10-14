@@ -23,9 +23,16 @@ pub fn request_read_aloud() {
     let suppress_state = app_handle.state::<ClipboardMonitorSuppressWrapper>();
     let _suppression = ClipboardMonitorSuppression::new(&suppress_state);
     let text = selection::get_text();
+    drop(_suppression);
+    request_read_aloud_with_text(text);
+}
+
+// Opens the read-aloud window for text that was already read from the selection.
+pub fn request_read_aloud_with_text(text: String) {
     if text.trim().is_empty() {
         return;
     }
+    let app_handle = APP.get().unwrap();
 
     let request = ReadAloudRequest {
         request_id: NEXT_READ_ALOUD_REQUEST_ID.fetch_add(1, Ordering::Relaxed),

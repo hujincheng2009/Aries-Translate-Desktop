@@ -15,6 +15,9 @@
 //           Speech synthesis is not mocked, so the window ends in its error state; time labels need real audio.
 //   update  window=updater: available (default, sample changelog) | latest (already up to date) | loading (skeleton)
 //   progress  window=updater: percent (1-99) of a simulated download; shows the progress bar and the "downloading" button
+//   window=selection_bar shows the selection assistant popup. bar=icon (default) | toolbar | hover | busy | copied |
+//           error picks its state; store.selection_assistant_button_style="icon" etc. change its settings.
+//           The page is transparent like the real window; add theme=dark to check dark mode.
 //   window=screenshot shows a generated sample picture as the frozen screenshot, so the selection overlay,
 //           size label and hint can be tried with the mouse.
 //   sample=history       serve sample rows for the history table (history.db queries)
@@ -191,7 +194,7 @@ function handleTauriModule({ __tauriModule: module, message = {} }) {
             }[message.cmd];
         case 'App':
             return {
-                getAppVersion: '1.0.11',
+                getAppVersion: '1.1.0',
                 getAppName: 'Aries',
                 getTauriVersion: '1.6.0',
             }[message.cmd];
@@ -350,6 +353,18 @@ mockIPC((cmd, args) => {
                 params.get('ocr') ??
                 'Machine translation has improved dramatically over the past decade, making it a practical tool for everyday reading.'
             );
+        case 'selection_assistant_running_apps':
+            return [
+                { exe: 'Code.exe', title: 'notes.md - Visual Studio Code' },
+                { exe: 'msedge.exe', title: 'Aries - Microsoft Edge' },
+                { exe: 'WeChat.exe', title: '微信' },
+            ];
+        case 'selection_bar_set_size':
+            window.__ARIES_PREVIEW__.barSize = args;
+            return null;
+        case 'selection_bar_action':
+            previewRequests.push({ command: cmd, ...args });
+            return null;
         case 'get_read_aloud_request':
             return params.has('read_aloud') ? { request_id: 1, text: params.get('read_aloud') } : null;
         default:
@@ -379,5 +394,40 @@ window.__ARIES_PREVIEW__.getState = async () => {
         target: store.get(targetLanguageAtom),
     };
 };
+
+if (label === 'selection_bar') {
+    // Drive the popup the way the Rust worker does (see src-tauri/src/selection_assistant/windows.rs).
+    const bar = params.get('bar') || 'icon';
+    const setting = (key, fallback) => memoryStore[`selection_assistant_${key}`] ?? fallback;
+    const settings = {
+        displayMode: bar === 'icon' ? 'icon' : 'toolbar',
+        buttonStyle: setting('button_style', 'icon'),
+        showLogo: setting('show_logo', true),
+        actions: setting('actions', ['translate', 'replace_translate', 'copy', 'read_aloud']),
+    };
+    const states = { busy: 'translate', copied: 'copy', error: 'replace_translate' };
+    setTimeout(() => {
+        fireEvent('selection_bar_show', { seq: 1, textKnown: true, settings });
+        setTimeout(() => {
+            if (bar === 'hover') {
+                const button = document.querySelector('[data-action="translate"]')?.getBoundingClientRect();
+                if (button)
+                    fireEvent('selection_bar_pointer', {
+                        seq: 1,
+                        x: button.left + button.width / 2,
+                        y: button.top + button.height / 2,
+                        inside: true,
+                    });
+            }
+            if (states[bar])
+                fireEvent('selection_bar_state', {
+                    seq: 1,
+                    action: states[bar],
+                    status: bar,
+                    message: bar === 'error' ? 'window_changed' : '',
+                });
+        }, 300);
+    }, 1200);
+}
 
 import('../main.jsx');

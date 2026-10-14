@@ -1,6 +1,7 @@
 use crate::clipboard::{ClipboardMonitorSuppressWrapper, ClipboardMonitorSuppression};
+use crate::clipboard_backup::{backup_clipboard, restore_clipboard_with_retry};
 use crate::APP;
-use arboard::{Clipboard, ImageData};
+use arboard::Clipboard;
 use enigo::{
     Direction::{Click, Press, Release},
     Enigo, Key, Keyboard, Settings,
@@ -14,7 +15,6 @@ use tauri::{Manager, State};
 
 static NEXT_REQUEST_ID: AtomicU64 = AtomicU64::new(1);
 const CLIPBOARD_RESTORE_DELAY: Duration = Duration::from_millis(500);
-const CLIPBOARD_RESTORE_RETRIES: usize = 3;
 
 #[derive(Clone, Debug)]
 struct PendingReplaceTranslation {
@@ -30,12 +30,6 @@ pub struct ReplaceTranslationState(Mutex<Option<PendingReplaceTranslation>>);
 struct ReplaceTranslationRequest {
     request_id: u64,
     text: String,
-}
-
-enum ClipboardBackup {
-    Text(String),
-    Image(ImageData<'static>),
-    Empty,
 }
 
 #[cfg(target_os = "windows")]
@@ -56,45 +50,6 @@ fn clear_pending_request(state: &ReplaceTranslationState, request_id: u64) {
     {
         *pending = None;
     }
-}
-
-fn backup_clipboard(clipboard: &mut Clipboard) -> ClipboardBackup {
-    if let Ok(text) = clipboard.get_text() {
-        ClipboardBackup::Text(text)
-    } else if let Ok(image) = clipboard.get_image() {
-        ClipboardBackup::Image(image.to_owned_img())
-    } else {
-        ClipboardBackup::Empty
-    }
-}
-
-fn restore_clipboard(clipboard: &mut Clipboard, backup: &ClipboardBackup) -> Result<(), String> {
-    match backup {
-        ClipboardBackup::Text(text) => clipboard
-            .set_text(text.clone())
-            .map_err(|error| error.to_string()),
-        ClipboardBackup::Image(image) => clipboard
-            .set_image(image.clone())
-            .map_err(|error| error.to_string()),
-        ClipboardBackup::Empty => clipboard.clear().map_err(|error| error.to_string()),
-    }
-}
-
-fn restore_clipboard_with_retry(
-    clipboard: &mut Clipboard,
-    backup: &ClipboardBackup,
-) -> Result<(), String> {
-    let mut last_error = None;
-    for attempt in 0..CLIPBOARD_RESTORE_RETRIES {
-        match restore_clipboard(clipboard, backup) {
-            Ok(()) => return Ok(()),
-            Err(error) => last_error = Some(error),
-        }
-        if attempt + 1 < CLIPBOARD_RESTORE_RETRIES {
-            std::thread::sleep(Duration::from_millis(50));
-        }
-    }
-    Err(last_error.unwrap_or_else(|| "Failed to restore clipboard".to_string()))
 }
 
 fn combine_paste_and_restore_results(
@@ -145,9 +100,16 @@ pub fn request_replace_translation() {
     let suppress_state = app_handle.state::<ClipboardMonitorSuppressWrapper>();
     let _suppression = ClipboardMonitorSuppression::new(&suppress_state);
     let text = selection::get_text();
+    drop(_suppression);
+    request_replace_translation_with_text(text);
+}
+
+// Starts a replacement translation for text that was already read from the foreground window's selection.
+pub fn request_replace_translation_with_text(text: String) {
     if text.trim().is_empty() {
         return;
     }
+    let app_handle = APP.get().unwrap();
 
     let request_id = NEXT_REQUEST_ID.fetch_add(1, Ordering::Relaxed);
     let pending = PendingReplaceTranslation {

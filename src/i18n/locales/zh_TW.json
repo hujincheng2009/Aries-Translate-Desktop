@@ -184,6 +184,54 @@
                 "auto_read_aloud": "翻譯後自動朗讀",
                 "auto_read_aloud_description": "朗讀排在最上面且成功的文字結果；手動朗讀後，本輪不再自動朗讀。"
             },
+            "selection": {
+                "label": "劃詞助手",
+                "title": "劃詞助手",
+                "section": {
+                    "basic": "基本",
+                    "basic_desc": "選取文字後在滑鼠旁彈出操作按鈕 · 僅 Windows",
+                    "conditions": "彈出條件",
+                    "conditions_desc": "控制在哪些情況下不彈出",
+                    "actions": "操作按鈕",
+                    "actions_desc": "勾選要顯示的按鈕，拖曳調整順序；至少保留一個",
+                    "blacklist": "不彈出的應用程式",
+                    "blacklist_desc": "在這些軟體裡選取文字時不彈出"
+                },
+                "enable": "啟用劃詞助手",
+                "enable_desc": "以系統管理員身分執行的軟體裡不會出現",
+                "display_mode": "顯示方式",
+                "display_mode_desc": "小圖示更不打擾；工具列少一步操作",
+                "display_mode_icon": "先顯示小圖示",
+                "display_mode_toolbar": "直接顯示工具列",
+                "button_style": "按鈕樣式",
+                "button_style_desc": "工具列按鈕只顯示圖示，或同時顯示圖示和文字",
+                "button_style_icon_text": "圖示 + 文字",
+                "button_style_icon": "僅圖示",
+                "show_logo": "工具列顯示 Aries 圖示",
+                "show_logo_desc": "展開後工具列最左側的 Aries 圖示；關閉後只顯示操作按鈕",
+                "offset": "彈出位置",
+                "offset_desc": "相對滑鼠放開位置的距離；負數表示向左 / 向上",
+                "hide_delay": "自動消失",
+                "hide_delay_desc": "滑鼠不在圖示或工具列上時，多久後隱藏",
+                "seconds": "{{count}} 秒",
+                "never": "永不消失",
+                "disable_in_fullscreen": "全螢幕應用程式中不彈出",
+                "disable_in_fullscreen_desc": "遊戲、全螢幕影片、簡報放映時不彈出",
+                "compat_mode": "相容模式",
+                "compat_mode_desc": "讀不到選取範圍的軟體（如微信、VS Code）裡也彈出；點按鈕時暫時借用剪貼簿，用完還原",
+                "action_desc_translate": "開啟翻譯視窗翻譯選取的文字",
+                "action_desc_replace_translate": "用第一個翻譯服務的譯文直接取代選取的文字",
+                "action_desc_copy": "複製選取的文字",
+                "action_desc_read_aloud": "開啟朗讀視窗朗讀選取的文字",
+                "drag": "拖曳排序",
+                "add_app": "新增應用程式",
+                "add_app_desc": "選擇正在執行的程式，或手動輸入 exe 檔名",
+                "add_app_hint": "從正在執行的程式中選擇，也可以手動輸入 exe 檔名",
+                "loading_apps": "正在讀取程式清單…",
+                "no_apps": "沒有找到正在執行的程式",
+                "manual_placeholder": "例如 Photoshop.exe",
+                "add": "新增"
+            },
             "recognize": {
                 "label": "文字辨識",
                 "title": "文字辨識設定",
@@ -1083,6 +1131,16 @@
         },
         "screenshot": {
             "hint": "拖曳選取區域，放開確認，右鍵取消"
+        },
+        "selection_bar": {
+            "translate": "翻譯",
+            "replace_translate": "取代翻譯",
+            "copy": "複製",
+            "read_aloud": "朗讀",
+            "copied": "已複製",
+            "error_no_text": "沒有取得選取的文字",
+            "error_window_changed": "視窗已切換，請重新選取文字",
+            "error_generic": "操作失敗"
         }
     }
 }

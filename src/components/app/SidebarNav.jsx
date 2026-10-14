@@ -1,4 +1,4 @@
-import { Cloud, History, Info, Keyboard, Languages, Puzzle, ScanText, Settings } from 'lucide-react';
+import { Cloud, History, Info, Keyboard, Languages, Puzzle, ScanText, Settings, TextSelect } from 'lucide-react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import React from 'react';
@@ -13,6 +13,8 @@ const groups = [
         items: [
             { path: '/general', labelKey: 'config.general.label', icon: Settings },
             { path: '/translate', labelKey: 'config.translate.label', icon: Languages },
+            // The selection assistant is Windows only
+            { path: '/selection', labelKey: 'config.selection.label', icon: TextSelect, os: 'Windows_NT' },
             { path: '/recognize', labelKey: 'config.recognize.label', icon: ScanText },
             { path: '/hotkey', labelKey: 'config.hotkey.label', icon: Keyboard },
             { path: '/service', labelKey: 'config.service.label', icon: Puzzle },
@@ -91,12 +93,14 @@ export default function SidebarNav() {
                             <div className='-mb-1 flex h-8 shrink-0 items-center px-2 text-xs font-medium text-muted-foreground'>
                                 {t(group.labelKey)}
                             </div>
-                            {group.items.map((item) => (
-                                <NavItem
-                                    key={item.path}
-                                    item={item}
-                                />
-                            ))}
+                            {group.items
+                                .filter((item) => !item.os || item.os === osType)
+                                .map((item) => (
+                                    <NavItem
+                                        key={item.path}
+                                        item={item}
+                                    />
+                                ))}
                         </div>
                     ))}
                 </div>

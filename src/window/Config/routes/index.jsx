@@ -2,6 +2,7 @@ import { Navigate } from 'react-router-dom';
 
 import Translate from '../pages/Translate';
 import Recognize from '../pages/Recognize';
+import SelectionAssistant from '../pages/SelectionAssistant';
 import General from '../pages/General';
 import Service from '../pages/Service';
 import History from '../pages/History';
@@ -17,6 +18,10 @@ const routes = [
     {
         path: '/translate',
         element: <Translate />,
+    },
+    {
+        path: '/selection',
+        element: <SelectionAssistant />,
     },
     {
         path: '/recognize',

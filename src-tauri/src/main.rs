@@ -3,6 +3,7 @@
 
 mod backup;
 mod clipboard;
+mod clipboard_backup;
 mod cmd;
 mod config;
 mod error;
@@ -12,6 +13,7 @@ mod lang_detect;
 mod read_aloud;
 mod replace_translation;
 mod screenshot;
+mod selection_assistant;
 mod server;
 mod system_ocr;
 mod tray;
@@ -28,6 +30,10 @@ use once_cell::sync::OnceCell;
 use read_aloud::*;
 use replace_translation::*;
 use screenshot::screenshot;
+use selection_assistant::{
+    selection_assistant_running_apps, selection_assistant_set, selection_bar_action,
+    selection_bar_hide, selection_bar_set_size,
+};
 use server::*;
 use std::sync::atomic::AtomicUsize;
 use std::sync::Mutex;
@@ -99,6 +105,8 @@ fn main() {
             app.manage(ClipboardMonitorSuppressWrapper {
                 count: AtomicUsize::new(0),
             });
+            // Selection assistant (Windows): starts only when enabled; before the tray reads its state
+            selection_assistant::init();
             // Update Tray Menu
             update_tray(app.app_handle(), "".to_string(), "".to_string());
             // Start http server
@@ -165,6 +173,11 @@ fn main() {
             local,
             install_plugin,
             font_list,
+            selection_assistant_set,
+            selection_bar_set_size,
+            selection_bar_action,
+            selection_bar_hide,
+            selection_assistant_running_apps,
         ])
         .on_system_tray_event(tray_event_handler)
         .build(tauri::generate_context!())

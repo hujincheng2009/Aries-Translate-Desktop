@@ -75,6 +75,12 @@ pub fn update_tray(app_handle: tauri::AppHandle, mut language: String, mut copy_
         .set_selected(enable_clipboard_monitor)
         .unwrap();
 
+    #[cfg(target_os = "windows")]
+    tray_handle
+        .get_item("selection_assistant")
+        .set_selected(crate::selection_assistant::is_enabled())
+        .unwrap();
+
     match copy_mode.as_str() {
         "source" => tray_handle
             .get_item("copy_source")
@@ -104,6 +110,7 @@ pub fn tray_event_handler<'a>(app: &'a AppHandle, event: SystemTrayEvent) {
             "input_translate" => on_input_translate_click(),
             "copy_source" => on_auto_copy_click(app, "source"),
             "clipboard_monitor" => on_clipboard_monitor_click(app),
+            "selection_assistant" => on_selection_assistant_click(app),
             "copy_target" => on_auto_copy_click(app, "target"),
             "copy_source_target" => on_auto_copy_click(app, "source_target"),
             "copy_disable" => on_auto_copy_click(app, "disable"),
@@ -168,6 +175,14 @@ fn on_clipboard_monitor_click(app: &AppHandle) {
         .set_selected(current)
         .unwrap();
 }
+fn on_selection_assistant_click(app: &AppHandle) {
+    let enabled = !crate::selection_assistant::is_enabled();
+    crate::selection_assistant::set_enabled_from_tray(enabled);
+    let _ = app
+        .tray_handle()
+        .get_item("selection_assistant")
+        .set_selected(enabled);
+}
 fn on_auto_copy_click(app: &AppHandle, mode: &str) {
     info!("Set copy mode to: {}", mode);
     set("translate_auto_copy", mode);
@@ -203,6 +218,17 @@ fn on_quit_click(app: &AppHandle) {
     app.exit(0);
 }
 
+// Selection assistant toggle (Windows only), placed right after "clipboard monitor".
+fn with_selection_assistant_item(menu: SystemTrayMenu, label: &str) -> SystemTrayMenu {
+    #[cfg(target_os = "windows")]
+    return menu.add_item(CustomMenuItem::new("selection_assistant", label));
+    #[cfg(not(target_os = "windows"))]
+    {
+        let _ = label;
+        menu
+    }
+}
+
 fn tray_menu_en() -> tauri::SystemTrayMenu {
     let input_translate = CustomMenuItem::new("input_translate", "Input Translate");
     let copy_source = CustomMenuItem::new("copy_source", "Source");
@@ -216,9 +242,12 @@ fn tray_menu_en() -> tauri::SystemTrayMenu {
     let view_log = CustomMenuItem::new("view_log", "View Log");
     let restart = CustomMenuItem::new("restart", "Restart");
     let quit = CustomMenuItem::new("quit", "Quit");
-    SystemTrayMenu::new()
-        .add_item(input_translate)
-        .add_item(clipboard_monitor)
+    with_selection_assistant_item(
+        SystemTrayMenu::new()
+            .add_item(input_translate)
+            .add_item(clipboard_monitor),
+        "Selection Assistant",
+    )
         .add_submenu(SystemTraySubmenu::new(
             "Auto Copy",
             SystemTrayMenu::new()
@@ -253,9 +282,12 @@ fn tray_menu_zh_cn() -> tauri::SystemTrayMenu {
     let restart = CustomMenuItem::new("restart", "重启应用");
     let view_log = CustomMenuItem::new("view_log", "查看日志");
     let quit = CustomMenuItem::new("quit", "退出");
-    SystemTrayMenu::new()
-        .add_item(input_translate)
-        .add_item(clipboard_monitor)
+    with_selection_assistant_item(
+        SystemTrayMenu::new()
+            .add_item(input_translate)
+            .add_item(clipboard_monitor),
+        "划词助手",
+    )
         .add_submenu(SystemTraySubmenu::new(
             "自动复制",
             SystemTrayMenu::new()
@@ -290,9 +322,12 @@ fn tray_menu_zh_tw() -> tauri::SystemTrayMenu {
     let restart = CustomMenuItem::new("restart", "重啓程式");
     let view_log = CustomMenuItem::new("view_log", "查看日誌");
     let quit = CustomMenuItem::new("quit", "退出");
-    SystemTrayMenu::new()
-        .add_item(input_translate)
-        .add_item(clipboard_monitor)
+    with_selection_assistant_item(
+        SystemTrayMenu::new()
+            .add_item(input_translate)
+            .add_item(clipboard_monitor),
+        "劃詞助手",
+    )
         .add_submenu(SystemTraySubmenu::new(
             "自動複製",
             SystemTrayMenu::new()
@@ -327,9 +362,12 @@ fn tray_menu_ja() -> tauri::SystemTrayMenu {
     let restart = CustomMenuItem::new("restart", "アプリの再起動");
     let view_log = CustomMenuItem::new("view_log", "ログを見る");
     let quit = CustomMenuItem::new("quit", "退出する");
-    SystemTrayMenu::new()
-        .add_item(input_translate)
-        .add_item(clipboard_monitor)
+    with_selection_assistant_item(
+        SystemTrayMenu::new()
+            .add_item(input_translate)
+            .add_item(clipboard_monitor),
+        "Selection Assistant",
+    )
         .add_submenu(SystemTraySubmenu::new(
             "自動コピー",
             SystemTrayMenu::new()
@@ -364,9 +402,12 @@ fn tray_menu_ko() -> tauri::SystemTrayMenu {
     let restart = CustomMenuItem::new("restart", "응용 프로그램 다시 시작");
     let view_log = CustomMenuItem::new("view_log", "로그 보기");
     let quit = CustomMenuItem::new("quit", "퇴출");
-    SystemTrayMenu::new()
-        .add_item(input_translate)
-        .add_item(clipboard_monitor)
+    with_selection_assistant_item(
+        SystemTrayMenu::new()
+            .add_item(input_translate)
+            .add_item(clipboard_monitor),
+        "Selection Assistant",
+    )
         .add_submenu(SystemTraySubmenu::new(
             "자동 복사",
             SystemTrayMenu::new()
@@ -402,9 +443,12 @@ fn tray_menu_fr() -> tauri::SystemTrayMenu {
     let restart = CustomMenuItem::new("restart", "Redémarrer l'application");
     let view_log = CustomMenuItem::new("view_log", "Voir le journal");
     let quit = CustomMenuItem::new("quit", "Quitter");
-    SystemTrayMenu::new()
-        .add_item(input_translate)
-        .add_item(clipboard_monitor)
+    with_selection_assistant_item(
+        SystemTrayMenu::new()
+            .add_item(input_translate)
+            .add_item(clipboard_monitor),
+        "Selection Assistant",
+    )
         .add_submenu(SystemTraySubmenu::new(
             "Copier automatiquement",
             SystemTrayMenu::new()
@@ -438,9 +482,12 @@ fn tray_menu_de() -> tauri::SystemTrayMenu {
     let restart = CustomMenuItem::new("restart", "Anwendung neu starten");
     let view_log = CustomMenuItem::new("view_log", "Protokoll anzeigen");
     let quit = CustomMenuItem::new("quit", "Beenden");
-    SystemTrayMenu::new()
-        .add_item(input_translate)
-        .add_item(clipboard_monitor)
+    with_selection_assistant_item(
+        SystemTrayMenu::new()
+            .add_item(input_translate)
+            .add_item(clipboard_monitor),
+        "Selection Assistant",
+    )
         .add_submenu(SystemTraySubmenu::new(
             "Automatisch kopieren",
             SystemTrayMenu::new()
@@ -475,9 +522,12 @@ fn tray_menu_ru() -> tauri::SystemTrayMenu {
     let restart = CustomMenuItem::new("restart", "Перезапустить приложение");
     let view_log = CustomMenuItem::new("view_log", "Просмотр журнала");
     let quit = CustomMenuItem::new("quit", "Выход");
-    SystemTrayMenu::new()
-        .add_item(input_translate)
-        .add_item(clipboard_monitor)
+    with_selection_assistant_item(
+        SystemTrayMenu::new()
+            .add_item(input_translate)
+            .add_item(clipboard_monitor),
+        "Selection Assistant",
+    )
         .add_submenu(SystemTraySubmenu::new(
             "Автоматическое копирование",
             SystemTrayMenu::new()
@@ -512,9 +562,12 @@ fn tray_menu_fa() -> tauri::SystemTrayMenu {
     let restart = CustomMenuItem::new("restart", "راه‌اندازی مجدد برنامه");
     let view_log = CustomMenuItem::new("view_log", "مشاهده گزارشات");
     let quit = CustomMenuItem::new("quit", "خروج");
-    SystemTrayMenu::new()
-        .add_item(input_translate)
-        .add_item(clipboard_monitor)
+    with_selection_assistant_item(
+        SystemTrayMenu::new()
+            .add_item(input_translate)
+            .add_item(clipboard_monitor),
+        "Selection Assistant",
+    )
         .add_submenu(SystemTraySubmenu::new(
             "کپی خودکار",
             SystemTrayMenu::new()
@@ -550,9 +603,12 @@ fn tray_menu_pt_br() -> tauri::SystemTrayMenu {
     let restart = CustomMenuItem::new("restart", "Reiniciar aplicativo");
     let view_log = CustomMenuItem::new("view_log", "Exibir Registro");
     let quit = CustomMenuItem::new("quit", "Sair");
-    SystemTrayMenu::new()
-        .add_item(input_translate)
-        .add_item(clipboard_monitor)
+    with_selection_assistant_item(
+        SystemTrayMenu::new()
+            .add_item(input_translate)
+            .add_item(clipboard_monitor),
+        "Selection Assistant",
+    )
         .add_submenu(SystemTraySubmenu::new(
             "Copiar Automaticamente",
             SystemTrayMenu::new()
@@ -587,9 +643,12 @@ fn tray_menu_uk() -> tauri::SystemTrayMenu {
     let restart = CustomMenuItem::new("restart", "Перезапустити додаток");
     let view_log = CustomMenuItem::new("view_log", "Перегляд журналу");
     let quit = CustomMenuItem::new("quit", "Вихід");
-    SystemTrayMenu::new()
-        .add_item(input_translate)
-        .add_item(clipboard_monitor)
+    with_selection_assistant_item(
+        SystemTrayMenu::new()
+            .add_item(input_translate)
+            .add_item(clipboard_monitor),
+        "Selection Assistant",
+    )
         .add_submenu(SystemTraySubmenu::new(
             "Автоматичне копіювання",
             SystemTrayMenu::new()
