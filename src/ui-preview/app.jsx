@@ -196,7 +196,7 @@ function handleTauriModule({ __tauriModule: module, message = {} }) {
             }[message.cmd];
         case 'App':
             return {
-                getAppVersion: '1.1.1',
+                getAppVersion: '1.1.2',
                 getAppName: 'Aries',
                 getTauriVersion: '1.6.0',
             }[message.cmd];
