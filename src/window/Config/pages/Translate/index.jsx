@@ -8,9 +8,11 @@ import OptionSelect from '../../../../components/app/OptionSelect';
 import { languageList } from '../../../../utils/language';
 import { useConfig } from '../../../../hooks/useConfig';
 import { invoke } from '@tauri-apps/api';
+import { SELECTION_READ_ALOUD_CONFIG_KEY } from '../../../../utils/selection_read_aloud';
 
 export default function Translate() {
     const [autoReadAloud, setAutoReadAloud] = useConfig('translate_auto_read_aloud', false);
+    const [selectionReadAloud, setSelectionReadAloud] = useConfig(SELECTION_READ_ALOUD_CONFIG_KEY, true);
     const [sourceLanguage, setSourceLanguage] = useConfig('translate_source_language', 'auto');
     const [targetLanguage, setTargetLanguage] = useConfig('translate_target_language', 'zh_cn');
     const [secondLanguage, setSecondLanguage] = useConfig('translate_second_language', 'en');
@@ -110,6 +112,15 @@ export default function Translate() {
                     <Switch
                         checked={autoReadAloud === true}
                         onCheckedChange={setAutoReadAloud}
+                    />
+                </SettingRow>
+                <SettingRow
+                    title={t('config.translate.selection_read_aloud')}
+                    description={t('config.translate.selection_read_aloud_description')}
+                >
+                    <Switch
+                        checked={selectionReadAloud !== false}
+                        onCheckedChange={setSelectionReadAloud}
                     />
                 </SettingRow>
                 <SettingRow

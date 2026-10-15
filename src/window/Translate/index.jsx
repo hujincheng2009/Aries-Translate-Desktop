@@ -7,6 +7,7 @@ import { Pin, PinOff, X } from 'lucide-react';
 import React, { useState, useEffect, useLayoutEffect } from 'react';
 import { useAtomValue } from 'jotai';
 import { sourceTextAtom, ocrLanguageHintAtom } from './components/SourceArea';
+import SelectionReadAloudBubble from './components/SelectionReadAloudBubble';
 import { sourceLanguageAtom, targetLanguageAtom } from './components/LanguageArea';
 import { resolveOcrSourceLanguage } from '../../utils/ocr_language';
 import { syncAutoReadRound, getAutoReadRound } from '../../hooks/useAutoReadAloud';
@@ -326,6 +327,7 @@ export default function Translate() {
                     )}
                 >
                     <Toaster />
+                    <SelectionReadAloudBubble serviceInstanceConfigMap={serviceInstanceConfigMap} />
                     <div
                         className={cn(
                             'relative isolate flex h-10 shrink-0 items-center px-2',

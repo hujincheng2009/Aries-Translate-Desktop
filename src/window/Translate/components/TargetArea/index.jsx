@@ -34,6 +34,7 @@ import * as builtinCollectionServices from '../../../../services/collection';
 import { sourceLanguageAtom, targetLanguageAtom } from '../LanguageArea';
 import { useConfig, useToastStyle, useVoice } from '../../../../hooks';
 import { useTranslationReadAloud } from '../../../../hooks/useTranslationReadAloud';
+import { stopSelectionReadAloud } from '../../../../utils/selection_read_aloud_player';
 import { useReadAloudPlaybackRate } from '../../../../hooks/useReadAloudPlaybackRate';
 import TranslationReadAloudControls from '../../../../components/TranslationReadAloudControls';
 import { normalizeReadAloudText, toReadAloudSpeechText } from '../../../../utils/read_aloud';
@@ -760,7 +761,10 @@ export default function TargetArea(props) {
             <animated.div style={{ ...springs, overflow: 'hidden' }}>
                 <div ref={boundRef}>
                     {/* result content */}
-                    <div className={cn('flex flex-col px-4 pb-1 pt-0.5 text-base', hide && 'h-0 p-0')}>
+                    <div
+                        data-selection-read-aloud={targetLanguage}
+                        className={cn('flex flex-col px-4 pb-1 pt-0.5 text-base', hide && 'h-0 p-0')}
+                    >
                         {typeof result === 'string' ? (
                             <textarea
                                 ref={textAreaRef}
@@ -796,6 +800,7 @@ export default function TargetArea(props) {
                                                         onClick={() => {
                                                             voice.stop();
                                                             cancelAutoReadAloud();
+                                                            stopSelectionReadAloud();
                                                             speak(pronunciation['voice']);
                                                         }}
                                                     >

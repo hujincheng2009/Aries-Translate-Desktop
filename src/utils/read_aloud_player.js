@@ -43,7 +43,7 @@ function getDataUrlMimeType(data) {
     return /^data:([^;,]+)/i.exec(data)?.[1] ?? '';
 }
 
-function toAudioSource(data) {
+export function toAudioSource(data) {
     let bytes;
     if (typeof data === 'string') {
         bytes = base64ToBytes(data);

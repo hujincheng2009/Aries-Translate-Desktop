@@ -183,7 +183,9 @@
                     "window": "翻译窗口"
                 },
                 "auto_read_aloud": "翻译后自动朗读",
-                "auto_read_aloud_description": "朗读排在最上面且成功的文字结果；手动朗读后，本轮不再自动朗读。"
+                "auto_read_aloud_description": "朗读排在最上面且成功的文字结果；手动朗读后，本轮不再自动朗读。",
+                "selection_read_aloud": "划词朗读",
+                "selection_read_aloud_description": "在译文里用鼠标选中一段文字，旁边会出现朗读按钮，只朗读选中的部分（200 字以内）。用普通朗读的语音和音量，语速固定为正常速度。"
             },
             "selection": {
                 "label": "划词助手",
@@ -1144,6 +1146,8 @@
             "add_collection_success": "添加成功",
             "recognizing": "识别中…",
             "speak": "朗读",
+            "selection_read_aloud": "朗读选中的文字",
+            "selection_read_aloud_stop": "停止朗读",
             "copy": "复制",
             "retry": "重试",
             "delete_newline": "删除换行",

@@ -8,6 +8,7 @@ import {
     seekReadAloudVoice,
     stopReadAloudVoice,
 } from '../utils/read_aloud_player';
+import { stopSelectionReadAloud } from '../utils/selection_read_aloud_player';
 import { cancelAutoReadAloud } from './useAutoReadAloud';
 import { stopVoice } from './useVoice';
 
@@ -17,9 +18,20 @@ let generation = 0;
 export function stopTranslationReadAloudVoice() {
     cancelAutoReadAloud();
     stopVoice();
+    stopSelectionReadAloud();
     generation += 1;
     stopReadAloudVoice();
     getDefaultStore().set(translationReadAloudAtom, { cardId: null, status: 'idle' });
+}
+
+// The read-aloud bubble pauses a playing card (it can be resumed later) instead of stopping it.
+export function pauseTranslationReadAloudVoice() {
+    cancelAutoReadAloud();
+    const store = getDefaultStore();
+    const active = store.get(translationReadAloudAtom);
+    if (active.status === 'playing' && pauseReadAloudVoice()) {
+        store.set(translationReadAloudAtom, { cardId: active.cardId, status: 'paused' });
+    }
 }
 
 export function useTranslationReadAloud(cardId, text) {
@@ -42,6 +54,7 @@ export function useTranslationReadAloud(cardId, text) {
         }
         const session = ++generation;
         stopVoice();
+        stopSelectionReadAloud();
         stopReadAloudVoice();
         setActive({ cardId, status: 'loading' });
         const isCurrent = () => generation === session;
@@ -70,6 +83,7 @@ export function useTranslationReadAloud(cardId, text) {
     const pauseOrResume = async () => {
         cancelAutoReadAloud();
         if (!mine) return;
+        if (status === 'paused') stopSelectionReadAloud();
         const session = generation;
         if (status === 'playing' && pauseReadAloudVoice()) setActive({ cardId, status: 'paused' });
         else if (status === 'paused' && (await resumeReadAloudVoice()) && generation === session) {
@@ -79,6 +93,7 @@ export function useTranslationReadAloud(cardId, text) {
     const replay = async () => {
         cancelAutoReadAloud();
         if (!mine || status === 'loading') return;
+        stopSelectionReadAloud();
         const session = generation;
         await replayReadAloudVoice({
             onStarted: () => {

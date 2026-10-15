@@ -182,7 +182,9 @@
                     "window": "翻譯視窗"
                 },
                 "auto_read_aloud": "翻譯後自動朗讀",
-                "auto_read_aloud_description": "朗讀排在最上面且成功的文字結果；手動朗讀後，本輪不再自動朗讀。"
+                "auto_read_aloud_description": "朗讀排在最上面且成功的文字結果；手動朗讀後，本輪不再自動朗讀。",
+                "selection_read_aloud": "劃詞朗讀",
+                "selection_read_aloud_description": "在譯文裡用滑鼠選取一段文字，旁邊會出現朗讀按鈕，只朗讀選取的部分（200 字以內）。使用一般朗讀的語音和音量，語速固定為正常速度。"
             },
             "selection": {
                 "label": "劃詞助手",
@@ -1140,6 +1142,8 @@
             "add_collection_success": "成功加入收藏",
             "recognizing": "辨識中…",
             "speak": "朗讀",
+            "selection_read_aloud": "朗讀選取的文字",
+            "selection_read_aloud_stop": "停止朗讀",
             "copy": "複製",
             "retry": "重試",
             "delete_newline": "刪除換行",

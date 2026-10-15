@@ -183,7 +183,9 @@
                     "window": "Window"
                 },
                 "auto_read_aloud": "Read translations automatically",
-                "auto_read_aloud_description": "Read the first successful text result in card order. Manual reading cancels automatic reading for this round."
+                "auto_read_aloud_description": "Read the first successful text result in card order. Manual reading cancels automatic reading for this round.",
+                "selection_read_aloud": "Read selected text",
+                "selection_read_aloud_description": "Select text in a translation with the mouse to show a read-aloud button next to it that reads only the selection (up to 200 characters). Uses the normal read-aloud voice and volume at normal speed."
             },
             "selection": {
                 "label": "Selection Assistant",
@@ -1144,6 +1146,8 @@
             "add_collection_success": "Add to collection successfully",
             "recognizing": "Recognizing…",
             "speak": "Speak",
+            "selection_read_aloud": "Read selected text",
+            "selection_read_aloud_stop": "Stop reading",
             "copy": "Copy",
             "retry": "Try again",
             "delete_newline": "Delete Newline",
