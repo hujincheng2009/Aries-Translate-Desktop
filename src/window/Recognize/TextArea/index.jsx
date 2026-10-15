@@ -15,6 +15,7 @@ import * as builtinServices from '../../../services/recognize';
 import { useConfig } from '../../../hooks';
 import { base64Atom } from '../ImageArea';
 import { pluginListAtom } from '..';
+import { deleteNewlinesOnClick, deleteWrappedNewlines } from '../../../utils/newline';
 
 export const textAtom = atom();
 let recognizeId = 0;
@@ -60,7 +61,7 @@ export default function TextArea(props) {
                                 if (recognizeId !== id) return;
                                 v = v.trim();
                                 if (deleteNewline) {
-                                    v = v.replace(/\-\s+/g, '').replace(/\s+/g, ' ');
+                                    v = deleteWrappedNewlines(v);
                                 }
                                 setText(v);
                                 setLoading(false);
@@ -101,7 +102,7 @@ export default function TextArea(props) {
                                 if (recognizeId !== id) return;
                                 v = v.trim();
                                 if (deleteNewline) {
-                                    v = v.replace(/\-\s+/g, '').replace(/\s+/g, ' ');
+                                    v = deleteWrappedNewlines(v);
                                 }
                                 setText(v);
                                 setLoading(false);
@@ -175,7 +176,7 @@ export default function TextArea(props) {
                 <ToolbarButton
                     label={t('recognize.delete_newline')}
                     onClick={() => {
-                        setText(text.replace(/\-\s+/g, '').replace(/\s+/g, ' '));
+                        setText(deleteNewlinesOnClick(text));
                     }}
                 >
                     <WrapText />

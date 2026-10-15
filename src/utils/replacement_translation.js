@@ -1,3 +1,4 @@
+import { deleteWrappedNewlines } from './newline.js';
 export const DEFAULT_TRANSLATE_SERVICE_LIST = ['deepl', 'bing', 'yandex', 'google'];
 
 export function selectDefaultEnabledService(serviceInstanceList, serviceInstanceConfigMap) {
@@ -20,7 +21,7 @@ export function resolveReplacementTargetLanguage(sourceLanguage, targetLanguage,
 
 export function normalizeReplacementSourceText(text, deleteNewline) {
     if (deleteNewline) {
-        return text.replace(/\-\s+/g, '').replace(/\s+/g, ' ').trim();
+        return deleteWrappedNewlines(text);
     }
     return text.trim();
 }

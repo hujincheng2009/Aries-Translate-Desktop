@@ -17,6 +17,7 @@ import {
 } from '../utils/replacement_translation';
 import { getServiceName, whetherPluginService } from '../utils/service_instance';
 import { store } from '../utils/store';
+import { MARKDOWN_RESULT_CONFIG_KEY, isMarkdownResultService, markdownToPlainText } from '../utils/markdown_text';
 
 async function loadDefaultService() {
     const serviceInstanceList = (await store.get('translate_service_list')) ?? DEFAULT_TRANSLATE_SERVICE_LIST;
@@ -108,6 +109,15 @@ async function translateWithDefaultService(sourceText) {
 
     if (typeof result !== 'string' || result.trim() === '') {
         throw new Error('Translation service returned an empty or non-text result');
+    }
+
+    // Large-language-model results may be Markdown; the text pasted into other programs has no formatting symbols.
+    if (
+        ((await store.get(MARKDOWN_RESULT_CONFIG_KEY)) ?? false) &&
+        !whetherPluginService(serviceInstanceKey) &&
+        isMarkdownResultService(serviceName)
+    ) {
+        result = markdownToPlainText(result);
     }
 
     return {

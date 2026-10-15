@@ -22,6 +22,9 @@
 //           size label and hint can be tried with the mouse.
 //   openai_error=<param>  OpenAI-compatible requests answer HTTP 400 rejecting that parameter (default temperature),
 //           e.g. openai_error=reasoning_effort, to check the located-error marking in the OpenAI service dialog.
+//   sample=translation   mock Bing / Google translations, a speech service and an OpenAI-compatible chat answer
+//                        in Markdown (store.openai={"service":"openai","requestPath":"https://api.openai.com/v1/chat/completions",
+//                        "model":"preview","apiKey":"preview","stream":false} plus store.translate_markdown_result=true)
 //   sample=history       serve sample rows for the history table (history.db queries)
 //   sample=plugins       pretend two plugins are installed per service type (no icons), so the Service page can
 //                        show plugin rows and the "add external plugin" list. Instance keys that use them:
@@ -55,6 +58,22 @@ for (const [key, raw] of params.entries()) {
 }
 
 const samples = (params.get('sample') || '').split(',');
+const previewMarkdownAnswer = [
+    '## 用法',
+    '',
+    '**apple** 是名词，意思是*苹果*，也可以指 [苹果公司](https://www.apple.com)。',
+    '',
+    '1. An apple a day keeps the doctor away.',
+    '2. She took a bite of the apple.',
+    '',
+    '| 词形 | 示例 |',
+    '| --- | --- |',
+    '| 复数 | apples |',
+    '',
+    '> 例句来自常见谚语。',
+    '',
+    '`apple pie` 是苹果派。',
+].join('\n');
 const previewRequests = [];
 const previewAudio = [];
 if (samples.includes('translation')) {
@@ -289,6 +308,9 @@ function handleTauriModule({ __tauriModule: module, message = {} }) {
                     )
                 );
             if (url.includes('/audio/')) return response({ audio: [1, 2, 3] });
+            // OpenAI-compatible chat completion (non-streaming) with a Markdown answer, for the Markdown result view.
+            if (url.includes('/chat/completions'))
+                return response({ choices: [{ message: { content: previewMarkdownAnswer } }] });
             return null;
         }
         case 'Fs':

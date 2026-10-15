@@ -35,6 +35,12 @@ import { sourceLanguageAtom, targetLanguageAtom } from '../LanguageArea';
 import { useConfig, useToastStyle, useVoice } from '../../../../hooks';
 import { useTranslationReadAloud } from '../../../../hooks/useTranslationReadAloud';
 import { stopSelectionReadAloud } from '../../../../utils/selection_read_aloud_player';
+import {
+    MARKDOWN_RESULT_CONFIG_KEY,
+    isMarkdownResultService,
+    markdownToPlainText,
+} from '../../../../utils/markdown_text';
+import MarkdownResult from './MarkdownResult';
 import { useReadAloudPlaybackRate } from '../../../../hooks/useReadAloudPlaybackRate';
 import TranslationReadAloudControls from '../../../../components/TranslationReadAloudControls';
 import { normalizeReadAloudText, toReadAloudSpeechText } from '../../../../utils/read_aloud';
@@ -130,6 +136,15 @@ export default function TargetArea(props) {
     const detectLanguage = useAtomValue(detectLanguageAtom);
     const { t } = useTranslation();
     const textAreaRef = useRef();
+    const [markdownResult] = useConfig(MARKDOWN_RESULT_CONFIG_KEY, false);
+    // Large-language-model results can be shown as Markdown; copy, read aloud and vocabulary books then get the
+    // text without formatting symbols.
+    const usesMarkdown = (instanceKey) =>
+        markdownResult === true &&
+        !whetherPluginService(instanceKey) &&
+        isMarkdownResultService(getServiceName(instanceKey));
+    const showMarkdown = typeof result === 'string' && usesMarkdown(currentTranslateServiceInstanceKey);
+    const plainResult = typeof result === 'string' && showMarkdown ? markdownToPlainText(result) : result;
     const toastStyle = useToastStyle();
     const speak = useVoice();
     const voice = useTranslationReadAloud(`target:${name}`, typeof result === 'string' ? result : '');
@@ -426,21 +441,28 @@ export default function TargetArea(props) {
                                         typeof v === 'string' ? v.trim() : v
                                     );
                                 }
+                                const copyText =
+                                    typeof v === 'string' && usesMarkdown(requestServiceInstanceKey)
+                                        ? markdownToPlainText(v)
+                                        : v;
                                 if (index === 0 && !clipboardMonitor) {
                                     switch (autoCopy) {
                                         case 'target':
-                                            writeText(v).then(() => {
+                                            writeText(copyText).then(() => {
                                                 if (hideWindow) {
-                                                    sendNotification({ title: t('common.write_clipboard'), body: v });
+                                                    sendNotification({
+                                                        title: t('common.write_clipboard'),
+                                                        body: copyText,
+                                                    });
                                                 }
                                             });
                                             break;
                                         case 'source_target':
-                                            writeText(requestSourceText + '\n\n' + v).then(() => {
+                                            writeText(requestSourceText + '\n\n' + copyText).then(() => {
                                                 if (hideWindow) {
                                                     sendNotification({
                                                         title: t('common.write_clipboard'),
-                                                        body: requestSourceText + '\n\n' + v,
+                                                        body: requestSourceText + '\n\n' + copyText,
                                                     });
                                                 }
                                             });
@@ -487,7 +509,7 @@ export default function TargetArea(props) {
 
     // handle tts speak
     const handleSpeak = async (shouldContinue) => {
-        const speechText = toReadAloudSpeechText(normalizeReadAloudText(result));
+        const speechText = toReadAloudSpeechText(normalizeReadAloudText(plainResult));
         return synthesizeWithFallback({
             text: speechText,
             serviceInstanceList: ttsServiceList,
@@ -639,7 +661,7 @@ export default function TargetArea(props) {
         if (getServiceSouceType(collectionServiceInstanceName) === ServiceSourceType.PLUGIN) {
             const pluginConfig = serviceInstanceConfigMap[collectionServiceInstanceName];
             let [func, utils] = await invoke_plugin('collection', getServiceName(collectionServiceInstanceName));
-            func(sourceText.trim(), result.toString(), {
+            func(sourceText.trim(), plainResult.toString(), {
                 config: pluginConfig,
                 utils,
             }).then(
@@ -655,7 +677,7 @@ export default function TargetArea(props) {
         } else {
             const instanceConfig = serviceInstanceConfigMap[collectionServiceInstanceName];
             builtinCollectionServices[getServiceName(collectionServiceInstanceName)]
-                .collection(sourceText, result, {
+                .collection(sourceText, plainResult, {
                     config: instanceConfig,
                 })
                 .then(
@@ -765,7 +787,9 @@ export default function TargetArea(props) {
                         data-selection-read-aloud={targetLanguage}
                         className={cn('flex flex-col px-4 pb-1 pt-0.5 text-base', hide && 'h-0 p-0')}
                     >
-                        {typeof result === 'string' ? (
+                        {showMarkdown ? (
+                            <MarkdownResult text={result} />
+                        ) : typeof result === 'string' ? (
                             <textarea
                                 ref={textAreaRef}
                                 className='h-0 w-full select-text resize-none bg-transparent outline-none'
@@ -928,7 +952,7 @@ export default function TargetArea(props) {
                             label={t('translate.copy')}
                             disabled={!hasTextResult}
                             onClick={() => {
-                                writeText(result);
+                                writeText(plainResult);
                             }}
                         >
                             <Copy />

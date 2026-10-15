@@ -144,6 +144,7 @@
                 "incremental_translate": "增量翻譯",
                 "dynamic_translate": "動態翻譯",
                 "delete_newline": "自動刪除換行",
+                "delete_newline_description": "只刪除句子中間的折行；以句號、問號等結尾的行，清單和空行會保留換行。",
                 "remember_language": "記住目標語言",
                 "window_position": "視窗位置",
                 "mouse": "跟隨滑鼠",
@@ -184,7 +185,9 @@
                 "auto_read_aloud": "翻譯後自動朗讀",
                 "auto_read_aloud_description": "朗讀排在最上面且成功的文字結果；手動朗讀後，本輪不再自動朗讀。",
                 "selection_read_aloud": "劃詞朗讀",
-                "selection_read_aloud_description": "在譯文裡用滑鼠選取一段文字，旁邊會出現朗讀按鈕，只朗讀選取的部分（200 字以內）。使用一般朗讀的語音和音量，語速固定為正常速度。"
+                "selection_read_aloud_description": "在譯文裡用滑鼠選取一段文字，旁邊會出現朗讀按鈕，只朗讀選取的部分（200 字以內）。使用一般朗讀的語音和音量，語速固定為正常速度。",
+                "markdown_result": "結果以 Markdown 顯示",
+                "markdown_result_description": "只對 OpenAI、Gemini、ChatGLM、Ollama 等大型語言模型服務生效。複製、朗讀和替換翻譯時自動去掉格式符號。"
             },
             "selection": {
                 "label": "劃詞助手",
@@ -249,6 +252,7 @@
                 "title": "文字辨識設定",
                 "language": "辨識語言",
                 "delete_newline": "自動刪除換行",
+                "delete_newline_description": "只刪除句子中間的折行；以句號、問號等結尾的行，清單和空行會保留換行。",
                 "auto_copy": "自動複製",
                 "close_on_blur": "失去焦點時關閉視窗",
                 "hide_window": "隱藏辨識視窗",

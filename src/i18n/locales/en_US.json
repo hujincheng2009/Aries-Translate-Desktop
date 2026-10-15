@@ -145,6 +145,7 @@
                 "incremental_translate": "Incremental Translation",
                 "dynamic_translate": "Dynamic Translation",
                 "delete_newline": "Delete Newline",
+                "delete_newline_description": "Only removes line breaks inside a sentence; lines ending with a full stop or question mark, list items and blank lines keep their breaks.",
                 "remember_language": "Remember Target Language",
                 "font_size": {
                     "10": "Very Very Small (10px)",
@@ -185,7 +186,9 @@
                 "auto_read_aloud": "Read translations automatically",
                 "auto_read_aloud_description": "Read the first successful text result in card order. Manual reading cancels automatic reading for this round.",
                 "selection_read_aloud": "Read selected text",
-                "selection_read_aloud_description": "Select text in a translation with the mouse to show a read-aloud button next to it that reads only the selection (up to 200 characters). Uses the normal read-aloud voice and volume at normal speed."
+                "selection_read_aloud_description": "Select text in a translation with the mouse to show a read-aloud button next to it that reads only the selection (up to 200 characters). Uses the normal read-aloud voice and volume at normal speed.",
+                "markdown_result": "Show results as Markdown",
+                "markdown_result_description": "Only for large language model services such as OpenAI, Gemini, ChatGLM and Ollama. Formatting symbols are removed when copying, reading aloud and replacing."
             },
             "selection": {
                 "label": "Selection Assistant",
@@ -250,6 +253,7 @@
                 "title": "Recognition Settings",
                 "language": "Recognition Language",
                 "delete_newline": "Auto Delete Newline",
+                "delete_newline_description": "Only removes line breaks inside a sentence; lines ending with a full stop or question mark, list items and blank lines keep their breaks.",
                 "auto_copy": "Auto Copy",
                 "close_on_blur": "Close window when focus lost",
                 "hide_window": "Hide Recognition Window",

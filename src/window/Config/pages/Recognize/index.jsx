@@ -37,7 +37,10 @@ export default function Recognize() {
                     />
                 )}
             </SettingRow>
-            <SettingRow title={t('config.recognize.delete_newline')}>
+            <SettingRow
+                title={t('config.recognize.delete_newline')}
+                description={t('config.recognize.delete_newline_description')}
+            >
                 {deleteNewline !== null && (
                     <Switch
                         checked={deleteNewline}

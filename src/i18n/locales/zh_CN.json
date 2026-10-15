@@ -145,6 +145,7 @@
                 "incremental_translate": "增量翻译",
                 "dynamic_translate": "动态翻译",
                 "delete_newline": "自动删除换行",
+                "delete_newline_description": "只删除句子中间的折行；以句号、问号等结尾的行，列表和空行会保留换行。",
                 "remember_language": "记住目标语言",
                 "font_size": {
                     "10": "极小 (10px)",
@@ -185,7 +186,9 @@
                 "auto_read_aloud": "翻译后自动朗读",
                 "auto_read_aloud_description": "朗读排在最上面且成功的文字结果；手动朗读后，本轮不再自动朗读。",
                 "selection_read_aloud": "划词朗读",
-                "selection_read_aloud_description": "在译文里用鼠标选中一段文字，旁边会出现朗读按钮，只朗读选中的部分（200 字以内）。用普通朗读的语音和音量，语速固定为正常速度。"
+                "selection_read_aloud_description": "在译文里用鼠标选中一段文字，旁边会出现朗读按钮，只朗读选中的部分（200 字以内）。用普通朗读的语音和音量，语速固定为正常速度。",
+                "markdown_result": "结果按 Markdown 显示",
+                "markdown_result_description": "只对 OpenAI、Gemini、ChatGLM、Ollama 等大模型服务生效。复制、朗读和替换翻译时自动去掉格式符号。"
             },
             "selection": {
                 "label": "划词助手",
@@ -250,6 +253,7 @@
                 "title": "文字识别",
                 "language": "识别语言",
                 "delete_newline": "自动删除换行",
+                "delete_newline_description": "只删除句子中间的折行；以句号、问号等结尾的行，列表和空行会保留换行。",
                 "auto_copy": "自动复制",
                 "close_on_blur": "失去焦点时关闭窗口",
                 "hide_window": "隐藏识别窗口",

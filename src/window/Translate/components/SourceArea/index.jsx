@@ -27,6 +27,7 @@ import detect from '../../../../utils/lang_detect';
 import { store } from '../../../../utils/store';
 import { info } from 'tauri-plugin-log-api';
 import { debug } from 'tauri-plugin-log-api';
+import { deleteNewlinesOnClick, deleteWrappedNewlines } from '../../../../utils/newline';
 
 export const sourceTextAtom = atom('');
 export const detectLanguageAtom = atom('');
@@ -99,7 +100,7 @@ export default function SourceArea(props) {
                         (v) => {
                             let newText = v.trim();
                             if (deleteNewline) {
-                                newText = v.replace(/\-\s+/g, '').replace(/\s+/g, ' ');
+                                newText = deleteWrappedNewlines(v);
                             } else {
                                 newText = v.trim();
                             }
@@ -138,7 +139,7 @@ export default function SourceArea(props) {
                             (v) => {
                                 let newText = v.trim();
                                 if (deleteNewline) {
-                                    newText = v.replace(/\-\s+/g, '').replace(/\s+/g, ' ');
+                                    newText = deleteWrappedNewlines(v);
                                 } else {
                                     newText = v.trim();
                                 }
@@ -169,7 +170,7 @@ export default function SourceArea(props) {
             setWindowType('[SELECTION_TRANSLATE]');
             let newText = text.trim();
             if (deleteNewline) {
-                newText = text.replace(/\-\s+/g, '').replace(/\s+/g, ' ');
+                newText = deleteWrappedNewlines(text);
             } else {
                 newText = text.trim();
             }
@@ -430,7 +431,7 @@ export default function SourceArea(props) {
                         <ToolbarButton
                             label={t('translate.delete_newline')}
                             onClick={() => {
-                                const newText = sourceText.replace(/\-\s+/g, '').replace(/\s+/g, ' ');
+                                const newText = deleteNewlinesOnClick(sourceText);
                                 setSourceText(newText);
                                 detect_language(newText).then(() => {
                                     syncSourceText();

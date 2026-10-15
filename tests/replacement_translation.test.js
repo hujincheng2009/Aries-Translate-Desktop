@@ -32,6 +32,7 @@ test('automatic source language uses the second language when source and target 
 });
 
 test('replacement source preprocessing follows the existing delete-newline setting', () => {
-    assert.equal(normalizeReplacementSourceText('  inter-\n national\ntext  ', true), 'international text');
+    assert.equal(normalizeReplacementSourceText('  well-\n known\ntext  ', true), 'well-known text');
+    assert.equal(normalizeReplacementSourceText('First line.\nSecond line', true), 'First line.\nSecond line');
     assert.equal(normalizeReplacementSourceText('  first\nsecond  ', false), 'first\nsecond');
 });

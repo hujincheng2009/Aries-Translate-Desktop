@@ -8,6 +8,7 @@ import OptionSelect from '../../../../components/app/OptionSelect';
 import { languageList } from '../../../../utils/language';
 import { useConfig } from '../../../../hooks/useConfig';
 import { invoke } from '@tauri-apps/api';
+import { MARKDOWN_RESULT_CONFIG_KEY } from '../../../../utils/markdown_text';
 import { SELECTION_READ_ALOUD_CONFIG_KEY } from '../../../../utils/selection_read_aloud';
 
 export default function Translate() {
@@ -23,6 +24,7 @@ export default function Translate() {
     const [historyDisable, setHistoryDisable] = useConfig('history_disable', false);
     const [dynamicTranslate, setDynamicTranslate] = useConfig('dynamic_translate', false);
     const [deleteNewline, setDeleteNewline] = useConfig('translate_delete_newline', false);
+    const [markdownResult, setMarkdownResult] = useConfig(MARKDOWN_RESULT_CONFIG_KEY, false);
     const [rememberLanguage, setRememberLanguage] = useConfig('translate_remember_language', false);
     // const [translateFontSize, setTranslateFontSize] = useConfig('translate_font_size', 16);
     const [windowPosition, setWindowPosition] = useConfig('translate_window_position', 'mouse');
@@ -124,6 +126,15 @@ export default function Translate() {
                     />
                 </SettingRow>
                 <SettingRow
+                    title={t('config.translate.markdown_result')}
+                    description={t('config.translate.markdown_result_description')}
+                >
+                    <Switch
+                        checked={markdownResult === true}
+                        onCheckedChange={setMarkdownResult}
+                    />
+                </SettingRow>
+                <SettingRow
                     title={t('config.translate.follow_ocr_language', 'Follow specified OCR language')}
                     description={t(
                         'config.translate.follow_ocr_language_hint',
@@ -179,7 +190,10 @@ export default function Translate() {
                         />
                     )}
                 </SettingRow>
-                <SettingRow title={t('config.translate.delete_newline')}>
+                <SettingRow
+                    title={t('config.translate.delete_newline')}
+                    description={t('config.translate.delete_newline_description')}
+                >
                     {deleteNewline !== null && (
                         <Switch
                             checked={deleteNewline}
