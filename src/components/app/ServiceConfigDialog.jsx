@@ -22,6 +22,8 @@ const ServiceConfigDialogContext = createContext({
     missingFields: [],
     setRequiredField: () => {},
     removeRequiredField: () => {},
+    fieldError: null,
+    clearFailure: () => {},
 });
 
 export function useServiceConfigDialog() {
@@ -80,7 +82,8 @@ export default function ServiceConfigDialog({
     );
     const failureRef = useRef(null);
     useEffect(() => {
-        if (failure) failureRef.current?.scrollIntoView({ block: 'nearest' });
+        // A located error scrolls to its field instead (ConfigField).
+        if (failure && !failure.fieldKey) failureRef.current?.scrollIntoView({ block: 'nearest' });
     }, [failure]);
     useEffect(() => {
         setFailure(null);
@@ -91,6 +94,11 @@ export default function ServiceConfigDialog({
             setFailure({ ...explainServiceError(error, provider), detail: redactServiceError(error, config) });
         },
         [provider]
+    );
+    const clearFailure = useCallback(() => setFailure(null), []);
+    const fieldError = useMemo(
+        () => (failure?.fieldKey ? { fieldKey: failure.fieldKey, kind: failure.kind, ...failure.values } : null),
+        [failure]
     );
     const registerFooter = useCallback(() => {
         setFormFooters((count) => count + 1);
@@ -105,6 +113,8 @@ export default function ServiceConfigDialog({
             missingFields,
             setRequiredField,
             removeRequiredField,
+            fieldError,
+            clearFailure,
         }),
         [
             onOpenChange,
@@ -114,6 +124,8 @@ export default function ServiceConfigDialog({
             missingFields,
             setRequiredField,
             removeRequiredField,
+            fieldError,
+            clearFailure,
         ]
     );
     const showFooter = !hideFooter && formFooters === 0;
@@ -160,7 +172,7 @@ export default function ServiceConfigDialog({
                                     role='alert'
                                 >
                                     <p>
-                                        {t(failure.messageKey)} {t(failure.adviceKey)}
+                                        {t(failure.messageKey, failure.values)} {t(failure.adviceKey, failure.values)}
                                     </p>
                                     <details>
                                         <summary className='cursor-pointer'>{t('services.errors.details')}</summary>

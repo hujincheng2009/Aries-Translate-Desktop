@@ -480,7 +480,24 @@
                         "openrouter": "使用 OpenRouter 的兼容接口；模型 ID 应包含服务商前缀。",
                         "chatanywhere": "默认使用国内地址；在国外请把域名改为 api.chatanywhere.org。",
                         "tuzi": "第三方中转会处理请求内容，敏感文本请先确认其隐私与日志政策。"
-                    }
+                    },
+                    "reasoning": "思考强度",
+                    "reasoning_default": "模型默认",
+                    "reasoning_none": "关闭",
+                    "reasoning_low": "低",
+                    "reasoning_medium": "中",
+                    "reasoning_high": "高",
+                    "reasoning_hint": "不是所有模型都支持思考强度。不确定时保持“模型默认”；选了之后报错，就改回“模型默认”。",
+                    "reasoning_overridden": "请求参数里的设置会覆盖思考强度。",
+                    "reasoning_rejected": "当前模型不支持这个思考强度，建议改回“模型默认”。",
+                    "use_model_default": "改回模型默认",
+                    "request_arguments": "请求参数（JSON）",
+                    "request_arguments_hint": "会合并进请求体。不同服务商接受的参数不同。",
+                    "request_arguments_invalid": "请求参数不是有效的 JSON：{{error}}",
+                    "param_rejected": "服务商不接受 {{param}}，建议删除这一项。",
+                    "default_params_note": "这些是默认参数，部分模型不接受，可以全部删除，改为 {}。",
+                    "preview_after_fix": "修改后：",
+                    "apply_suggestion": "应用建议"
                 },
                 "geminipro": {
                     "title": "Gemini Pro",
@@ -1072,6 +1089,12 @@
                 "network_advice": "检查接口地址、网络、代理与防火墙。",
                 "required": "缺少必要配置。",
                 "required_advice": "补齐表单中必填的凭据、地址或模型。",
+                "bad_request": "请求参数不被接受。",
+                "bad_request_advice": "检查请求参数（JSON）里是否有服务商不支持的项，或把思考强度改回“模型默认”。",
+                "bad_request_arguments_advice": "服务商不接受请求参数（JSON）中的 {{param}}，已在下方标出。",
+                "bad_request_reasoning_advice": "当前模型不支持所选思考强度，已在下方标出。",
+                "invalid_json": "请求参数不是有效的 JSON。",
+                "invalid_json_advice": "修正下方标出的请求参数：{{error}}",
                 "other": "服务测试失败。",
                 "other_advice": "检查服务设置和官方状态；展开详情查看已隐藏密钥的原始报错。"
             },

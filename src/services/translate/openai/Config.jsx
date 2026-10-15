@@ -1,8 +1,17 @@
 import ServiceRecommendations from '@/components/app/ServiceRecommendations';
 import { open } from '@tauri-apps/api/shell';
 import { Button } from '@/components/ui/button';
-import { getOpenaiProvider, openaiProviders, selectOpenaiProvider } from './providers';
+import {
+    buildReasoningArguments,
+    getOpenaiProvider,
+    openaiProviders,
+    parseRequestArguments,
+    reasoningLevels,
+    removeRequestArgument,
+    selectOpenaiProvider,
+} from './providers';
 import { useServiceError } from '@/hooks/useServiceError';
+import { useServiceConfigDialog } from '@/components/app/ServiceConfigDialog';
 import toast, { Toaster } from 'react-hot-toast';
 import { useTranslation } from 'react-i18next';
 import React, { useState } from 'react';
@@ -31,6 +40,7 @@ export const defaultRequestArguments = JSON.stringify({
     frequency_penalty: 0,
     presence_penalty: 0,
 });
+const defaultArgumentKeys = Object.keys(JSON.parse(defaultRequestArguments));
 
 export function Config(props) {
     const { instanceKey, updateServiceList, onClose } = props;
@@ -54,10 +64,12 @@ export function Config(props) {
                 { role: 'user', content: `Translate into $to:\n"""\n$text\n"""` },
             ],
             requestArguments: defaultRequestArguments,
+            reasoning: 'default',
         },
         { sync: false }
     );
     const reportError = useServiceError(openaiConfig);
+    const { fieldError, clearFailure } = useServiceConfigDialog();
     // 兼容旧版本
     if (openaiConfig) {
         if (openaiConfig.promptList === undefined) {
@@ -84,6 +96,29 @@ export function Config(props) {
     const [isLoading, setIsLoading] = useState(false);
 
     const toastStyle = useToastStyle();
+    const label = (key, values) => t(`services.translate.openai.${key}`, values);
+    // Editing the field a test failure points at clears the failure.
+    const changeLocated = (fieldKey, patch) => {
+        if (fieldError?.fieldKey === fieldKey) clearFailure();
+        setOpenaiConfig({ ...openaiConfig, ...patch });
+    };
+
+    let userArguments = null;
+    let argumentsError = null;
+    try {
+        userArguments = parseRequestArguments(openaiConfig?.requestArguments ?? '');
+    } catch (error) {
+        argumentsError = error.detail ?? error.message;
+    }
+    const reasoning = openaiConfig?.reasoning ?? 'default';
+    const reasoningOverridden =
+        userArguments !== null &&
+        Object.keys(buildReasoningArguments(openaiConfig?.service, reasoning)).some((key) =>
+            Object.prototype.hasOwnProperty.call(userArguments, key)
+        );
+    const rejectedParam = fieldError?.fieldKey === 'requestArguments' ? fieldError.param : '';
+    const fixedArguments =
+        rejectedParam && userArguments !== null ? removeRequestArgument(userArguments, rejectedParam) : null;
 
     return (
         openaiConfig !== null && (
@@ -234,6 +269,42 @@ export function Config(props) {
                         />
                     </ConfigField>
                 )}
+                <ConfigField
+                    fieldKey='reasoning'
+                    label={label('reasoning')}
+                    hint={
+                        <span className='flex flex-col gap-1'>
+                            <span>{label('reasoning_hint')}</span>
+                            {reasoningOverridden && <span>{label('reasoning_overridden')}</span>}
+                        </span>
+                    }
+                    error={
+                        fieldError?.fieldKey === 'reasoning' && (
+                            <span>
+                                {label('reasoning_rejected')}{' '}
+                                <Button
+                                    type='button'
+                                    variant='link'
+                                    className='h-auto whitespace-normal p-0 text-[length:inherit] text-destructive'
+                                    onClick={() => changeLocated('reasoning', { reasoning: 'default' })}
+                                >
+                                    {label('use_model_default')}
+                                </Button>
+                            </span>
+                        )
+                    }
+                >
+                    <OptionSelect
+                        className='w-full'
+                        value={reasoning}
+                        label={label(`reasoning_${reasoning}`)}
+                        options={reasoningLevels.map((value) => ({
+                            value,
+                            label: label(`reasoning_${value}`),
+                        }))}
+                        onChange={(value) => changeLocated('reasoning', { reasoning: value })}
+                    />
+                </ConfigField>
                 <ConfigPromptList
                     description={t('services.translate.openai.prompt_description')}
                     prompts={(openaiConfig.promptList ?? []).map((prompt) => ({
@@ -289,17 +360,43 @@ export function Config(props) {
                 />
                 <ConfigField
                     fieldKey='requestArguments'
-                    label='Request Arguments'
+                    label={label('request_arguments')}
+                    hint={label('request_arguments_hint')}
+                    error={
+                        argumentsError ? (
+                            label('request_arguments_invalid', { error: argumentsError })
+                        ) : rejectedParam ? (
+                            <span className='flex flex-col gap-1'>
+                                <span>{label('param_rejected', { param: rejectedParam })}</span>
+                                {defaultArgumentKeys.includes(rejectedParam) && (
+                                    <span>{label('default_params_note')}</span>
+                                )}
+                                {fixedArguments !== null && (
+                                    <span className='flex flex-wrap items-center gap-x-2 gap-y-1'>
+                                        <span>
+                                            {label('preview_after_fix')}{' '}
+                                            <code className='break-all font-mono text-xs'>{fixedArguments}</code>
+                                        </span>
+                                        <Button
+                                            type='button'
+                                            variant='link'
+                                            className='h-auto p-0 text-[length:inherit] text-destructive'
+                                            onClick={() =>
+                                                changeLocated('requestArguments', { requestArguments: fixedArguments })
+                                            }
+                                        >
+                                            {label('apply_suggestion')}
+                                        </Button>
+                                    </span>
+                                )}
+                            </span>
+                        ) : null
+                    }
                 >
                     <Textarea
                         value={openaiConfig['requestArguments'] ?? ''}
-                        placeholder={`Input API Request Arguments`}
-                        onChange={(e) => {
-                            setOpenaiConfig({
-                                ...openaiConfig,
-                                requestArguments: e.target.value,
-                            });
-                        }}
+                        placeholder='{}'
+                        onChange={(e) => changeLocated('requestArguments', { requestArguments: e.target.value })}
                     />
                 </ConfigField>
                 <ConfigFooter

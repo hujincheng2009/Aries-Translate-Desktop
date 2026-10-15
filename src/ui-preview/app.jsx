@@ -20,6 +20,8 @@
 //           The page is transparent like the real window; add theme=dark to check dark mode.
 //   window=screenshot shows a generated sample picture as the frozen screenshot, so the selection overlay,
 //           size label and hint can be tried with the mouse.
+//   openai_error=<param>  OpenAI-compatible requests answer HTTP 400 rejecting that parameter (default temperature),
+//           e.g. openai_error=reasoning_effort, to check the located-error marking in the OpenAI service dialog.
 //   sample=history       serve sample rows for the history table (history.db queries)
 //   sample=plugins       pretend two plugins are installed per service type (no icons), so the Service page can
 //                        show plugin rows and the "add external plugin" list. Instance keys that use them:
@@ -239,6 +241,15 @@ function handleTauriModule({ __tauriModule: module, message = {} }) {
             return null;
         case 'Http': {
             if (message.cmd === 'createClient') return 1;
+            if (
+                message.cmd === 'httpRequest' &&
+                params.has('openai_error') &&
+                message.options.url.includes('/chat/completions')
+            ) {
+                const param = params.get('openai_error') || 'temperature';
+                const error = { message: `Unsupported parameter: ${param}`, type: 'invalid_request_error', param };
+                return { url: message.options.url, status: 400, headers: {}, data: JSON.stringify({ error }) };
+            }
             if (message.cmd === 'httpRequest' && params.has('service_error')) {
                 const status = Number(params.get('service_error')) || 429;
                 throw Object.assign(

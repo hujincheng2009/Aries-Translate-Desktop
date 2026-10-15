@@ -1,7 +1,7 @@
 import { open } from '@tauri-apps/api/shell';
 import { Eye, EyeOff, ExternalLink, Plus, Trash2 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import React, { useId, useLayoutEffect, useState } from 'react';
+import React, { useEffect, useId, useLayoutEffect, useRef, useState } from 'react';
 
 import { Alert } from '@/components/ui/alert';
 import { Button } from '@/components/ui/button';
@@ -54,6 +54,8 @@ export function ConfigForm({ onSubmit, className, children, ...props }) {
 // One field: label above, control (full width), optional hint below. A single element child receives the generated
 // `id` (so the label is wired with htmlFor) and `aria-describedby` for the hint. `children` may also be a function
 // `({ id, describedBy }) => node` for controls that need to place those themselves.
+// `error` (node) is shown in red below the control. A test failure located at this `fieldKey` (fieldError from the
+// dialog) also marks the control invalid and scrolls the field into view.
 export function ConfigField({
     label,
     labelAction,
@@ -64,12 +66,20 @@ export function ConfigField({
     fieldKey,
     required: explicitRequired,
     value,
+    error,
 }) {
     const generatedId = useId();
     const fieldId = id ?? generatedId;
     const hintId = `${fieldId}-hint`;
-    const describedBy = hint ? hintId : undefined;
-    const { requiredFields, setRequiredField, removeRequiredField } = useServiceConfigDialog();
+    const errorId = `${fieldId}-error`;
+    const describedBy = [error && errorId, hint && hintId].filter(Boolean).join(' ') || undefined;
+    const { requiredFields, setRequiredField, removeRequiredField, fieldError } = useServiceConfigDialog();
+    const located = Boolean(fieldKey) && fieldError?.fieldKey === fieldKey;
+    const invalid = located || Boolean(error);
+    const wrapperRef = useRef(null);
+    useEffect(() => {
+        if (located) wrapperRef.current?.scrollIntoView({ block: 'center' });
+    }, [located, fieldError]);
     const required = explicitRequired ?? requiredFields.includes(fieldKey);
     const fieldValue = value !== undefined ? value : React.isValidElement(children) ? children.props.value : undefined;
     const missing = !hasRequiredValue(fieldValue);
@@ -87,11 +97,15 @@ export function ConfigField({
             id: fieldId,
             'aria-describedby': describedBy,
             'aria-required': required || undefined,
+            'aria-invalid': invalid || undefined,
         });
     }
 
     return (
-        <div className={cn('flex flex-col gap-2', className)}>
+        <div
+            ref={wrapperRef}
+            className={cn('flex flex-col gap-2', className)}
+        >
             {label && (
                 <div className='flex items-center justify-between gap-2'>
                     <Label htmlFor={fieldId}>
@@ -109,6 +123,15 @@ export function ConfigField({
                 </div>
             )}
             {control}
+            {error && (
+                <div
+                    id={errorId}
+                    role='alert'
+                    className='text-[0.8125rem] leading-snug text-destructive'
+                >
+                    {error}
+                </div>
+            )}
             {hint && (
                 <p
                     id={hintId}

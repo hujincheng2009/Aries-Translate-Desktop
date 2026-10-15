@@ -462,7 +462,24 @@
                         "openrouter": "使用 OpenRouter 的相容介面；模型 ID 應包含服務商前綴。",
                         "chatanywhere": "預設使用國內位址；在國外請把網域改為 api.chatanywhere.org。",
                         "tuzi": "第三方中轉會處理請求內容，敏感文字請先確認其隱私與日誌政策。"
-                    }
+                    },
+                    "reasoning": "思考強度",
+                    "reasoning_default": "模型預設",
+                    "reasoning_none": "關閉",
+                    "reasoning_low": "低",
+                    "reasoning_medium": "中",
+                    "reasoning_high": "高",
+                    "reasoning_hint": "不是所有模型都支援思考強度。不確定時保持「模型預設」；選了之後報錯，就改回「模型預設」。",
+                    "reasoning_overridden": "請求參數裡的設定會覆蓋思考強度。",
+                    "reasoning_rejected": "目前模型不支援這個思考強度，建議改回「模型預設」。",
+                    "use_model_default": "改回模型預設",
+                    "request_arguments": "請求參數（JSON）",
+                    "request_arguments_hint": "會合併進請求內容。不同服務商接受的參數不同。",
+                    "request_arguments_invalid": "請求參數不是有效的 JSON：{{error}}",
+                    "param_rejected": "服務商不接受 {{param}}，建議刪除這一項。",
+                    "default_params_note": "這些是預設參數，部分模型不接受，可以全部刪除，改為 {}。",
+                    "preview_after_fix": "修改後：",
+                    "apply_suggestion": "套用建議"
                 },
                 "chatglm": {
                     "title": "ChatGLM",
@@ -1068,6 +1085,12 @@
                 "network_advice": "檢查介面位址、網路、代理與防火牆。",
                 "required": "缺少必要設定。",
                 "required_advice": "補齊表單中必填的憑證、位址或模型。",
+                "bad_request": "請求參數不被接受。",
+                "bad_request_advice": "檢查請求參數（JSON）裡是否有服務商不支援的項目，或把思考強度改回「模型預設」。",
+                "bad_request_arguments_advice": "服務商不接受請求參數（JSON）中的 {{param}}，已在下方標出。",
+                "bad_request_reasoning_advice": "目前模型不支援所選思考強度，已在下方標出。",
+                "invalid_json": "請求參數不是有效的 JSON。",
+                "invalid_json_advice": "修正下方標出的請求參數：{{error}}",
                 "other": "服務測試失敗。",
                 "other_advice": "檢查服務設定和官方狀態；展開詳情查看已隱藏密鑰的原始錯誤。"
             },

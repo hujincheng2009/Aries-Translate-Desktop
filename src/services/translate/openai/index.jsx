@@ -1,12 +1,19 @@
 import { fetch, Body } from '@tauri-apps/api/http';
 import { Language } from './info';
 import { defaultRequestArguments } from './Config';
-import { buildOpenaiRequest } from './providers';
+import {
+    buildOpenaiRequest,
+    buildReasoningArguments,
+    describeOpenaiError,
+    formatOpenaiError,
+    parseRequestArguments,
+    requestError,
+} from './providers';
 
 export async function translate(text, from, to, options) {
     const { config, setResult, detect } = options;
 
-    let { service, requestPath, model, apiKey, stream, promptList, requestArguments } = config;
+    let { service, requestPath, model, apiKey, stream, promptList, requestArguments, reasoning } = config;
 
     // 兼容旧版
     if (promptList === undefined) {
@@ -31,11 +38,18 @@ export async function translate(text, from, to, options) {
         };
     });
 
+    const userArguments = parseRequestArguments(requestArguments ?? defaultRequestArguments);
+    const reasoningArguments = buildReasoningArguments(service, reasoning);
     const { url, headers, body } = buildOpenaiRequest(
         { service, requestPath, model, apiKey, stream },
         promptList,
-        JSON.parse(requestArguments ?? defaultRequestArguments)
+        userArguments,
+        reasoningArguments
     );
+    const fail = (status, bodyText) => {
+        const described = describeOpenaiError(status, bodyText, { userArguments, reasoningArguments });
+        return requestError(formatOpenaiError(described, bodyText), described);
+    };
     if (stream) {
         const res = await window.fetch(url, {
             method: 'POST',
@@ -91,7 +105,8 @@ export async function translate(text, from, to, options) {
                 reader.releaseLock();
             }
         } else {
-            throw `Http Request Error\nHttp Status: ${res.status}\n${JSON.stringify(res.data)}`;
+            // window.fetch responses have no .data; the reason for a 400 is in the body.
+            throw fail(res.status, await res.text());
         }
     } else {
         let res = await fetch(url, {
@@ -119,7 +134,7 @@ export async function translate(text, from, to, options) {
                 throw JSON.stringify(result);
             }
         } else {
-            throw `Http Request Error\nHttp Status: ${res.status}\n${JSON.stringify(res.data)}`;
+            throw fail(res.status, typeof res.data === 'string' ? res.data : JSON.stringify(res.data));
         }
     }
 }

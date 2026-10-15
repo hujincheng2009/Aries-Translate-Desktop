@@ -14,6 +14,7 @@ export default function OptionSelect({
     'aria-labelledby': labelledBy,
     'aria-describedby': describedBy,
     'aria-required': required,
+    'aria-invalid': invalid,
     id,
     disabled,
     className,
@@ -31,6 +32,7 @@ export default function OptionSelect({
                 aria-labelledby={labelledBy}
                 aria-describedby={describedBy}
                 aria-required={required}
+                aria-invalid={invalid}
             >
                 <SelectValue>{label}</SelectValue>
             </SelectTrigger>
