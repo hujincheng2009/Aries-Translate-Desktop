@@ -8,6 +8,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 export default function OptionSelect({
     value,
     label,
+    placeholder,
     options,
     onChange,
     ariaLabel,
@@ -34,7 +35,7 @@ export default function OptionSelect({
                 aria-required={required}
                 aria-invalid={invalid}
             >
-                <SelectValue>{label}</SelectValue>
+                <SelectValue placeholder={placeholder}>{label}</SelectValue>
             </SelectTrigger>
             <SelectContent className='max-h-[50vh]'>
                 {options.map((option) => (

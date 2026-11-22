@@ -1,4 +1,7 @@
 import { configurePitchPreservingMediaElement, normalizeReadAloudVolume } from './read_aloud.js';
+import { detectAudioMimeType } from './tts_audio.js';
+
+export { detectAudioMimeType } from './tts_audio.js';
 
 let audioElement = null;
 let audioObjectUrl = null;
@@ -18,24 +21,6 @@ function base64ToBytes(value) {
         bytes[index] = binary.charCodeAt(index);
     }
     return bytes;
-}
-
-function hasBytes(bytes, offset, expected) {
-    return expected.every((value, index) => bytes[offset + index] === value);
-}
-
-export function detectAudioMimeType(bytes) {
-    if (hasBytes(bytes, 0, [0x49, 0x44, 0x33])) return 'audio/mpeg';
-    if (hasBytes(bytes, 0, [0x52, 0x49, 0x46, 0x46]) && hasBytes(bytes, 8, [0x57, 0x41, 0x56, 0x45])) {
-        return 'audio/wav';
-    }
-    if (hasBytes(bytes, 0, [0x4f, 0x67, 0x67, 0x53])) return 'audio/ogg';
-    if (hasBytes(bytes, 0, [0x66, 0x4c, 0x61, 0x43])) return 'audio/flac';
-    if (hasBytes(bytes, 0, [0x1a, 0x45, 0xdf, 0xa3])) return 'audio/webm';
-    if (hasBytes(bytes, 4, [0x66, 0x74, 0x79, 0x70])) return 'audio/mp4';
-    if (bytes[0] === 0xff && (bytes[1] & 0xf6) === 0xf0) return 'audio/aac';
-    if (bytes[0] === 0xff && (bytes[1] & 0xe0) === 0xe0) return 'audio/mpeg';
-    return '';
 }
 
 function getDataUrlMimeType(data) {

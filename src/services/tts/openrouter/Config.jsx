@@ -20,8 +20,9 @@ import { useToastStyle } from '../../../hooks';
 import { useConfig } from '../../../hooks/useConfig';
 import { playVoice } from '../../../hooks/useVoice';
 import { INSTANCE_NAME_CONFIG_KEY } from '../../../utils/service_instance';
+import { OPENROUTER_DEFAULT_FORMATS } from './core';
 import { Language } from './info';
-import { tts, validateOpenRouterConfig } from './index';
+import { fetchOpenRouterSpeechModel, tts, validateOpenRouterConfig } from './index';
 
 const SPEED_OPTIONS = [
     ['1', '1.0×'],
@@ -37,7 +38,9 @@ export function Config(props) {
     const { t } = useTranslation();
     const toastStyle = useToastStyle();
     const [isTesting, setIsTesting] = useState(false);
-    const [config, setConfig] = useConfig(
+    const [isFetchingVoices, setIsFetchingVoices] = useState(false);
+    const [speechModel, setSpeechModel] = useState(null);
+    const [config, setConfig, getConfig] = useConfig(
         instanceKey,
         {
             [INSTANCE_NAME_CONFIG_KEY]: t('services.tts.openrouter_tts.title'),
@@ -52,6 +55,19 @@ export function Config(props) {
 
     const showError = (error) => {
         reportError(error);
+    };
+
+    const fetchVoices = async () => {
+        const model = config.model.trim();
+        setIsFetchingVoices(true);
+        try {
+            const capabilities = await fetchOpenRouterSpeechModel(model);
+            if (getConfig()?.model?.trim() === model) setSpeechModel({ model, ...capabilities });
+        } catch (error) {
+            if (getConfig()?.model?.trim() === model) showError(error);
+        } finally {
+            setIsFetchingVoices(false);
+        }
     };
 
     const testVoice = async () => {
@@ -82,6 +98,14 @@ export function Config(props) {
     if (config === null) return null;
 
     const speed = String(config.speed ?? '1');
+    const model = config.model?.trim() ?? '';
+    const currentSpeechModel = speechModel?.model === model ? speechModel : null;
+    const voices = currentSpeechModel?.voices ?? [];
+    const selectedVoice = voices.includes(config.voice) ? config.voice : '';
+    const publishedFormats = currentSpeechModel?.formats ?? [];
+    const responseFormat = config.responseFormat ?? '';
+    const formats = [...new Set([...OPENROUTER_DEFAULT_FORMATS, ...publishedFormats])];
+    if (responseFormat === 'mp4' && !formats.includes('mp4')) formats.push('mp4');
 
     return (
         <ConfigForm>
@@ -115,10 +139,68 @@ export function Config(props) {
                 label={t('services.tts.openrouter_tts.voice')}
                 hint={t('services.tts.openrouter_tts.voice_hint')}
             >
-                <Input
-                    value={config.voice ?? ''}
-                    placeholder={t('services.tts.openrouter_tts.voice_placeholder')}
-                    onChange={(e) => setConfig({ ...config, voice: e.target.value })}
+                {({ id, describedBy }) => (
+                    <div className='flex flex-col gap-2'>
+                        <div className='flex gap-2'>
+                            <Input
+                                id={id}
+                                aria-describedby={describedBy}
+                                className='min-w-0 flex-1'
+                                value={config.voice ?? ''}
+                                placeholder={t('services.tts.openrouter_tts.voice_placeholder')}
+                                onChange={(e) => setConfig({ ...config, voice: e.target.value })}
+                            />
+                            <Button
+                                type='button'
+                                variant='outline'
+                                disabled={!model || isFetchingVoices}
+                                onClick={() => void fetchVoices()}
+                            >
+                                {isFetchingVoices && <Spinner />}
+                                {t('services.tts.openrouter_tts.fetch_voices')}
+                            </Button>
+                        </div>
+                        {voices.length > 0 && (
+                            <OptionSelect
+                                className='w-full'
+                                ariaLabel={t('services.tts.openrouter_tts.select_voice')}
+                                value={selectedVoice}
+                                label={selectedVoice}
+                                placeholder={t('services.tts.openrouter_tts.select_voice')}
+                                options={voices.map((voice) => ({ value: voice, label: voice }))}
+                                onChange={(voice) => setConfig({ ...config, voice })}
+                            />
+                        )}
+                        {currentSpeechModel && voices.length === 0 && (
+                            <span
+                                role='status'
+                                className='text-sm text-muted-foreground'
+                            >
+                                {t('services.tts.openrouter_tts.no_voices')}
+                            </span>
+                        )}
+                    </div>
+                )}
+            </ConfigField>
+            <ConfigField
+                label={t('services.tts.openrouter_tts.audio_format')}
+                hint={
+                    publishedFormats.length
+                        ? t('services.tts.openrouter_tts.audio_format_available', {
+                              formats: publishedFormats.map((format) => format.toUpperCase()).join(' / '),
+                          })
+                        : t('services.tts.openrouter_tts.audio_format_hint')
+                }
+            >
+                <OptionSelect
+                    className='w-full'
+                    value={responseFormat || 'auto'}
+                    label={responseFormat.toUpperCase() || t('services.tts.openrouter_tts.audio_format_auto')}
+                    options={[
+                        { value: 'auto', label: t('services.tts.openrouter_tts.audio_format_auto') },
+                        ...formats.map((format) => ({ value: format, label: format.toUpperCase() })),
+                    ]}
+                    onChange={(value) => setConfig({ ...config, responseFormat: value === 'auto' ? '' : value })}
                 />
             </ConfigField>
             <ConfigField label={t('services.tts.openrouter_tts.speed')}>
